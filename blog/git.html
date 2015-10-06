@@ -55,14 +55,17 @@
         <br>
         Let's consider that you have crafted this awesomely complicated Excel spreadsheet (let's call this <i>myExcelv1.xlsx</i>).  Everything works properly.  One day, you needed to change some formulae for whatever reason, but you are not sure if the change that you've made will mess up the other calculations anf references.  So instead of making your changes in this known good Excel file, you save a copy of <i>myExcelv1.xlsx</i>, and you can mess with the new copy (<i>myExcelv2.xlsx</i>) with the peace of mind that even if you mess up on the new copy (<i>myExcelv2.xlsx</i>), your incredibly complicated formulae is still safe in the original, and you can keep trying different things until your changes don't break anything.  Now, <i>myExcelv2.xlsx</i> will be your official main version.<br>
         <br>
-        Wnen writing your own code alone, you can make your backups manually this way, making a new version and manually renaming the file with a different name.  But having a version control system will automate this for you.  All of that work will be simplified and streamlined.  The date, time, who made a change, and what got changed will all be tracked for you.  Sure you could do this manually, but wouldn't you want to spend your time doing other things?<br>
-        <br>
-        <aside><blockquote><h5>(Bernice's Rant: Truthfully, version control can be used by other kinds of professionals too.  In the git into video <a href="https://vimeo.com/41027679">https://vimeo.com/41027679</a> or <a href="https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI">https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI</a>, the narrator did not specifically say "coders" or "software developers".  He actually said "<strong><i>knowledge workers</i></strong>".  So that means anybody who works with any sort of data.  The people who tend to use insanely complicated formulae in Excel would most likely be accountants, and in my humble opionion, it would do them well to learn version control also.  Alas, but this is not the case in real life.)</h5></blockquote></aside>
-
         In summary "version control" is the idea.  "Version control system" is the implementation of this practice, but nowadays it is more commonly the software system that implements the practice of controlling versions.<br>
         <br>
         git is just one of the version control systems out there, the other being SVN or "SubVersion" or CVS (not the pharmacy).  See here for a more comprehensivev list: <a href = "https://en.wikipedia.org/wiki/List_of_version_control_software">https://en.wikipedia.org/wiki/List_of_version_control_software</a>.  See here for a review of different version control systems: <a href="http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/">http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/</a><br>
         <br>
+      </p>
+      <h3 class = "text-center">How does git help you keep track of changes?</h3>
+      <p>
+        When writing your own code alone, you can make your backups manually this way, making a new version and manually renaming the file with a different name.  But having a version control system will automate this for you.  All of that work will be simplified and streamlined.  The date, time, who made a change, and what got changed will all be tracked for you.  Sure you could do this manually, but wouldn't you want to spend your time doing other things?<br>
+        <br>
+        <aside><blockquote><h5>(Bernice's Rant: Truthfully, version control can be used by other kinds of professionals too.  In the git into video <a href="https://vimeo.com/41027679">https://vimeo.com/41027679</a> or <a href="https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI">https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI</a>, the narrator did not specifically say "coders" or "software developers".  He actually said "<strong><i>knowledge workers</i></strong>".  So that means anybody who works with any sort of data.  The people who tend to use insanely complicated formulae in Excel would most likely be accountants, and in my humble opionion, it would do them well to learn version control also.  Alas, but this is not the case in real life.)</h5></blockquote></aside>
+
         Basically, the version control system can be downloaded and installed on your local machine, and it can do all these wonderful things like tracking the changes.  Since I'm using git, here's an example of my git log output to show the tracked changes:<br>
         <div class = "text-center">
         <figure><img class = "shrink_my_image" src="./git_log.png" alt="Screenshot my <code>git log</code> output."/></figure><br>
@@ -70,22 +73,41 @@
 
         If you would like to try out git for yourself, you can download it from <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.  Then follow the instructions for installing it.<br>
         <br>
-        What is GitHub, then?  Like the name implies, it is a hub where git repositories (the technical term for git 'information' is "repository") are stored.  This <br>
-        <br>
-        <h4 class = "text-center">Now, say it with me: <i>git and GitHub are 2 very different things!</i></h4>
-        Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is a website (github.com).
-      </p>
-      <h3 class = "text-center">How does git help you keep track of changes?</h3>
-      <p>
+        There are also lots of useful guides found online:
+        <ul>
+          <li><a href="http://anitacheng.com/git-for-non-developers">git FOR NON-DEVELOPERS!!!! :D</a></li>
+          <li><a href="https://github.com/jlord/git-it">https://github.com/jlord/git-it</a> (I actually used this one to learn git.)</li>
+          <li><a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
+          <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+          <li><a href="http://skillcrush.com/2013/02/20/get-started-working-with-git/">http://skillcrush.com/2013/02/20/get-started-working-with-git/</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Y9XZQO1n_7c">https://www.youtube.com/watch?v=Y9XZQO1n_7c</a></li>
+          <li><a href="https://www.youtube.com/watch?v=r63f51ce84A">https://www.youtube.com/watch?v=r63f51ce84A</a></li>
+          <li><a href="https://www.codeschool.com/courses/git-real">https://www.codeschool.com/courses/git-real</a></li>
+          <li><a href="http://www.joelonsoftware.com/articles/fog0000000043.html">http://www.joelonsoftware.com/articles/fog0000000043.html</a></li>
+          <li><a href="http://www.freecodecamp.com/challenges/waypoint-save-your-code-revisions-forever-with-git">http://www.freecodecamp.com/challenges/waypoint-save-your-code-revisions-forever-with-git</a></li>
+          <li><a href="https://www.udacity.com/wiki/ud775">https://www.udacity.com/wiki/ud775</a></li>
+          <li><a href="https://www.udacity.com/course/viewer#!/c-ud805/l-3666138591/m-643368749">https://www.udacity.com/course/viewer#!/c-ud805/l-3666138591/m-643368749</a></li>
+          <li><a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">https://www.udacity.com/course/how-to-use-git-and-github--ud775</a></li>
+          <li><a href="https://www.codecademy.com/blog/74-getting-started-with-git">https://www.codecademy.com/blog/74-getting-started-with-git</a></li>
+          <li>Basically, just do a Google search or if you're a visual learner like me, you can find these guides in Youtube also.</li>
+        </ul>
         Let's go back to the example of the Excel file with tons of complicated formulae, and references to who-knows-where.<br>
         <br>
         In the cas  
       </p>
       <h3 class = "text-center">Why use GitHub to store your code?</h3>
       <p>
+        What is GitHub, then?  Like the name implies, <a href="http://www.github.com">github.com</a> is a website that is a hub where git repositories (the technical term for git 'information' is "repository") are stored.  This is like an offsite/remote backup of your work.  But it's more than that<br>
+        <br>
+        I have to admit that in the beginning, I was really scared of putting my work out there like that.  
+        <h4 class = "text-center">Now, say it with me: <i>git and GitHub are 2 very different things!</i></h4>
+        Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is a website (github.com).
+
         The most likely natural habitat for such complex Excel files are usually in work environments.  Someone who works on this file is more likely sharing this file with other people in a team, or from different teams, who are also working on the same file.  
-        
+
         We like to 
+
+
       </p>
 
         <!-- copy and paste as many sections as you want to add paragraphs -->
