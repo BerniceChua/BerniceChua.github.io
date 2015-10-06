@@ -20,20 +20,23 @@
 
     <section>
       <p>
-        This topic has probably been talked about to death by everyone plus their mothers.  But only because it's a really important concept.  It cannot be emphasized enough!<br>
-        <br>
+        This topic of version control has probably been talked about to death by everyone plus their mothers.  But only because it's a really important concept.  It cannot be emphasized enough!<br>
+        <div class = "text-center">
+        <figure><img src="./version-control-search-results.PNG" alt="Screenshot of version control search results."/></figure><br>
+        <figcaption><i>The search results are OVER 9000!!!!!!!!!!!</i></figcaption><br></div>
         Here's why.
       <p>
       <h4 class = "text-center">What are the benefits of version control?</h4>
       <p>
         Have you ever accidentally saved over your work, but then realized that you've deleted something really important, and you can't remember how to put it back?<br>
         <br>
+        Have you ever played those videogames that only have one save slot, and it auto-saves in such a way that you've made the game accidentally unwinnable?  (For example, autosaving right after you've accidentally destroyed or lost some plot-advancing item (<i>Diablo 2</i>), or even auto-saving right after your army is dwindled and your important general was killed (<i>Total War</i>), or even realized that some tactical decision you made several turns ago has turned out to be a strategical error and now all the other factions have ganged up against you (<i>Civilization</i> and <i>Total War</i>), or auto-saving right when you've glitched into a wall (<i>Dying Light</i>), or auto-saving when the enemies are right beside you so they kill you instantly as soon as you load the game.  Oh great, now you have to start over again from the beginning.
         <div class = "text-center">
         <figure><img src="http://www.nooooooooooooooo.com/vader.jpg" alt="Darth Vader screaming 'NOOOOOOOOOOOOOOO!!!!!'"/></figure><br>
         <figcaption><i>Image Source: <a href="http://www.nooooooooooooooo.com/">http://www.nooooooooooooooo.com/</a></i></figcaption><br>
         <br>
         </div>
-        Have you ever played those videogames that only have one save slot, and it auto-saves in such a way that you've made the game accidentally unwinnable?  (For example, autosaving right after you've accidentally destroyed or lost some plot-advancing item (<i>Diablo 2</i>), or even auto-saving right after your army is dwindled and your important general was killed (<i>Total War</i>), or even realized that some tactical decision you made several turns ago has turned out to be a strategical error and now all the other factions have ganged up against you (<i>Civilization</i> and <i>Total War</i>), or auto-saving right when you've glitched into a wall (<i>Dying Light</i>), or auto-saving when the enemies are right beside you so they kill you instantly as soon as you load the game (Yes, I play too many videogames, and in general I dislike games that auto-save and don't allow you multiple save slots.  But that's another story for another day).)<br>
+        (Yes, I play too many videogames, and in general I dislike games that auto-save and don't allow you multiple save slots.  But that's another story for another day).)<br>
         <br>
         Well none of those things will be a problem as soon as you start using version control! ^__^<br>
         <br>
@@ -43,6 +46,11 @@
         <br>
         Or, if you don't play videogames, you've performed a backup of your entire OS each time right before installing some new software, and you keep each version of the old backups.  One day, you've suddenly discovered that the new driver or whatever is incompatible with everything else, or the new software is actually malware that corrupted your system.  You can just revert to a recent backed-up state.  If you find that this does not solve your problem, you revert backwards through each iteration until you find the backup with a known good state.  This way, you don't have to re-install your OS or figure out which software or driver is incompatible with what.<br>
         <br>
+        <div class = "text-center">
+        <figure><img src="http://www.shimmertechno.com/wp-content/uploads/2014/06/0x0000000a-300x228.jpg" alt="The infamous 'Blue screen of death'."/></figure><br>
+        <figcaption><i>Image Source: <a href="http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/">http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/</a></i></figcaption><br>
+        <br>
+        </div>
         If those examples are still not relatable enough, here's an example that more people might have encountered.<br>
         <br>
         Let's consider that you have crafted this awesomely complicated Excel spreadsheet (let's call this <i>myExcelv1.xlsx</i>).  Everything works properly.  One day, you needed to change some formulae for whatever reason, but you are not sure if the change that you've made will mess up the other calculations anf references.  So instead of making your changes in this known good Excel file, you save a copy of <i>myExcelv1.xlsx</i>, and you can mess with the new copy (<i>myExcelv2.xlsx</i>) with the peace of mind that even if you mess up on the new copy (<i>myExcelv2.xlsx</i>), your incredibly complicated formulae is still safe in the original, and you can keep trying different things until your changes don't break anything.  Now, <i>myExcelv2.xlsx</i> will be your official main version.<br>
@@ -60,7 +68,7 @@
       <p>
           Let's go back to the example of the Excel file with tons of complicated formulae, and references to who-knows-where.<br>
           <br>
-          Someone who works on this file is more likely sharing 
+          The most likely natural habitat for such complex Excel files are usually in work environments.  Someone who works on this file is more likely sharing this file with other people in a team, or from different teams, who are also working on the same file.  
       </p>
       <h4 class = "text-center">Why use GitHub to store your code?</h4>
       <p>
