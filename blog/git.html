@@ -10,11 +10,11 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
+  <link rel="stylesheet" type="text/css" href="custom-after-bootstrap.css">
 </head>
-<body >
+<body class = "padding">
   <main>
-    <div><h1 class="text-center">Bernice's Dev Bootcamp Blog ^_^</h1>
+    <div><h1 class = "text-center">Bernice's Dev Bootcamp Blog ^_^</h1>
     <h2>git, GitHub, and version control</h2>
     <h6><strong><i>October 5, 2015, Monday</i></strong></h6>
 
@@ -24,21 +24,21 @@
         <br>
         Here's why.
       <p>
-      <h4>What are the benefits of version control?</h4>
+      <h4 class = "text-center">What are the benefits of version control?</h4>
       <p>
         Have you ever accidentally saved over your work, but then realized that you've deleted something really important, and you can't remember how to put it back?<br>
         <br>
-        <div class="text-center">
-        <img src="http://www.nooooooooooooooo.com/vader.jpg"/><br>
-        <i>Image Source: <a href="http://www.nooooooooooooooo.com/">http://www.nooooooooooooooo.com/</a></i><br>
+        <div class = "text-center">
+        <figure><img src="http://www.nooooooooooooooo.com/vader.jpg" alt="Darth Vader screaming 'NOOOOOOOOOOOOOOO!!!!!'"/></figure><br>
+        <figcaption><i>Image Source: <a href="http://www.nooooooooooooooo.com/">http://www.nooooooooooooooo.com/</a></i></figcaption><br>
         <br>
         </div>
         Have you ever played those videogames that only have one save slot, and it auto-saves in such a way that you've made the game accidentally unwinnable?  (For example, autosaving right after you've accidentally destroyed or lost some plot-advancing item (<i>Diablo 2</i>), or even auto-saving right after your army is dwindled and your important general was killed (<i>Total War</i>), or even realized that some tactical decision you made several turns ago has turned out to be a strategical error and now all the other factions have ganged up against you (<i>Civilization</i> and <i>Total War</i>), or auto-saving right when you've glitched into a wall (<i>Dying Light</i>), or auto-saving when the enemies are right beside you so they kill you instantly as soon as you load the game (Yes, I play too many videogames, and in general I dislike games that auto-save and don't allow you multiple save slots.  But that's another story for another day).)<br>
         <br>
         Well none of those things will be a problem as soon as you start using version control! ^__^<br>
         <br>
-        What is "version control"?  One of my friends so succinctly says: "They are tools to help you AVOID massive fuckups  ;-)"<br>
-        <br>
+        What is "version control"?  One of my friends so succinctly says: <blockquote>"They are tools to help you AVOID massive fuckups  ;-)"</blockquote>
+        
         A good way to think about version control is: it is like a videogame with multiple save slots, so if you've accidentally lost that plot-advancing item, or you've made some strategic decisions that gave you a bad outcome, you can just go back to that known good saved state, and you don't need to start the game from the beginning.<br>
         <br>
         Or, if you don't play videogames, you've performed a backup of your entire OS each time right before installing some new software, and you keep each version of the old backups.  One day, you've suddenly discovered that the new driver or whatever is incompatible with everything else, or the new software is actually malware that corrupted your system.  You can just revert to a recent backed-up state.  If you find that this does not solve your problem, you revert backwards through each iteration until you find the backup with a known good state.  This way, you don't have to re-install your OS or figure out which software or driver is incompatible with what.<br>
@@ -47,15 +47,22 @@
         <br>
         Let's consider that you have crafted this awesomely complicated Excel spreadsheet (let's call this <i>myExcelv1.xlsx</i>).  Everything works properly.  One day, you needed to change some formulae for whatever reason, but you are not sure if the change that you've made will mess up the other calculations anf references.  So instead of making your changes in this known good Excel file, you save a copy of <i>myExcelv1.xlsx</i>, and you can mess with the new copy (<i>myExcelv2.xlsx</i>) with the peace of mind that even if you mess up on the new copy (<i>myExcelv2.xlsx</i>), your incredibly complicated formulae is still safe in the original, and you can keep trying different things until your changes don't break anything.  Now, <i>myExcelv2.xlsx</i> will be your official main version.<br>
         <br>
-        In the case of writing code, version control is like the Excel file example.  Wnen writing your own code alone, you can make your backups manually this way, or you can have 
+        Wnen writing your own code alone, you can make your backups manually this way, making a new version and manually renaming the file with a different name.  But having a version control system will automate this for you.  All of that work will be simplified and streamlined.  The date, time, who made a change, and what got changed will all be tracked for you.  Sure you could do this manually, but wouldn't you want to spend your time doing other things?<br>
+        <br>
+        <aside><blockquote><h5>(Bernice's Rant: Truthfully, version control can be used by other kinds of professionals too.  In the git into video <a href="https://vimeo.com/41027679">https://vimeo.com/41027679</a> or <a href="https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI">https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI</a>, the narrator did not specifically say "coders" or "software developers".  He actually said "<strong><i>knowledge workers</i></strong>".  So that means anybody who works with any sort of data.  The people who tend to use insanely complicated formulae in Excel would most likely be accountants, and in my humble opionion, it would do them well to learn version control also.  Alas, but this is not the case in real life.)</h5></blockquote></aside>
+
+        In summary "version control" is the idea.  "Version control system" is the implementation of this practice, but nowadays it is more commonly the software system that implements the practice of controlling versions.<br>
+        <br>
+        git is just one of the version control systems out there, the other being SVN or "SubVersion" or CVS (not the pharmacy).  See here for a more comprehensivev list: <a href = "https://en.wikipedia.org/wiki/List_of_version_control_software">https://en.wikipedia.org/wiki/List_of_version_control_software</a>.  See here for a review of different version control systems: <a href="http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/">http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/</a><br>
+        <br>
       </p>
-      <h5>How does git help you keep track of changes?</h5>
+      <h4 class = "text-center">How does git help you keep track of changes?</h4>
       <p>
           Let's go back to the example of the Excel file with tons of complicated formulae, and references to who-knows-where.<br>
           <br>
           Someone who works on this file is more likely sharing 
       </p>
-      <h5>Why use GitHub to store your code?</h5>
+      <h4 class = "text-center">Why use GitHub to store your code?</h4>
       <p>
           We like to 
       </p>
