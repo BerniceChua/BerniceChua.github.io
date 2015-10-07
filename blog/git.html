@@ -1,26 +1,301 @@
 <!DOCTYPE html>
 <head>
-  <title>Your page title here</title>
+  <title>Bernice's Dev Bootcamp Blog ^_^</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="custom-after-bootstrap.css">
 </head>
+<body class = "padding">
+  <main>
+    <div><h1 class = "text-center">Bernice's Dev Bootcamp Blog ^_^</h1>
+    <h2>git, GitHub, and version control</h2>
+    <h6><strong><i>October 5, 2015, Monday</i></strong></h6>
 
-<main>
-  <h1>Post Title</h1>
-  <h2>The subtitle, if you want it</h2>
-  <h4>Today's Date</h4>
+    <section>
+      <p>
+        This topic of version control has probably been talked about to death by everyone plus their mothers.  But only because it's a really important concept.  It cannot be emphasized enough!<br>
+        <div class = "text-center">
+        <figure><img src="./version-control-search-results.PNG" alt="Screenshot of version control search results."/></figure><br>
+        <figcaption><i>The search results are OVER 9000!!!!!!!!!!!</i></figcaption><br></div>
+        Here's why.
+      <p>
+      <h3 class = "text-center">What are the benefits of version control?</h3>
+      <p>
+        Have you ever played those videogames that only have one save slot, and it auto-saves in such a way that you've made the game accidentally unwinnable?  (For example, autosaving right after you've accidentally destroyed or lost some plot-advancing item (<i>Diablo 2</i>), or even auto-saving right after your army is dwindled and your important general was killed (<i>Total War</i>), or even realized that some tactical decision you made several turns ago has turned out to be a strategical error and now all the other factions have ganged up against you (<i>Civilization</i> and <i>Total War</i>), or auto-saving right when you've glitched into a wall (<i>Dying Light</i>), or auto-saving when the enemies are right beside you so they kill you instantly as soon as you load the game.  Oh great, now you have to start over again from the beginning.<br>
+        <br>
+        (Yes, I play too many videogames, and in general I dislike games that auto-save and don't allow you multiple save slots.  But that's another story for another day).)<br>
+        <br>
+        Have you ever accidentally saved over your work, but then realized that you've deleted something really important, and you can't remember how to put it back?
+        <br>
+        <div class = "text-center">
+        <figure><img src="http://www.nooooooooooooooo.com/vader.jpg" alt="Darth Vader screaming 'NOOOOOOOOOOOOOOO!!!!!'"/></figure><br>
+        <figcaption><i>Image Source: <a href="http://www.nooooooooooooooo.com/">http://www.nooooooooooooooo.com/</a></i></figcaption><br>
+        <br>
+        </div>
+        Well none of those things will be a problem as soon as you start using version control! ^__^<br>
+        <br>
+        What is "version control"?  One of my friends so succinctly says: <blockquote>"They are tools to help you AVOID massive fuckups  ;-)"</blockquote>
+        
+        A good way to think about version control is: it is like a videogame with multiple save slots, so if you've accidentally lost that plot-advancing item, or you've made some strategic decisions that gave you a bad outcome, you can just go back to that known good saved state, and you don't need to start the game from the beginning.<br>
+        <br>
+        Or, if you don't play videogames, you've performed a backup of your entire OS each time right before installing some new software, and you keep each version of the old backups.  One day, you've suddenly discovered that the new driver or whatever is incompatible with everything else, or the new software is actually malware that corrupted your system.  You can just revert to a recent backed-up state.  If you find that this does not solve your problem, you revert backwards through each iteration until you find the backup with a known good state.  This way, you don't have to re-install your OS or figure out which software or driver is incompatible with what.<br>
+        <br>
 
-  <section>
-    <p>
-      Your first paragraph goes here. I'm using Web 2.0 Ipsum to add content. Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Nuvvo koofers oooooc voxy klout jaiku palantir flickr insala zinch napster oooj, airbnb mzinga vimeo yuntaa balihoo plickers whrrl edmodo appjet kippt. Yoono imvu hulu eduvant blekko imvu ebay voki napster skype, hipmunk zinch wesabe bubbli ning meebo bitly zlio. Fleck elgg ideeli disqus rovio zillow sifteo blyve jabber, bitly geni zoho foodzie qeyno twones klout jiglu, hipmunk jaiku balihoo plickers heekya eskobo yuntaa. Sococo whrrl plickers movity whrrl zinch voki nuvvo meebo, quora heroku unigo kno wufoo jibjab woopra, groupon yuntaa spock mzinga jumo meebo movity.
-    </p>
-    <p>
-        Lijit groupon ning stypi eskobo blyve ning shopify oooooc, meebo groupon prezi ebay voxy bitly diigo. Spock ifttt skype hipmunk movity whrrl bebo oooj empressr, disqus insala palantir bitly dropio zimbra zinch oooooc etsy, klout spock insala quora omgpop trulia jibjab. Sifteo dogster ebay grockit geni scribd bitly ning unigo, plickers voki mzinga tumblr kaboodle mozy whrrl woopra udemy, foodzie joukuu elgg twitter shopify akismet rovio. Kosmix eduvant woopra dopplr balihoo ning bebo akismet, boxbe vimeo kosmix shopify zappos bitly geni loopt, qeyno disqus sococo squidoo wikia octopart.
-    </p>
-    <p>
-        Kazaa meevee eduvant gsnap movity kosmix kazaa klout jumo, trulia unigo groupon wakoopa spock knewton glogster heroku oooj, ning imvu appjet eskobo zillow twitter rovio. Glogster chegg voxy greplin dopplr voki foodzie xobni weebly odeo, sococo zynga knewton loopt palantir lala blyve tumblr blekko, twones akismet plaxo kippt meebo zillow zooomr insala. Oovoo imeem napster divvyshot zinch imeem voxy shopify, fleck kazaa zinch lanyrd boxbe joost wakoopa nuvvo, orkut elgg heekya sifteo scribd napster. Yammer yoono groupon dopplr cloudera nuvvo eduvant klout, voxy groupon disqus eduvant oooj greplin.
-    </p>
+        <div class = "text-center">
+          <figure><img src="http://www.shimmertechno.com/wp-content/uploads/2014/06/0x0000000a-300x228.jpg" alt="The infamous 'Blue screen of death'."/></figure><br>
+          <figcaption><i>Image Source: <a href="http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/">http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/</a></i></figcaption><br>
+          <br>
+        </div>
 
-      <!-- copy and paste as many sections as you want to add paragraphs -->
-  </section>
-</main>
+        If those examples are still not relatable enough, here's an example that more people might have encountered.<br>
+        <br>
+        Let's consider that you have crafted this awesomely complicated Excel spreadsheet (let's call this <i>myExcelv1.xlsx</i>).  Everything works properly.  One day, you needed to change some formulae for whatever reason, but you are not sure if the change that you've made will mess up the other calculations and references.<br>
+        <br>
+
+        <div class = "text-center">
+          <figure><img class = "shrink_my_image" src="complicated-excel-formulae.PNG" alt="Screenshot of complicated Excel formulae."/></figure><br>
+          <figcaption><i>Screenshot of complicated Excel formulae.  Imagine all the possible #REF! and #VALUE! errors if there's a mistake!</i></figcaption><br>
+        </div>
+
+        So instead of making your changes in this known good Excel file, you save a copy of <i>myExcelv1.xlsx</i>, and you can mess with the new copy (<i>myExcelv2.xlsx</i>) with the peace of mind that even if you mess up on the new copy (<i>myExcelv2.xlsx</i>), your incredibly complicated formulae is still safe in the original, and you can keep trying different things until your changes don't break anything.  Now, <i>myExcelv2.xlsx</i> will be your official main version.<br>
+        <br>
+        In summary "version control" is the idea.  "Version control system" is the implementation of this practice, but nowadays it is more commonly the software system that implements the practice of controlling versions.<br>
+        <br>
+        git is just one of the version control systems out there, the other being SVN or "SubVersion" or CVS (not the pharmacy).  See here for a more comprehensivev list: <a href = "https://en.wikipedia.org/wiki/List_of_version_control_software">https://en.wikipedia.org/wiki/List_of_version_control_software</a>.  See here for a review of different version control systems: <a href="http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/">http://www.smashingmagazine.com/2008/09/the-top-7-open-source-version-control-systems/</a><br>
+        <br>
+      </p>
+      <h3 class = "text-center">How does git help you keep track of changes?</h3>
+      <p>
+        Basically, a version control system like git can be downloaded and installed on your local machine, and it can do all these wonderful things like tracking the changes.  Since I'm using git, here's an example of my git log output to show the tracked changes:<br>
+        <div class = "text-center">
+        <figure><img class = "shrink_my_image" src="./git_log.png" alt="Screenshot my <code>git log</code> output."/></figure><br>
+        <figcaption><i>Screenshot my <code>git log</code> output.  (I have a lot of commitments...)</i></figcaption><br></div>
+
+        When writing your own code alone, you can make your backup copies of your files manually the old-fashioned way, making a new version and manually renaming the file with a different name.  But having a version control system will automate this for you.  All of that work will be simplified and streamlined.  The date, time, who made a change, and what got changed will all be tracked for you.  Sure you could do this manually, but wouldn't you want to spend your time doing other things?<br>
+        <br>
+        <aside><blockquote><h5>(Bernice's Rant: Truthfully, version control can be used by other kinds of professionals too.  In the git into video <a href="https://vimeo.com/41027679">https://vimeo.com/41027679</a> or <a href="https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI">https://www.youtube.com/watch?t=38&v=hKfo0OXc1BI</a>, the narrator did not specifically say "coders" or "software developers".  He actually said "<strong><i>knowledge workers</i></strong>".  So that means anybody who works with any sort of data and/or creates content.  The people who tend to use insanely complicated formulae in Excel would most likely be accountants, and in my humble opionion, it would do them well to learn version control also.  But Alas!  This is not the case in real life. >_<)</h5></blockquote></aside>
+
+        If you would like to try out git for yourself, you can download it from <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.  Then follow the instructions for installing it.<br>
+        <br>
+        There are also lots of useful guides found online:
+        <ul>
+          <li><a href="http://anitacheng.com/git-for-non-developers">git FOR NON-DEVELOPERS!!!! :D</a> (Now, non-developers have no excuse!!!)</li>
+          <li><a href="https://github.com/jlord/git-it">https://github.com/jlord/git-it</a> (I actually used this one to learn git.)</li>
+          <li><a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
+          <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+          <li><a href="http://skillcrush.com/2013/02/20/get-started-working-with-git/">http://skillcrush.com/2013/02/20/get-started-working-with-git/</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Y9XZQO1n_7c">https://www.youtube.com/watch?v=Y9XZQO1n_7c</a></li>
+          <li><a href="https://www.youtube.com/watch?v=r63f51ce84A">https://www.youtube.com/watch?v=r63f51ce84A</a></li>
+          <li><a href="https://www.codeschool.com/courses/git-real">https://www.codeschool.com/courses/git-real</a></li>
+          <li><a href="http://www.joelonsoftware.com/articles/fog0000000043.html">http://www.joelonsoftware.com/articles/fog0000000043.html</a></li>
+          <li><a href="http://www.freecodecamp.com/challenges/waypoint-save-your-code-revisions-forever-with-git">http://www.freecodecamp.com/challenges/waypoint-save-your-code-revisions-forever-with-git</a></li>
+          <li><a href="https://www.udacity.com/wiki/ud775">https://www.udacity.com/wiki/ud775</a></li>
+          <li><a href="https://www.udacity.com/course/viewer#!/c-ud805/l-3666138591/m-643368749">https://www.udacity.com/course/viewer#!/c-ud805/l-3666138591/m-643368749</a></li>
+          <li><a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775">https://www.udacity.com/course/how-to-use-git-and-github--ud775</a></li>
+          <li><a href="https://www.codecademy.com/blog/74-getting-started-with-git">https://www.codecademy.com/blog/74-getting-started-with-git</a></li>
+          <li>Basically, just do a Google search or if you're a visual learner like me, you can find these guides in Youtube also.</li>
+        </ul>
+        OK, I have to admit that in the beginning this was all very intimidating, even with all the guides.  Also, a lot of people don't want to add one more thing to their workflow or setting aside the time to learn this.  So I understand the resistance to learning these or adding them to the workflow (not the case for coders, but for non-coders).<br>
+        <br>
+        Someone may argue, "But Bernice, regular MS Word and regular MS Excel and Photoshop already have these features inside their program.  You can undo and redo actions.  Why do I need to do all these?"  To this, I say, "When you turn off those programs and save, then later turn them back on and realize that something is not right, you cannot access that 'history' and undo stuff."  I am also a lazy person, so I don't want to do something if it has no beneficial effect to anyone at all.  But in this case, a temporary and small inconvenience is worth it, if it prevents much wailing and gnashing of teeth later on.<br>
+        <br>
+        Now, this worst-case scenario has happened, and you've saved and shut down your program.  How do you revert to the previous commit?  The instructions in <a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things">https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things</a> shows us that <code>git commit --ammend</code> can un-commit something for us.<br>
+        <br>
+        But what if you want to revert back to something a few commits ago?  Like the question of this person in Stackoverflow: <a href="http://stackoverflow.com/questions/4114095/revert-to-a-previous-git-commit">http://stackoverflow.com/questions/4114095/revert-to-a-previous-git-commit</a>.  In this case, we use <code>git revert</code> and <code>git reset</code>.  More details for each are here:<br>
+        <code>git revert</code>
+        <ul>
+          <li><a href="https://git-scm.com/docs/git-revert">https://git-scm.com/docs/git-revert</a></li>
+          <li><a href="https://www.kernel.org/pub/software/scm/git/docs/git-revert.html">https://www.kernel.org/pub/software/scm/git/docs/git-revert.html</a></li>
+          <li><a href="<li>http://schacon.github.io/git/git-revert.html</li>">http://schacon.github.io/git/git-revert.html</a></li>
+        </ul>
+        <code>git reset</code>
+        <ul>
+          <li><a href="https://git-scm.com/docs/git-reset">https://git-scm.com/docs/git-reset</a><br></li>
+        </ul>
+
+        <div class = "text-center">
+          <figure><img src="http://longhoang.ca/blog/wp-content/uploads/2012/07/git.jpg" alt="Altair screaming 'WHAT SORCERY IS THIS?!!!!!'"/></figure>
+          <figcaption><i>Image Source: <a href="http://longhoang.ca/blog/ever-pushed-a-bad-commit-to-git-save-yourself-with-git-revert/">http://longhoang.ca/blog/ever-pushed-a-bad-commit-to-git-save-yourself-with-git-revert/</a></i></figcaption>
+          <br>
+        </div>
+
+        In order to find the commit number, we can check what commits have been logged.  To check what commits have been logged, you type <code>git log</code>.  To get a more detailed look at each commit information, it's <code>git log -p</code>.  But both of these commands will show all the commits since the beginning.  If you want to limit the number of things you want to view, it's <code>git log -#</code> (replace '#' with a number).  You can even combine them!!  Example, typing <code>git log -p -3</code> will show the detailed log of the last 3 commits.  More information here: <a href="http://git-scm.com/docs/git-log">http://git-scm.com/docs/git-log</a>  And just like that, your problems are fixed.  Like magic.
+
+        <div class = "text-center">
+          <figure><img src="http://38.media.tumblr.com/tumblr_ly4otwHSJ01rn95k2o1_400.gif" alt="Altair screaming 'WHAT SORCERY IS THIS?!!!!!'"/></figure><br>
+          <figcaption><i>Image Source: <a href="http://gif-database.tumblr.com/post/16290208620">http://gif-database.tumblr.com/post/16290208620</a></i></figcaption><br>
+          <figure><img class = "shrink_my_image" src="http://image.slidesharecdn.com/gitsummaryk-ruby20120329-120830050953-phpapp02/95/git-13-728.jpg?cb=1346470610" alt="Diagram of <code>git revert</code>"/></figure><br>
+          <figcaption><i>Pictured above: sorcery.<br>
+          Image Source: <a href="http://www.slideshare.net/tamotsufuruya/git-14116631">http://www.slideshare.net/tamotsufuruya/git-14116631</a></i></figcaption><br>
+        </div>
+
+        This was all really confusing in the beginning, and all looks like <a href="https://www.youtube.com/watch?v=LBZsw5F66cQ">reversing time</a> or time travel or parallel universes or <a href="https://www.youtube.com/watch?v=me-WHitlw8A">time paradoxes</a>.  (And that's because in a sense, it kind of is.)  But after understanding what each step does and deliberately practicing a lot and stepping away and coming back (rinse and repeat), I finally figured it out.  The first time I learned this, I did not learn this overnight.  Even now, with my newfound knowledge, I still need to look up some of the commands if they are not something that I use everyday.  But that will change with more use, as time goes by.<br>
+        <br>
+        <strong><em>Very important things to take note of:</em></strong><br>
+        <ul>
+          <li>A commit is a recording of a snapshot of where your code is at a particular time.  You can capture as many of these snapshots as you would like, and then you can go back and visit any snapshot whenever you would like.</li>
+          <li>You cannot save what you did not <code>git add</code> and <code>git commit</code>.</li>
+          <div class = "text-center">
+            <figure><img class = "shrink_my_image" src="./primer-time-travel.PNG" alt="Primer movie time travel"/></figure>
+            <figcaption><i>Image Source: <a href="https://en.wikipedia.org/wiki/Primer_(film)">https://en.wikipedia.org/wiki/Primer_(film)</a></i></figcaption>
+            <br>
+          </div>
+          <li>About tracking changes:  If a creator/git user does not <code>git add</code> and <code>git commit -m 'Add comment here'</code> early and often, git can only do so much to help you.  Think of it like the videogame saves analogy.  If you wait until much further in the game to save, then you decide that you want to restore to an earlier save point, that cannot happen if there's no early save point to go back to.</li>
+          <li>Adding messages to your commits are also important, so you will know which ones to look for later on in case you need to revert.  Relying on the detailed view of <code>git log -p</code> will do no good if there were lots of changes and you're just greeted by a huge wall of text.</li>
+          <li>There is no penalty for committing multiple times.  So <code>git add .</code> like no one's watching; <code>git commit</code> like there's no tomorrow!!</li>
+        </ul>
+        If you follow all the rules properly when you fork and checkout, you will have everything in place, and it will be less confusing.  This way, your git repo will something look like this:
+        <br>
+        <div class = "text-center">
+          <figure><img class = "shrink_my_image" src="http://i.imgur.com/VACTBSE.jpg" alt="Primer movie orderly timelines"/></figure>
+          <figcaption><i>Image Source: <a href="http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5">http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5</a></i></figcaption>
+          <br>
+        </div>
+        ... instead of something like these:<br>
+        <div class = "text-center">
+          <figure><img class = "shrink_my_image" src="http://img.photobucket.com/albums/v334/FridgeMan88/primer-1.jpg" alt="Primer movie messy timelines"/></figure>
+          <figcaption><i>Image Source: <a href="http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5">http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5</a></i></figcaption>
+          <figure><img class = "shrink_my_image" src="http://now-here-this.timeout.com/wp-content/uploads/2014/07/Primer-XKCD-timeline.png" alt="Primer movie messy timelines from xkcd.com"/></figure>
+          <figcaption><i>Image Source: <a href="http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5">http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5</a>, originally from <a href="http://xkcd.com/657/">http://xkcd.com/657/</a></i></figcaption>
+          <br>
+        </div>
+      </p>
+      <h3 class = "text-center">Why use GitHub to store your code?</h3>
+      <p>
+        What is GitHub, then?  Like the name implies, <a href="http://www.github.com">github.com</a> is a website that is a hub where git repositories (the technical term for git 'information' is "repository") are stored.  This is like an offsite/remote backup of your work.  There are many other online repositories too, like BitBucket or Atlassian's Stash.  But online repositories are more than offsite/remote/hosted storage.  The true power of online repos (as they are abbreviated) is the ability for other people to see a project and collaborate on it AT THE SAME TIME, even though they are geographically apart.<br>
+        <br>
+        Now, I'll tell you why this is super-useful -- even for non-coders.  Let's go back to the example of the Excel file with tons of complicated formulae, and references to who-knows-where, which we called <i>myExcelv1.xlsx</i>.<br>
+        <br>
+        The most likely natural habitat for such complex Excel files are usually in work environments.  Someone who works on this file is more likely sharing this file with other people in a team, or from different teams, who are also working on the same file.  
+
+        <div class = "text-center">
+          <figure><img class = "shrink_my_image" src="complicated-excel-sheets.PNG" alt="Screenshot of complicated Excel spreadsheets"/></figure>
+          <figcaption><i>Nice Excel formulas you've got there.  It would be a shame if anything happened to them.</i></figcaption>
+          <br>
+        </div>
+
+        If someone were to version-control <i>myExcelv1.xlsx</i> the old-fashioned way, they would make a copy and name it <i>myExcelv2.xlsx</i>.  But what if the deadline is coming up, and multiple people need to work on the file?  Does this mean that there are multiple copies of <i>myExcelv2.xlsx</i> floating around?  If I updated one section of my copy of <i>myExcelv2.xlsx</i>, and you updated another section of your copy of <i>myExcelv2.xlsx</i>, then it stands to reason that each of our copies would have different parts that are updated and outdated at the same time.  The other way -- only one person can work on it at a time -- is equally as bad and as inefficient.<br>
+        <br>
+
+        <div class = "text-center">
+          <figure><img src="https://s-media-cache-ak0.pinimg.com/236x/7b/cd/c1/7bcdc1be8896494b188bcd4cdc1b6296.jpg" alt="I wonder if my boss has an excel spreadsheet to track his hundreds of excel spreadsheets."/></figure>
+          <figcaption><i>Image Source: <a href="http://www.someecards.com/usercards/viewcard/MjAxMy1hN2Y2MjU2ZTE1NTg0NGY4">http://www.someecards.com/usercards/viewcard/MjAxMy1hN2Y2MjU2ZTE1NTg0NGY4</a></i></figcaption>
+          <br>
+        </div>
+
+        This is why online repos like GitHub are great tools for version control.  Multiple people can work on something at the same time, even if they are all far apart from each other.  And even if they work on something at the same time, they will not overwrite each other's work.<br>
+        <ul>
+          <li>Even if nothing else, it's a really good idea to store your work not only in your local machine.  For example, something happens to your local machine for whatever reason, nobody will need to cry because all of that work is lost.  (Because it's not, it's saved remotely.)</li>
+          <li>If you want to work some more on your own code, you can fork a branch from the original, and mess with it as much as you want, without impunity!!!!!</li>
+          <li>If other people collaborate with you, then they would also fork their own individual branches, and mess with the code to their heart's content.  These collaborators don't even have to be in the same location as you.</li>
+          <li>Because everyone is working on a branch of the code, the original known good working version remains intact.</li>
+          <li>Eventually, people need to combine all the work back to the main branch (the <code>master</code>).  When this happens, this is called a <code>pull request</code>.  People can review each other's changes, and catch mistakes before combining the work back to the master.  This makes collaborating in teams much easier.</li>
+        </ul>
+      </p>
+      <h3 class = "text-center">How does this whole thing work?</h3>
+      <p>
+        There are many guides online, but here is a quick summary in git and GitHub, since those are the version controls that I'm currently using.<br>
+        <h4>Instructions for creating a new repo:</h4>
+        <ol>
+          <li>Step 1 - If you don't have this already, create a login and password in GitHub.</li>
+          <li>Step 2 - In your own GitHub page, look for the "+" sign on the upper right corner beside your avatar/picture. You'll know you're in the right place because when you hover over it, a sign will appear that says "Create new...".</li>
+          <li>Step 3 - Click on "+" sign on upper right corner beside your avatar/picture. A dropdown menu appears.</li>
+          <li>Step 4 - On dropdown menu, please click "New repository". A new screen will appear.</li>
+          <li>Step 5 - In this new screen, you can customize things about your repo such as the name. Please choose the name of your repo, choose whether or not the repo is public vs. private, and choose what kind of license is being used, since these are required fields. The others are optional, but you can add information on them if you want.</li>
+          <li>Step 6 - When you have made sure that everything in Step 5 is to your liking, please click "Create Repository". Congratulations! You have made a repository in GitHub.</li>
+          <li>Step 7 - In order to add more files to this repository, let us link it to your local machine through git. For this, please make sure that you have git installed from here: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.</li>
+          <ul>
+            <li><code>git config --global user.name "Your GitHub Username Here"</code></li>
+            <li><code>git config --global user.email "your.email@address.com"</code></li>
+          </ul>
+        </ol>
+        <h4>Instructions for forking an existing repo:</h4>
+        <ol>
+          <li>Step 1 - If you don't have this already, create a login and password in GitHub.</li>
+          <li>Step 2 - Please go to the GitHub page of whichever repo you'd wish to fork.</li>
+          <li>Step 3 - On the upper right corner of the screen, under your avatar/picture, there is a button called "Fork". Please click on this.</li>
+          <li>Step 4 - Congratulations! You have successfully forked a repo. You'll know that you have done this correctly if the name before the slash of the repo name is your own username, and under that, it says "forked from originalUser/source" or something like that, and the picture beside it is a branch instead of a book.</li>
+          <li>Step 5 - In order to add more files to this repository, let us link it to your local machine through git. For this, please make sure that you have git installed from here: https://git-scm.com/downloads (Links to an external site.).</li>
+          <li>Step 6 - On the right sidebar of the forked repo's page, there is a box under "HTTPS clone URL". Please click the box beside it that says "Copy to clipboard" when you hover over it.</li>
+          <li>Step 7 - Please open your CLI. Please "cd" to the directory where you want to save your cloned git repos.</li>
+          <li>Step 8 - Once you are in the directory that you want, please type this command:</li>
+          <ul>
+            <li><code>git clone </code> (and before hitting "Enter" on the keyboard, paste the URL that was copied in Step 6. NOW, hit Enter).</li>
+          </ul>
+          <li>Congratulations! You now have a copy of this forked repo on your local machine.</li>
+        </ol>
+        <h4>Instructions for tracking changes:</h4>
+        <ol>
+          <li><code>git pull origin master</code> (to make sure that you have the latest and greatest version of the project)</li>
+          <li><code>git checkout -b [name_of_branch]</code> (to make sure that when you make a change gone awry, you can always revert to the original)</li>
+          <li><code>git add [can be . or can be the filename(s)]</code> (prepares the changes to be committed)</li>
+          <li><code>git commit -m "imperative message here"</code> (saved state, prepares the changes to be pushed to the remote repository)</li>
+          <li><code>git push origin [your-branch-name-here]</code> (pushes the changes to the remote repository)</li>
+          <ul>
+            <li>It will ask for your username and password in the remote repo here.</li>
+            <li>Then a message will appear with the details of what was pushed to the remote repo.</li>
+          </ul>
+          <li><code>git checkout master</code> (moves your view into the master branch)</li>
+          <li>either <code>git pull origin master</code>, or <code>git fetch origin master</code> (makes sure everything is up to date on your local repo AND the remote repo)</li>
+        </ol>
+        Now comes the most powerful part -- the pull request.<br>
+        <br>
+        This happens in the remote repo; in this case in GitHub.  Anyone who logs in and has access to the remote repo in GitHub will see this:<br>
+        <br>
+        <div class = "text-center">
+          <figure><img src="GitHub-pull-request-alert.PNG" alt="Screenshot of 'You recently pushed branches: edit-blog.  Compare & pull request' in GitHub."/></figure>
+          <figcaption><i>In GitHub, you recently pushed branches: 'edit-blog'.  Compare & pull request.</i></figcaption>
+          <br>
+        </div>
+        <br>
+        <div class = "text-center">
+          <figure><a href="GitHub-open-pull-request.png">
+            <img class = "shrink_my_image" src="GitHub-open-pull-request.png" alt="Screenshot of 'Open a pull request' in GitHub."/>
+          </a></figure>
+          <figcaption><i>Open a pull request in GitHub.  (Right-click on the image and open on a new tab or new window to expand the image.)</i></figcaption>
+          <br>
+        </div>
+        As can be seen in the screenshots above, when someone clicks on "Compare & pull request", the screen takes you to the "Opens a pull request" page.  On this page, the submitter can write comments, see who did what and what time, etc.  Also, please note that person who submits the pull request can compare a branch to another branch, not just to the <code>master</code> branch.  The person who submits the pull request can also compare the changes line by line, by scrolling down in that pull request page.  Please take note the part that says "<span class = "green-font">Able to merge.</span> These branches can be automatically merged."  When everything is completed, click "Create pull request", and wait for someone to review the pull request.<br>
+        <br>
+        In the next step, someone else typically reviews the pull request.  They will see this screen:
+        <div class = "text-center">
+          <figure><a href="GitHub-merge-pull-request.png">
+            <img class = "shrink_my_image" src="GitHub-merge-pull-request.png" alt="Screenshot of 'Merge pull request' in GitHub."/>
+          </a></figure>
+          <figcaption><i>Merge a pull request in GitHub.  (Right-click on the image and open on a new tab or new window to expand the image.)</i></figcaption>
+          <br>
+        </div>
+        If for whatever reason, the pull request is not accepted, the reviewer can comment and click "Close pull request".  <a href="GitHub-merge-pull-request.png">Reasons for not accepting a pull request are detailed here.</a>  But if the pull request gets accepted, then the reviewer clicks "Merge pull request".  Now, the branch code gets merged back to the <code>master</code> branch.  That's why it's very important to review the code and make sure that everything works properly before merging back!!<br>
+        <br>
+        <h4 class = "text-center">Now, say it with me: <i>git and GitHub are 2 very different things!</i></h4>
+        Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is the website (github.com).  git is a system of version control, but there are many other systems too like CVS (again, still not the pharmacy) and SVN.  GitHub is an online repository where people store their work, and other people can see this repo to collaborate on their work.  
+
+        <h3 class = "text-center">Final Thoughts</h3>
+        I will be the first to admit that in the beginning, I was really scared of putting my work out there like that in GitHub for all to see.  It was scary mainly because the work was still raw and not done yet.  It was full of errors, and it looked really ugly to me.  <i>It's not done yet.  It's incomplete.  It's all over the place.  It's not ready for other people to see.  People will see how much I suck."</i>, we tell ourselves.  But let's face it: as people who create things, works will never be "done" or "completed".  There will always be some kind of tweak that needs to happen, and as we mature and gain more experience and techniques, we'll always look back at our old work, and see what could have been done better.  Hindsight is always 20x20, and past work will always suck compared to current work.  (Hopefully.)<br>
+        <br>
+        Anyway, do you know about Brandon Sanderson?  Now, this may seem like I'm changing the subject and it's coming out of nowhere, but bear with me and hear me out.  Brandon Sanderson is a famous author who writes speculative fiction, specifically in the fantasy genre.  He's one of my favorites because in his stories, the worlds are consistent and his writing style is elegant yet not overly flowery. I'd say he's a nice balance between Hemmingway/Walt Whitman/Asimov and Humberto Eco/Jose Luis Borges/Franz Kafka/Neal Stephenson.  When people like us read their works, we think "Oh wow, they just made something automatically just like that."  But truthfully, we don't see the process behind their writing -- the edits, re-edits, throwing away ideas that don't work with the rest even though it's a great idea by itself.<br>
+        <br>
+        The point is, Brandon Sanderson wrote a book called <i>Warbreaker</i>.  That's not surprising, since he's a writer.  But what's different about this book is that <i>he put everything online, including the original drafts, and all the edits</i>.  In his own words:
+        <blockquote cite="http://brandonsanderson.com/books/warbreaker/warbreaker/">
+          <a href="http://brandonsanderson.com/books/warbreaker/warbreaker/">And so, I did something crazy. I went to Tor and asked if they’d be okay with me posting the entire version of Warbreaker AS I WROTE IT. Meaning, rough drafts. The early, early stuff which is filled with problems and errors.  For those who are aspiring novelists, I wanted to show an early version of my work so they could follow its editing and progress.</a>
+        </blockquote>
+        Think of what Brandon Sanderson could have done if he had version control or used GitHub! ^_^<br>
+        <br>
+        The original essay in full context can be found here: <a href="http://brandonsanderson.com/books/warbreaker/warbreaker/">http://brandonsanderson.com/books/warbreaker/warbreaker/</a>, and you can download and read the different iterations of his book <i>Warbreaker</i> there too.  He said a bunch of other things too, but the point that I was trying to make is that when I was reading the original drafts, I didn't really think that the writing was bad or problematic.  It was good enough.  I bet it's the same thing with our code.  Regular people will not really think anything ill of it.  Also, it's some kind of output rather than nothing, and it can always be fixed at a later iteration.  The real reason why each of us is self-conscious of our own works is because we spend a lot of time with ourselves, so we know ourselves.  But truthfully, other people don't know any better, and are being self-conscious of their own selves for the same reason that each of us is self-conscious of our own selves.<br>
+        <br>
+        And when other smarter people pay attention to your code enough to want to fork a branch to fix stuff, that's actually a complement, because they think that it is worth their time to work on your code.  So be happy!!! ^___^  (Speaking of which, wanna see my older repos?  <a href="https://github.com/BerniceChua/BouncingDuckies">https://github.com/BerniceChua/BouncingDuckies</a> and <a href="https://github.com/BerniceChua/Breakout_-_Java_Homework">https://github.com/BerniceChua/Breakout_-_Java_Homework</a><br>
+        <br>
+        So put your work out there, and happy coding!!!  ^__^
+      </p>
+
+        <!-- copy and paste as many sections as you want to add paragraphs -->
+    </section>
+  </main>
+</body>
