@@ -133,14 +133,16 @@
         <br>
         <strong><em>Very important things to take note of:</em></strong><br>
         <ul>
+          <li>A commit is a recording of a snapshot of where your code is at a particular time.  You can capture as many of these snapshots as you would like, and then you can go back and visit any snapshot whenever you would like.</li>
           <li>You cannot save what you did not <code>git add</code> and <code>git commit</code>.</li>
           <div class = "text-center">
             <figure><img class = "shrink_my_image" src="./primer-time-travel.PNG" alt="Primer movie time travel"/></figure>
             <figcaption><i>Image Source: <a href="https://en.wikipedia.org/wiki/Primer_(film)">https://en.wikipedia.org/wiki/Primer_(film)</a></i></figcaption>
             <br>
           </div>
-          <li>Tracking changes automatically can only go so far.  If a creator/git user does not <code>git add</code> and <code>git commit -m 'Add comment here'</code> early and often, git can only do so much to help you.  Think of it like the videogame saves analogy.  If you don't</li>
+          <li>About tracking changes:  If a creator/git user does not <code>git add</code> and <code>git commit -m 'Add comment here'</code> early and often, git can only do so much to help you.  Think of it like the videogame saves analogy.  If you wait until much further in the game to save, then you decide that you want to restore to an earlier save point, that cannot happen if there's no early save point to go back to.</li>
           <li>Adding messages to your commits are also important, so you will know which ones to look for later on in case you need to revert.  Relying on the detailed view of <code>git log -p</code> will do no good if there were lots of changes and you're just greeted by a huge wall of text.</li>
+          <li>There is no penalty for committing multiple times.  So <code>git add .</code> like no one's watching; <code>git commit</code> like there's no tomorrow!!</li>
         </ul>
         If you follow all the rules properly when you fork and checkout, you will have everything in place, and it will be less confusing.  This way, your git repo will something look like this:
         <br>
@@ -183,11 +185,55 @@
           <li>If you want to work some more on your own code, you can fork a branch from the original, and mess with it as much as you want, without impunity!!!!!</li>
           <li>If other people collaborate with you, then they would also fork their own individual branches, and mess with the code to their heart's content.  These collaborators don't even have to be in the same location as you.</li>
           <li>Because everyone is working on a branch of the code, the original known good working version remains intact.</li>
-          <li>Eventually, people need to combine all the work back to the main branch (the <code>master</code>).  When this happens, this is called a <code>pull request</code>.  People can review each other's changes, and catch mistakes before combining the work back to the master.</li>
+          <li>Eventually, people need to combine all the work back to the main branch (the <code>master</code>).  When this happens, this is called a <code>pull request</code>.  People can review each other's changes, and catch mistakes before combining the work back to the master.  This makes collaborating in teams much easier.</li>
         </ul>
-        How does this work?  There are many guides online, but here is a quick summary:<br>
-        
-
+      </p>
+      <h3 class = "text-center">How does this whole thing work?</h3>
+      <p>
+        There are many guides online, but here is a quick summary in git and GitHub, since those are the version controls that I'm currently using.<br>
+        <h4>Instructions for creating a new repo:</h4>
+        <ol>
+          <li>Step 1 - If you don't have this already, create a login and password in GitHub.</li>
+          <li>Step 2 - In your own GitHub page, look for the "+" sign on the upper right corner beside your avatar/picture. You'll know you're in the right place because when you hover over it, a sign will appear that says "Create new...".</li>
+          <li>Step 3 - Click on "+" sign on upper right corner beside your avatar/picture. A dropdown menu appears.</li>
+          <li>Step 4 - On dropdown menu, please click "New repository". A new screen will appear.</li>
+          <li>Step 5 - In this new screen, you can customize things about your repo such as the name. Please choose the name of your repo, choose whether or not the repo is public vs. private, and choose what kind of license is being used, since these are required fields. The others are optional, but you can add information on them if you want.</li>
+          <li>Step 6 - When you have made sure that everything in Step 5 is to your liking, please click "Create Repository". Congratulations! You have made a repository in GitHub.</li>
+          <li>Step 7 - In order to add more files to this repository, let us link it to your local machine through git. For this, please make sure that you have git installed from here: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>.</li>
+          <ul>
+            <li><code>git config --global user.name "Your GitHub Username Here"</code></li>
+            <li><code>git config --global user.email "your.email@address.com"</code></li>
+          </ul>
+        </ol>
+        <h4>Instructions for forking an existing repo:</h4>
+        <ol>
+          <li>Step 1 - If you don't have this already, create a login and password in GitHub.</li>
+          <li>Step 2 - Please go to the GitHub page of whichever repo you'd wish to fork.</li>
+          <li>Step 3 - On the upper right corner of the screen, under your avatar/picture, there is a button called "Fork". Please click on this.</li>
+          <li>Step 4 - Congratulations! You have successfully forked a repo. You'll know that you have done this correctly if the name before the slash of the repo name is your own username, and under that, it says "forked from originalUser/source" or something like that, and the picture beside it is a branch instead of a book.</li>
+          <li>Step 5 - In order to add more files to this repository, let us link it to your local machine through git. For this, please make sure that you have git installed from here: https://git-scm.com/downloads (Links to an external site.).</li>
+          <li>Step 6 - On the right sidebar of the forked repo's page, there is a box under "HTTPS clone URL". Please click the box beside it that says "Copy to clipboard" when you hover over it.</li>
+          <li>Step 7 - Please open your CLI. Please "cd" to the directory where you want to save your cloned git repos.</li>
+          <li>Step 8 - Once you are in the directory that you want, please type this command:</li>
+          <ul>
+            <li><code>git clone </code> (and before hitting "Enter" on the keyboard, paste the URL that was copied in Step 6. NOW, hit Enter).</li>
+          </ul>
+          <li>Congratulations! You now have a copy of this forked repo on your local machine.</li>
+        </ol>
+        <h4>Instructions for tracking changes:</h4>
+        <ol>
+          <li><code>git pull origin master</code> (to make sure that you have the latest and greatest version of the project)</li>
+          <li><code>git checkout -b [name_of_branch]</code> (to make sure that when you make a change gone awry, you can always revert to the original)</li>
+          <li><code>git add [can be . or can be the filename(s)]</code> (prepares the changes to be committed)</li>
+          <li><code>git commit -m "imperative message here"</code> (saved state, prepares the changes to be pushed to the remote repository)</li>
+          <li><code>git push origin [your-branch-name-here]</code> (pushes the changes to the remote repository)</li>
+          <li><code>git checkout master</code> (moves your view into the master branch)</li>
+          <li>either <code>git pull origin master</code>, or <code>git fetch origin master</code> (makes sure everything is up to date on your local repo AND the remote repo)</li>
+        </ol>
+        Now comes the most powerful part -- the pull request.<br>
+        <br>
+        In GitHub, <br>
+        <br>
         <h4 class = "text-center">Now, say it with me: <i>git and GitHub are 2 very different things!</i></h4>
         Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is the website (github.com).  git is a system of version control, but there are many other systems too like CVS (again, still not the pharmacy) and SVN.  GitHub is an online repository where people store their work, and other people can see it to collaborate on their work.  
 
