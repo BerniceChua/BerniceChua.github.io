@@ -47,18 +47,22 @@
         <br>
         Or, if you don't play videogames, you've performed a backup of your entire OS each time right before installing some new software, and you keep each version of the old backups.  One day, you've suddenly discovered that the new driver or whatever is incompatible with everything else, or the new software is actually malware that corrupted your system.  You can just revert to a recent backed-up state.  If you find that this does not solve your problem, you revert backwards through each iteration until you find the backup with a known good state.  This way, you don't have to re-install your OS or figure out which software or driver is incompatible with what.<br>
         <br>
+
         <div class = "text-center">
-        <figure><img src="http://www.shimmertechno.com/wp-content/uploads/2014/06/0x0000000a-300x228.jpg" alt="The infamous 'Blue screen of death'."/></figure><br>
-        <figcaption><i>Image Source: <a href="http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/">http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/</a></i></figcaption><br>
-        <br>
+          <figure><img src="http://www.shimmertechno.com/wp-content/uploads/2014/06/0x0000000a-300x228.jpg" alt="The infamous 'Blue screen of death'."/></figure><br>
+          <figcaption><i>Image Source: <a href="http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/">http://www.shimmertechno.com/technology-blog/windows-help/irql_not_less_or_equal/</a></i></figcaption><br>
+          <br>
         </div>
+
         If those examples are still not relatable enough, here's an example that more people might have encountered.<br>
         <br>
         Let's consider that you have crafted this awesomely complicated Excel spreadsheet (let's call this <i>myExcelv1.xlsx</i>).  Everything works properly.  One day, you needed to change some formulae for whatever reason, but you are not sure if the change that you've made will mess up the other calculations and references.<br>
         <br>
+
         <div class = "text-center">
-        <figure><img class = "shrink_my_image" src="complicated-excel-formulae.PNG" alt="Screenshot of complicated Excel formulae."/></figure><br>
-        <figcaption><i>Screenshot of complicated Excel formulae.  Imagine all the possible #REF! and #VALUE! errors if there's a mistake!</i></figcaption><br></div>
+          <figure><img class = "shrink_my_image" src="complicated-excel-formulae.PNG" alt="Screenshot of complicated Excel formulae."/></figure><br>
+          <figcaption><i>Screenshot of complicated Excel formulae.  Imagine all the possible #REF! and #VALUE! errors if there's a mistake!</i></figcaption><br>
+        </div>
 
         So instead of making your changes in this known good Excel file, you save a copy of <i>myExcelv1.xlsx</i>, and you can mess with the new copy (<i>myExcelv2.xlsx</i>) with the peace of mind that even if you mess up on the new copy (<i>myExcelv2.xlsx</i>), your incredibly complicated formulae is still safe in the original, and you can keep trying different things until your changes don't break anything.  Now, <i>myExcelv2.xlsx</i> will be your official main version.<br>
         <br>
@@ -115,11 +119,13 @@
         <ul>
           <li><a href="https://git-scm.com/docs/git-reset">https://git-scm.com/docs/git-reset</a><br></li>
         </ul>
+
         <div class = "text-center">
           <figure><img src="http://longhoang.ca/blog/wp-content/uploads/2012/07/git.jpg" alt="Altair screaming 'WHAT SORCERY IS THIS?!!!!!'"/></figure>
           <figcaption><i>Image Source: <a href="http://longhoang.ca/blog/ever-pushed-a-bad-commit-to-git-save-yourself-with-git-revert/">http://longhoang.ca/blog/ever-pushed-a-bad-commit-to-git-save-yourself-with-git-revert/</a></i></figcaption>
           <br>
         </div>
+
         In order to find the commit number, we can check what commits have been logged.  To check what commits have been logged, you type <code>git log</code>.  To get a more detailed look at each commit information, it's <code>git log -p</code>.  But both of these commands will show all the commits since the beginning.  If you want to limit the number of things you want to view, it's <code>git log -#</code> (replace '#' with a number).  You can even combine them!!  Example, typing <code>git log -p -3</code> will show the detailed log of the last 3 commits.  More information here: <a href="http://git-scm.com/docs/git-log">http://git-scm.com/docs/git-log</a>  And just like that, your problems are fixed.  Like magic.
 
         <div class = "text-center">
@@ -129,6 +135,7 @@
           <figcaption><i>Pictured above: sorcery.<br>
           Image Source: <a href="http://www.slideshare.net/tamotsufuruya/git-14116631">http://www.slideshare.net/tamotsufuruya/git-14116631</a></i></figcaption><br>
         </div>
+
         This was all really confusing in the beginning, and all looks like <a href="https://www.youtube.com/watch?v=LBZsw5F66cQ">reversing time</a> or time travel or parallel universes or <a href="https://www.youtube.com/watch?v=me-WHitlw8A">time paradoxes</a>.  (And that's because in a sense, it kind of is.)  But after understanding what each step does and deliberately practicing a lot and stepping away and coming back (rinse and repeat), I finally figured it out.  The first time I learned this, I did not learn this overnight.  Even now, with my newfound knowledge, I still need to look up some of the commands if they are not something that I use everyday.  But that will change with more use, as time goes by.<br>
         <br>
         <strong><em>Very important things to take note of:</em></strong><br>
@@ -155,7 +162,7 @@
         <div class = "text-center">
           <figure><img class = "shrink_my_image" src="http://img.photobucket.com/albums/v334/FridgeMan88/primer-1.jpg" alt="Primer movie messy timelines"/></figure>
           <figcaption><i>Image Source: <a href="http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5">http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5</a></i></figcaption>
-          <figure><img class = "shrink_my_image" src="http://now-here-this.timeout.com/wp-content/uploads/2014/07/Primer-XKCD-timeline.png" alt="Primer movie messy timelines"/></figure>
+          <figure><img class = "shrink_my_image" src="http://now-here-this.timeout.com/wp-content/uploads/2014/07/Primer-XKCD-timeline.png" alt="Primer movie messy timelines from xkcd.com"/></figure>
           <figcaption><i>Image Source: <a href="http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5">http://www.timeout.com/london/film/confusing-sci-fi-movies#tab_panel_5</a>, originally from <a href="http://xkcd.com/657/">http://xkcd.com/657/</a></i></figcaption>
           <br>
         </div>
@@ -167,18 +174,22 @@
         Now, I'll tell you why this is super-useful -- even for non-coders.  Let's go back to the example of the Excel file with tons of complicated formulae, and references to who-knows-where, which we called <i>myExcelv1.xlsx</i>.<br>
         <br>
         The most likely natural habitat for such complex Excel files are usually in work environments.  Someone who works on this file is more likely sharing this file with other people in a team, or from different teams, who are also working on the same file.  
+
         <div class = "text-center">
           <figure><img class = "shrink_my_image" src="complicated-excel-sheets.PNG" alt="Screenshot of complicated Excel spreadsheets"/></figure>
-          <figcaption><i>Nice Excel formlas you've got there.  It would be a shame if anything happened to them.</i></figcaption>
+          <figcaption><i>Nice Excel formulas you've got there.  It would be a shame if anything happened to them.</i></figcaption>
           <br>
         </div>
+
         If someone were to version-control <i>myExcelv1.xlsx</i> the old-fashioned way, they would make a copy and name it <i>myExcelv2.xlsx</i>.  But what if the deadline is coming up, and multiple people need to work on the file?  Does this mean that there are multiple copies of <i>myExcelv2.xlsx</i> floating around?  If I updated one section of my copy of <i>myExcelv2.xlsx</i>, and you updated another section of your copy of <i>myExcelv2.xlsx</i>, then it stands to reason that each of our copies would have different parts that are updated and outdated at the same time.  The other way -- only one person can work on it at a time -- is equally as bad and as inefficient.<br>
         <br>
+
         <div class = "text-center">
-          <figure><img src="https://s-media-cache-ak0.pinimg.com/236x/7b/cd/c1/7bcdc1be8896494b188bcd4cdc1b6296.jpg" alt="Screenshot of complicated Excel spreadsheets"/></figure>
+          <figure><img src="https://s-media-cache-ak0.pinimg.com/236x/7b/cd/c1/7bcdc1be8896494b188bcd4cdc1b6296.jpg" alt="I wonder if my boss has an excel spreadsheet to track his hundreds of excel spreadsheets."/></figure>
           <figcaption><i>Image Source: <a href="http://www.someecards.com/usercards/viewcard/MjAxMy1hN2Y2MjU2ZTE1NTg0NGY4">http://www.someecards.com/usercards/viewcard/MjAxMy1hN2Y2MjU2ZTE1NTg0NGY4</a></i></figcaption>
           <br>
         </div>
+
         This is why online repos like GitHub are great tools for version control.  Multiple people can work on something at the same time, even if they are all far apart from each other.  And even if they work on something at the same time, they will not overwrite each other's work.<br>
         <ul>
           <li>Even if nothing else, it's a really good idea to store your work not only in your local machine.  For example, something happens to your local machine for whatever reason, nobody will need to cry because all of that work is lost.  (Because it's not, it's saved remotely.)</li>
@@ -227,15 +238,44 @@
           <li><code>git add [can be . or can be the filename(s)]</code> (prepares the changes to be committed)</li>
           <li><code>git commit -m "imperative message here"</code> (saved state, prepares the changes to be pushed to the remote repository)</li>
           <li><code>git push origin [your-branch-name-here]</code> (pushes the changes to the remote repository)</li>
+          <ul>
+            <li>It will ask for your username and password in the remote repo here.</li>
+            <li>Then a message will appear with the details of what was pushed to the remote repo.</li>
+          </ul>
           <li><code>git checkout master</code> (moves your view into the master branch)</li>
           <li>either <code>git pull origin master</code>, or <code>git fetch origin master</code> (makes sure everything is up to date on your local repo AND the remote repo)</li>
         </ol>
         Now comes the most powerful part -- the pull request.<br>
         <br>
-        In GitHub, <br>
+        This happens in the remote repo; in this case in GitHub.  Anyone who logs in and has access to the remote repo in GitHub will see this:<br>
+        <br>
+        <div class = "text-center">
+          <figure><img src="GitHub-pull-request-alert.PNG" alt="Screenshot of 'You recently pushed branches: edit-blog.  Compare & pull request' in GitHub."/></figure>
+          <figcaption><i>In GitHub, you recently pushed branches: 'edit-blog'.  Compare & pull request.</i></figcaption>
+          <br>
+        </div>
+        <br>
+        <div class = "text-center">
+          <figure><a href="GitHub-open-pull-request.png">
+            <img class = "shrink_my_image" src="GitHub-open-pull-request.png" alt="Screenshot of 'Open a pull request' in GitHub."/>
+          </a></figure>
+          <figcaption><i>Open a pull request in GitHub.  (Right-click on the image and open on a new tab or new window to expand the image.)</i></figcaption>
+          <br>
+        </div>
+        As can be seen in the screenshots above, when someone clicks on "Compare & pull request", the screen takes you to the "Opens a pull request" page.  On this page, the submitter can write comments, see who did what and what time, etc.  Also, please note that person who submits the pull request can compare a branch to another branch, not just to the <code>master</code> branch.  The person who submits the pull request can also compare the changes line by line, by scrolling down in that pull request page.  Please take note the part that says "<span class = "green-font">Able to merge.</span> These branches can be automatically merged."  When everything is completed, click "Create pull request", and wait for someone to review the pull request.<br>
+        <br>
+        In the next step, someone else typically reviews the pull request.  They will see this screen:
+        <div class = "text-center">
+          <figure><a href="GitHub-merge-pull-request.png">
+            <img class = "shrink_my_image" src="GitHub-merge-pull-request.png" alt="Screenshot of 'Merge pull request' in GitHub."/>
+          </a></figure>
+          <figcaption><i>Merge a pull request in GitHub.  (Right-click on the image and open on a new tab or new window to expand the image.)</i></figcaption>
+          <br>
+        </div>
+        If for whatever reason, the pull request is not accepted, the reviewer can comment and click "Close pull request".  <a href="GitHub-merge-pull-request.png">Reasons for not accepting a pull request are detailed here.</a>  But if the pull request gets accepted, then the reviewer clicks "Merge pull request".  Now, the branch code gets merged back to the <code>master</code> branch.  That's why it's very important to review the code and make sure that everything works properly before merging back!!<br>
         <br>
         <h4 class = "text-center">Now, say it with me: <i>git and GitHub are 2 very different things!</i></h4>
-        Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is the website (github.com).  git is a system of version control, but there are many other systems too like CVS (again, still not the pharmacy) and SVN.  GitHub is an online repository where people store their work, and other people can see it to collaborate on their work.  
+        Despite the similarities in their names, git and GitHub are 2 different things.  As mentioned earlier, git can be downloaded and installed in your computer, but GitHub cannot be, because it is the website (github.com).  git is a system of version control, but there are many other systems too like CVS (again, still not the pharmacy) and SVN.  GitHub is an online repository where people store their work, and other people can see this repo to collaborate on their work.  
 
         <h3 class = "text-center">Final Thoughts</h3>
         I will be the first to admit that in the beginning, I was really scared of putting my work out there like that in GitHub for all to see.  It was scary mainly because the work was still raw and not done yet.  It was full of errors, and it looked really ugly to me.  <i>It's not done yet.  It's incomplete.  It's all over the place.  It's not ready for other people to see.  People will see how much I suck."</i>, we tell ourselves.  But let's face it: as people who create things, works will never be "done" or "completed".  There will always be some kind of tweak that needs to happen, and as we mature and gain more experience and techniques, we'll always look back at our old work, and see what could have been done better.  Hindsight is always 20x20, and past work will always suck compared to current work.  (Hopefully.)<br>
