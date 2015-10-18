@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+body {
+    background-image:url('http://www.bernicechua.com/blue_thatch.png');
+    background-repeat: repeat;
+    /*background-repeat:no-repeat;
+    background-size:100% 100%;*/
+
+    font-family: 'Maven Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: slategray;
+}
+
+/*~~~~~~~~~~BEGIN-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+.banner {
+    color: #F0F0F0;
+    /*text-shadow: 20px 20px 20px #ddd;*/
+    background-color: black;
+
+    height: 100px;
+    padding: 20px;
+    padding-top: 38px;
+    text-align: center;
+
+    padding-bottom: 38px;
+
+/*    margin-left: auto !important;
+    margin-right: auto !important;
+    min-width: 977px;
+    position: fixed;
+    z-index: 3;*/
+}
+
+.logo {
+    font-family: 'Special Elite', monospace;
+    font-size: 110px;
+    color: #F0F0F0;
+    background-color: black;
+    padding: 17px;
+    padding-top: 38px;
+    padding-bottom: 28px;
+}
