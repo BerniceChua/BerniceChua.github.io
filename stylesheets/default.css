@@ -37,12 +37,12 @@ a {
 
 .logo {
     font-family: 'Special Elite', monospace;
-    font-size: 3em;
+    font-size: 5em;
     color: #F0F0F0;
     background-color: black;
-    padding: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .nav_container {
@@ -50,8 +50,10 @@ a {
     list-style-type: none;
     background-color: black;
 
-    min-width: 945px;
+    /*min-width: 100%;*/
+    /*width: 100%;*/
     margin-left: -8px;
+    margin-right: 0px;
     color: white;
 }
 
