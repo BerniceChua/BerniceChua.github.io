@@ -16,10 +16,16 @@ a {
 }
 
 /*~~~~~~~~~~BEGIN-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+header {
+    margin: 0;
+    background-color: black;
+    min-width: 786px;
+}
 .banner {
     color: #F0F0F0;
     /*text-shadow: 20px 20px 20px #ddd;*/
     background-color: black;
+    min-width: 786px;
 
     height: 100px;
     padding: 20px;
@@ -37,7 +43,7 @@ a {
 
 .logo {
     font-family: 'Special Elite', monospace;
-    font-size: 5em;
+    font-size: 4em;
     color: #F0F0F0;
     background-color: black;
     padding: 1rem;
@@ -50,10 +56,10 @@ a {
     list-style-type: none;
     background-color: black;
 
-    /*min-width: 100%;*/
+    min-width: 60%;
     /*width: 100%;*/
-    margin-left: -8px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
     color: white;
 }
 
@@ -198,12 +204,6 @@ a {
     padding: 5px;
 }
 
-/*
-
-Sticky Footer by Ryan Fait
-http://ryanfait.com/
-
-*/
 * {
     margin: 0;
 }
