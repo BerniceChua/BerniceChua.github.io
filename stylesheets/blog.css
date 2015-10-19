@@ -7,3 +7,40 @@
     top: 0;
     margin-top: 0;
 }
+
+.float-left {
+    float: left;
+    list-style-type: none;
+    
+    padding: 0 10px;
+}
+
+.float-right {
+    float: right;
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav ul li {
+    padding: 0 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.blog-post {
+   clear: both;
+   margin-left: auto;
+   margin-bottom: 10%;
+}
+
+.blog-post * {
+   margin-bottom: 1.5em;
+}
+
+code {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #F08080;
+    background-color: #B0C4DE; /*LightSteelBlue*/
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <meta charset="UTF-8">
+
+      <link rel="shortcut icon" href="../imgs/favicon.ico" />
+
+      <link rel="stylesheet" type="text/css" href="../stylesheets/html-boilerplate-normalize-main.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+        <title>Bernice's Dev Bootcamp Blog ^_^ ~ Index</title>
+    </head>
+    <body>
+            <header>
+                <div class="banner">
+                    <a  class="logo" 
+                href="http://BerniceChua.github.io">BerniceChua.github.io</a>
+             <nav>
+                <ul class="nav_container">
+                    <li>
+                        <a href="http://BerniceChua.github.io">
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">Blog</a>
+                    </li>
+                    <!-- In HTML, &#233; renders as é -->
+                              <!--<a href="./resume.html">Curriculum Vitae/Resum&#233;</a>
+                          </li> -->
+          <!--                <li>
+                              <a href="./programs.html">Programs I Made</a>
+                          </li>
+                          <li>
+                              <a href="./affiliates.html">Affiliates</a>
+                          </li>
+                          <li>
+                              <a href="./contactMe()">
+                                  Contact Me (under construction)</a>
+                          </li>
+                          <li>
+                              <a href="./acknowledgements.html">Acknowledgements</a>
+                          </li>
+          -->
+                      </ul>
+                  </nav>
+                </div>
+            </header>
+
+            <main class="main_content">
+              <section class="title">
+                <h1 class="page-title"><a href="http://BerniceChua.github.io/blog/index">Bernice's Dev Bootcamp Blog ^_^</a></h1>
+                <p class="author">By Bernice Anne W. Chua</p>
+              </section>
+
+              <nav>
+                <ul class="float-left">
+                  <li><a href="http://bernicechua.github.io/blog/git">First</a></li>
+                  <li><a href="http://bernicechua.github.io/blog/wireframe">Previous</a></li>
+                </ul>
+
+                <ul class="float-right">
+                  <li>Next</li>
+                  <li>Most Recent</li>
+                </ul>
+              </nav>
+
+              <section class="main_column blog-post">
+                    <h2>CSS FTW!!!! (And WTF!!!) ~ CSS Concepts</h2>
+
+                    <p>CSS is really useful because it allows the people who make the structure and the content of a webpage to only concentrate on the structure and the content through HTML, and it allows the people who make the design to only concentrate on the layout.  It does this through having the CSS code on a separate file than the HTML file.</p>
+
+                    <p>In order to do this, it is important to make sure that the path to the external file is correct, or else the effects of that file won't appear in the HTML file.  Also, it is important to make the syntax correct, like this:</p>
+                    <code>
+                      <!-- <pre> -->
+                        &lt;link rel="stylesheet" type="text/css" href="path/of/my/stylesheet.css"&gt;
+                      <!-- </pre> -->
+                    </code>
+
+                    <p>Because the .css file is separate from the .html file, the .css is infinitely re-usable.  The person who wrote the webpage does not need to re-do the style on each page.  They just have to copy that link.  Also, the content and structure of the .html does not need to be cluttered by random &lt;style&gt; tags all throughout.  For these reasons, I say "CSS FTW!!!" ("FTW" means "for the win!!!".)  But CSS is also confusing.</p>
+
+                    <p>In order to alleviate this confusion, I've put together a quick cheat sheet with explanations:</p>
+
+                    <h3>What is the difference between Margin, Border, and Padding?</h3>
+
+                    <ul>
+                      <li><code>margin</code> = distance between the child elements &amp; text that live inside an element to the edge of the element.  (Inside distance.)  </li>
+                      <li><code>border</code> = the outline of an element.  </li>
+                      <li><code>padding</code> = distance between the edge of the selected element and the elements surrounding it.  If there's no element surrounding it, distance between the selected element and the element/container that it stays in.  (Outside distance.)  </li>
+                    </ul>
+    
+                    <h3>What are the best practices associated with using classes vs. ids?</h3>
+
+                    <p>Classes are more portable, and more than one class can be used to style one element.  For example, in our code we wanted a particular line to have multiple attributes, so we did this: </p>
+
+                    <pre><code>&lt;span class="description-text separate-line"&gt;Updated August 10, 2015&lt;/span&gt;;</code></pre>
+
+                    <p>When we did that, that string of characters  got the attributes of these 2 classes at the same time:</p>
+    
+                    <pre>
+                    .description-text {
+                      font-size: .60em;
+                      padding-top: .5%;
+                      margin-top: .5%;
+                    }
+                    and
+                    .separate-line {
+                      display: block;
+                    }</pre>
+
+                    <p>That cannot be done with ID selectors.  If I were to use an ID, doing the same thing would give me these error messages:</p>
+                    <pre>
+                    #description-text {
+                      font-size: .60em;
+                      padding-top: .5%;
+                      margin-top: .5%;
+                    }
+                    and
+                    #separate-line {
+                      display: block;
+                    }
+                    </pre>
+
+  &lt;<span id="description-text" id="separate-line">&gt;Updated August 10, 2015&lt;</span>&gt;;
+  <p>will give me this error message:</p>
+
+  &lt;<span id="description-text separate-line">&gt;Updated August 10, 2015&lt;</span>&gt;;
+  <p>this is also not allowed:</p>
+
+
+
+                    <p>ID selectors cannot be combined the same way that class selectors can be done.  This is why IDs are messier, because there is more typing involved, especially if the html will have a lot of attributes, like more than 5.  </p>
+
+                    <p>Also, ID selectors should only be used once per HTML file, so ID tags should only be used in special cases that should not repeat.  That is why we used class selectors, so if we wanted another HTML element to look the same, we didn't need to make a new ID selector for it.  </p>
+    
+                    <h3>What are the differences between relative, absolute, fixed, and static positioning?</h3>
+
+                    <ul>
+                      <li><code>static</code> = default positioning style, if no <code>position</code> attribute is specified.  Element flows on the page as it normally would, based on its sequence in the HTML file.  </li>
+
+                      <li><code>absolute</code> = element will be placed exactly where you tell it to go.  This works because it is positioned in relation to the first parent element that is NOT <code>position: static;</code>. If there's no such parent element, the element with <code>position: absolute;</code> gets positioned relative to the <code>&lt;html&gt;</code> node.  </li>
+                      
+                      <li><code>fixed</code> = it will always be in the same place relative to the browser window.  If the user scrolls up and down, the fixed element stays put even as other elements scroll past.  Nice for headers, footers, or sidebar/navigation that need to be displayed prominently, but might be troublesome if the window resizes or in smaller screens.  </li>
+                      
+                      <li><code>relative</code> = elements move <em>relative to where it would have been</em> if it just had the default static positioning.  <code>relative</code> works with other properties/attribues like <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> attributes.  For example, if the element has the attribute <code>top: 10px;</code>, this element will shift it's position 10 pixels DOWN from where it would NORMALLY be.  The <code>z-index</code> of a <code>relative</code>-ly positioned element will always trump a <code>static</code>-ally positioned element.  <code>relative</code> elements can have <code>absoulte</code>-positioned child elements inside it, and this `absolute` child element will behave as if it is inside its own browser window.  </li>
+                    </ul>
+
+                    <h3>What does it mean to display inline vs using inline block?</h3>
+                    
+                    <ul>
+                      <li><code>inline</code> = the element will sit on the same row as another element.  </li>
+                      <li><code>inline-block</code> = the element will have its own row.  </li>
+                    </ul>
+
+                    <h3>Additional References And Resources:</h3>
+
+              </section>
+            </main>
+
+        <footer  class="footer">
+            <div class="button_group">
+                <div class="followbuttons">
+                    <a href="https://github.com/BerniceChua">
+                    <img src="../imgs/Fork_Me_On_GitHub.png" alt="View Bernice Anne W. Chua's repo on GitHub">
+                    </a>
+                </div>                      
+
+                <!-- <div class="followbuttons">
+                    <a href="https://coderbits.com/BerniceChua">
+                    <img src="./coderbits.png" alt="View Bernice Anne W. Chua's profile on CoderBits">
+                    </a>
+                </div> -->
+
+                <div class="followbuttons">
+                    <a href="https://twitter.com/ChuaBernice" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ChuaBernice</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+
+                <div class="followbuttons">
+                <!-- Place this code where you want the badge to render. -->
+                    <a href="http://plus.google.com/115377831515196015573?prsrc=3"
+                        rel="publisher" target="_top" style="text-decoration:none;">
+                    <img src="http://ssl.gstatic.com/images/icons/gplus-32.png" 
+                        alt="Google+" style="border:0;width:32px;height:32px;"/>
+                    </a>
+                </div>
+
+                <div class="followbuttons">
+                    <a href="http://www.linkedin.com/in/bernicechua415">
+                      <img  class="linkedin-button" 
+                          src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" 
+                          alt="View Bernice Anne W. Chua's profile on LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>
