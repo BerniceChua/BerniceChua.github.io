@@ -210,15 +210,10 @@ header {
 html, body {
     height: 100%;
 }
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
-}
+
 .footer {
     bottom: 0;
-    min-width: 957px;
+    min-width: 786px;
     height: 40px;
     margin: 0 auto;
     /*margin-left: -8px;*/
@@ -231,7 +226,7 @@ html, body {
     margin-top: -3em;
     padding-top: 4px;
     padding-bottom: 4px;
-    position: relative;
+    position: fixed;
 
     background-image: -moz-linear-gradient(top,  #FFF0F5 0%, #FFC0CB 100%); /* FF3.6+ */  
     background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#FFF0F5), color-stop(100%,#FFC0CB)); /* Chrome,Safari4+ */  
