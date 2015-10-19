@@ -55,3 +55,5 @@ The 3rd-most difficult is suddenly getting a new idea about the layout while in 
 I learned that if I'm not careful, I can accidentally have the child elements inherit attributes/properties from their parent elements, that I didn't intend.  
 
 Also, I'm learning more and more about `rem` & `em`, and trying to manually make my webpage designed more responsively.  (For example, it looks great on my desktop browser, but looks funky if the browser window is resized, and looks funky on the phone.)  For this reason, I learned that sometimes the idea on the prototype/wireframe sometimes look good on paper (literally), but might be different in practice.  (Possible solution?  Make many wireframes for many possibilities?)  
+
+The other challenging thing about adding and formatting with CSS is that I wish that I knew how to use frameworks like Angular or Ruby On Rails.  This would definitely prevent a lot of repetitive typing, since some elements of the webpages are the same (the headers, banners, footers, etc).  
