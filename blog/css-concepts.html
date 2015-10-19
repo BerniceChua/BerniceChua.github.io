@@ -133,7 +133,7 @@
 
                     <p>ID selectors cannot be combined the same way that class selectors can be done.  This is why IDs are messier, because there is more typing involved, especially if the html will have a lot of attributes, like more than 5.  </p>
 
-                    <p>Also, ID selectors should only be used once per HTML file, so ID tags should only be used in special cases that should not repeat.  That is why we used class selectors, so if we wanted another HTML element to look the same, we didn't need to make a new ID selector for it.  </p>
+                    <p>Also, ID selectors should only be used once per HTML element, so ID tags should only be used in special cases that should not repeat.  That is why we used class selectors, so if we wanted another HTML element to look the same, we didn't need to make a new ID selector for it.  </p>
     
                     <h3>What are the differences between relative, absolute, fixed, and static positioning?</h3>
 
@@ -155,6 +155,65 @@
                     </ul>
 
                     <h3>Additional References And Resources:</h3>
+
+                    <p>To better understand margins, borders, and padding, modern browsers like Firefox and Google Chrome have a tool for inspecting individual HTML elements.  Since this school is using Google Chrome, here's a screenshot of Google's Chrome Dev Tools:</p>
+
+                    <img src="../imgs/css-box-model-chrome-dev-tools.png" alt="Screenshot of CSS Box Model in Chrome Dev Tools.">
+
+                    <p>This screenshot illustrates that the element that I'm looking at has a width of 475px, and a height of 40px.  It has 4px padding on the top and bottom, 8px padding on its left, and 40px padding on its right.  It does not have a border, that's why there are no numbers on that side.  But it has margins set to 64.50px on its left and right.  The box model and the browser's Dev Tools are very useful for figuring out why an HTML element is positioning itself in an unexpected way.  If the margins of an element are huge, it may be pushing the elements under it more down on the webpage than you'd expect from just normal positioning from "fixed", "relative", and "absolute".</p>
+
+                    <p>Here are additional helpful links:</p>
+
+                    <ul>
+                      <li>Box Model:
+                        <ul>
+                          <li>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model</a>
+                          </li>
+                          <li>
+                            <a href="http://www.w3.org/TR/CSS21/box.html">http://www.w3.org/TR/CSS21/box.html</a>
+                          </li>
+                          <li>
+                            <a href="https://css-tricks.com/box-sizing/">https://css-tricks.com/box-sizing/</a>
+                          </li>
+                          <li>
+                            <a href="https://css-tricks.com/the-css-box-model/">https://css-tricks.com/the-css-box-model/</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>To learn more about CSS positions:
+                        <ul>
+                          <li>
+                            <a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/</a>
+                          </li>
+                          <li>
+                            <a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">http://www.barelyfitz.com/screencast/html-training/css/positioning/</a>
+                          </li>
+                          <li>
+                            <a href="http://www.w3schools.com/css/css_positioning.asp">http://www.w3schools.com/css/css_positioning.asp</a>
+                          </li>
+                          <li>
+                            <a href="http://learn.shayhowe.com/html-css/positioning-content/">http://learn.shayhowe.com/html-css/positioning-content/</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>Convert px to flexible units:
+                        <ul>
+                          <li>
+                            <a href="http://www.w3schools.com/tags/ref_pxtoemconversion.asp">http://www.w3schools.com/tags/ref_pxtoemconversion.asp</a>
+                          </li>
+                          <li>
+                            <a href="http://yuilibrary.com/yui/docs/cssfonts/cssfonts-size.html">http://yuilibrary.com/yui/docs/cssfonts/cssfonts-size.html</a>
+                          </li>
+                          <li>
+                            <a href="https://offroadcode.com/prototypes/rem-calculator/">https://offroadcode.com/prototypes/rem-calculator/</a>
+                          </li>
+                          <li>
+                            <a href="http://pxtoem.com/">http://pxtoem.com/</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
 
               </section>
             </main>
