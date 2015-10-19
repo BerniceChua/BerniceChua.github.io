@@ -86,7 +86,7 @@ header {
 /*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
 
 /*----------BEGIN-Style of the main content.----------*/
-#main_content {
+.main_content {
     width: 70%;
     margin: auto;
     padding: 20px;
@@ -98,7 +98,7 @@ header {
     margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
 }
 
-#main_content a:hover {
+.main_content a:hover {
     font-weight: bold;
     color: orange;
 }
@@ -220,6 +220,7 @@ html, body {
     bottom: 0;
     min-width: 786px;
     /*min-width: 957px;*/
+    width: 100%;
     height: 40px;
     margin: 0 auto;
     /*margin-left: -8px;*/
