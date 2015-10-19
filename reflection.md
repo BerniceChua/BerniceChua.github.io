@@ -23,10 +23,10 @@ These are what the challenge re-inforced:
 The easiest things for me to implement were the colors, font-colors, background, background-colors, and the pseudo-classes for specific states (for example, `a:hover` or `a:active`).  
 
 The most difficult things for me to implement were the paddings and margins and positions.  They are not difficult in and of themselves, but they become difficult when I test re-sizing the browser windows and looking at my site on my phone.  When I test them, the sizes become funky for these reasons:
-    * The words don't fit, so they spill over the outsides of the container that I want them to stay.  This was problematic for long words.  
-    ** Possible solution?  I'll check if <h1> can be resizable.  If that doesn't work, I'll take it off.
-    * I want all the <nav>-bar items and all the things inside the footer-bar to fit in one line, but when I resize the window, the links and the icons spill out from the "bars" where I want them to appear.  The other thing I tried was making the bars a fixed width, but this causes other issues, like their background colors spilling over the sides when I shrink/resize the browser windows.  Also, supposedly it's not good to use fixed units.  
-    ** Possible solution?  To-do.
+    - The words don't fit, so they spill over the outsides of the container that I want them to stay.  This was problematic for long words.  
+    -- Possible solution?  I'll check if <h1> can be resizable.  If that doesn't work, I'll take it off.
+    - I want all the <nav>-bar items and all the things inside the footer-bar to fit in one line, but when I resize the window, the links and the icons spill out from the "bars" where I want them to appear.  The other thing I tried was making the bars a fixed width, but this causes other issues, like their background colors spilling over the sides when I shrink/resize the browser windows.  Also, supposedly it's not good to use fixed units.  
+    -- Possible solution?  To-do.
 The second-most-difficult is using rem & em, because I was not familiar with how big they are supposed to look like.  But I found these helpful websites when I did a search for "convert px to % or rem or em":
     - http://stackoverflow.com/questions/7240654/how-to-convert-px-into-like-we-convert-px-to-em-for-font-size
     - http://yuilibrary.com/yui/docs/cssfonts/cssfonts-size.html
