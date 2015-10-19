@@ -78,11 +78,16 @@ header {
 .nav_container li a:hover {
     color: ghostwhite;
 }
+
+.nav_container li a:active {
+    color: ghostwhite;
+    background-color: red;
+}
 /*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
 
 /*----------BEGIN-Style of the main content.----------*/
 #main_content {
-    width: 900px;
+    width: 70%;
     margin: auto;
     padding: 20px;
     background: mistyrose;
@@ -214,10 +219,11 @@ html, body {
 .footer {
     bottom: 0;
     min-width: 786px;
+    /*min-width: 957px;*/
     height: 40px;
     margin: 0 auto;
     /*margin-left: -8px;*/
-    padding-right: 38px;
+    /*padding-right: 38px;*/
     background-color: #FFC0CB /*pink*/;
 
     clear: both;
