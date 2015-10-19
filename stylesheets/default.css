@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 
 body {
-    background-image:url('http://www.bernicechua.com/blue_thatch.png');
+    background-image:url('http://images1.pixlis.com/background-image-circles-bubbles-sponge-soap-seamless-tileable-puerto-rico-spice-238qmt.png');
     background-repeat: repeat;
     /*background-repeat:no-repeat;
     background-size:100% 100%;*/
@@ -37,10 +37,221 @@ a {
 
 .logo {
     font-family: 'Special Elite', monospace;
-    font-size: 110px;
+    font-size: 5rem;
     color: #F0F0F0;
     background-color: black;
-    padding: 17px;
-    padding-top: 38px;
-    padding-bottom: 28px;
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nav_container {
+    text-align: center;
+    list-style-type: none;
+    background-color: black;
+
+    min-width: 945px;
+    margin-left: -8px;
+    color: white;
+}
+
+.nav_container li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.nav_container li a {
+    display: inline-block;
+    text-decoration: none;
+
+    color: grey;
+}
+
+.nav_container li a:hover {
+    color: ghostwhite;
+}
+/*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+
+/*----------BEGIN-Style of the main content.----------*/
+#main_content {
+    width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: mistyrose;
+
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
+}
+
+#main_content a:hover {
+    font-weight: bold;
+    color: orange;
+}
+
+.menu_column {
+    width: 250px;
+    float: left;
+    position: fixed;
+
+    margin-top: 2em;
+}
+
+#nav_side_column {
+    list-style: none;
+    margin-left: -15px;
+    text-align: center;
+}
+
+#nav_side_column li {
+    padding: 8px;
+    background: ghostwhite;
+    border-top: solid darkred 4px;
+    border-left: solid darkred 4px;
+    border-bottom: solid darkred 2px;
+    border-bottom-left-radius: 100px;
+    opacity: 0.5;
+}
+
+#nav_side_column li:hover {
+    opacity: 1;
+/*    box-shadow: -5px 10px 15px #777;*/
+    width: 207px;
+    border-right: solid ghostwhite 3px;
+}
+
+#nav_side_column li a {
+    font-weight: bold;
+}
+
+#nav_side_column li a:hover {
+    color: red;
+}
+
+#nav_side_column li:active {
+    opacity: 1;
+    width: 208px;
+/*    border-left-style: inset;
+    border-top-style: inset;
+    border-right-style: hidden;*/
+    background: darkred;
+    border-right: solid darkred 2px;
+}
+
+#nav_side_column li a:active {
+    color: ghostwhite;
+}
+
+#nav_side_column li.selected {
+    opacity: 1;
+/*    box-shadow: -5px 10px 15px #777;*/
+    width: 208px;
+    border-right: solid ghostwhite 2px;
+}
+
+#nav_side_column li a.selected {
+    color: black;
+}
+
+#nav_side_column li.selected:active {
+    border-right: solid darkred 2px;
+}
+
+.main_column {
+    margin-left: 250px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    border: solid darkred 5px;
+    border-radius: 10px;
+    background-color: ghostwhite;
+    padding: 15px;
+    box-shadow: 10px 10px 15px #777;
+}
+
+.main_column h1, p {
+    margin: 10px;
+}
+
+#greeting, .dateButton, .title, .centerP {
+    text-align: center;
+}
+/*----------END-Style of the main content.----------*/
+
+.button_group {
+    /*This allows the buttons on the bottom to be centered.*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: green;
+    /*Without "width", this div will extend 100% horizontally.
+     * hence, it won't be centered the way we want.*/
+    width: 630px;
+}
+
+.followbuttons {
+    display: inline;
+    float: right;
+    padding: 5px;
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer {
+    bottom: 0;
+    min-width: 957px;
+    height: 40px;
+    margin: 0 auto;
+    /*margin-left: -8px;*/
+    padding-right: 38px;
+    background-color: #FFC0CB /*pink*/;
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: -3em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: relative;
+
+    background-image: -moz-linear-gradient(top,  #FFF0F5 0%, #FFC0CB 100%); /* FF3.6+ */  
+    background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#FFF0F5), color-stop(100%,#FFC0CB)); /* Chrome,Safari4+ */  
+    background-image: -webkit-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Chrome10+,Safari5.1+ */  
+    background-image: -o-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Opera 11.10+ */  
+    background-image: -ms-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* IE10+ */  
+    background-image: linear-gradient(to bottombottom,  #FFF0F5 0%,#FFC0CB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF0F5', endColorstr='#FFC0CB',GradientType=0 ); /* IE6-9 */
+
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 1px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 0 0px 0px rgba(0, 0, 0, .5);  
+}
+
+.footer, .push {
+    /*height: 142px;*/ /* .push must be the same height as .footer */
+    height: 42px;
 }

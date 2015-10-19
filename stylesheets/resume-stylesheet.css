@@ -1,0 +1,369 @@
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+body {
+    background-image:url('http://www.bernicechua.com/blue_thatch.png');
+    background-repeat: repeat;
+
+    font-family: 'Numans', sans-serif;
+
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*~~~~~~~~~~BEGIN-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+.banner {
+    color: #F0F0F0;
+    /*text-shadow: 20px 20px 20px #ddd;*/
+    background-color: black;
+
+    height: 100px;
+    padding: 20px;
+    padding-top: 38px;
+    text-align: center;
+
+    padding-bottom: 38px;
+}
+
+.logo {
+    font-family: 'Special Elite', monospace;
+    font-size: 110px;
+    color: #F0F0F0;
+    background-color: black;
+    padding: 17px;
+    padding-top: 38px;
+    padding-bottom: 28px;
+
+    margin: 0;
+}
+
+#nav_container {
+    text-align: center;
+    list-style-type: none;
+    background-color: black;
+
+    min-width: 875px;
+    margin-left: -8px;
+    color: white;
+
+    font-family: 'Maven Pro', sans-serif;
+    margin-top: 0;
+}
+
+#nav_container li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+#nav_container li:hover {
+    font-weight: normal;
+}
+
+#nav_container li a {
+    display: inline-block;
+    text-decoration: none;
+    
+    color: grey;
+}
+
+#nav_container li a:hover {
+    color: ghostwhite;
+    font-weight: normal;
+}
+/*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+
+/*----------BEGIN-Style of the main content.----------*/
+#main_content {
+    font-family: Verdana, Trebuchet MS, Tahoma, Helvetica, sans-serif;
+    min-width: 995px;
+    height: auto;
+    min-height: 100%;
+    overflow:hidden;
+    width:100%;
+}
+
+li:hover {
+    font-weight: bold;
+}
+
+#header {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: darkred;
+    height: 65px;
+    padding-top: 10px;
+    padding-right: 10px;
+    color: cornsilk;
+    z-index: 2;
+    position: relative;
+}
+
+.name {
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+    padding-bottom: 1px;
+}
+
+.address {
+    float: left;
+    padding-left: 20px;
+}
+
+.phone {
+    width: 12%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.email {
+    float: right;
+    padding-right: 10px;
+}
+
+.address, .email {
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.address:hover, .email:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: mintcream;
+}
+
+#content {
+    height: 100%;
+    overflow:hidden;
+    width:995px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    padding-top: 0;
+    position: relative;
+}
+
+.left {
+    background-color: #B9D7D9;
+    border-radius: 10px;
+    width: 60%;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+h2 {
+    font-variant: small-caps;
+}
+
+span {
+    font-size: 12px;
+}
+
+.right {
+    background-color: #F4EBC3;
+    width: 28%;
+    margin-right: 40px;
+    padding-left: 10px;
+
+    border-radius: 10px;
+    padding-top: 15px;
+    position: relative;
+    display: inline-block;
+    float: right;
+}
+
+.right > h2 {
+    margin-top: 35px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 0;
+}
+
+.right > h4 {
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 0;
+    margin-bottom: -5px;
+    padding-bottom: -5px;
+}
+.right > h5 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    line-height: 0px;
+    
+}
+
+.indentBack {
+    margin-left: -40px;
+    list-style: none;
+}
+
+.indentUp1 {
+    margin-top: -22px;
+}
+
+.indentUp2 {
+    margin-top: -100x;
+}
+
+/*.right ul li a {
+    color: black;
+}*/
+
+.right ul li a:hover {
+    text-decoration: underline;
+    color: deepskyblue;
+}
+
+#footer {
+    border-radius: 10px;
+    background-color: steelblue;
+    height: 50px;
+    clear: both;
+    text-align: center;
+}
+
+#footer p {
+    position: relative;
+    padding-top: 1px;
+    vertical-align: middle;
+}
+
+#footer_div_buttons {
+    width: 100px;
+    display: inline;
+    padding: 5px;
+    border-radius: 10px;
+
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 1px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 0 0px 0px rgba(0, 0, 0, .5);  
+}
+
+#footer_div_buttons_words {
+    color: cyan;
+}
+
+#footer_div_buttons:hover {
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 5px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 1px 5px 0px rgba(0, 0, 0, .5);  
+}
+
+#footer_div_buttons_words:hover {
+    color: white;
+}
+
+#header, #footer {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pastCareers .ui-accordion-content {
+/*    background-color: #f3f3f3;  
+    color: #777;  */
+    font-size: 10pt;  
+    line-height: 16pt;  
+    margin: 0;
+}
+
+.pastCareers .ui-accordion-content > * {  
+    margin: auto;
+}
+
+.pastCareers ul li {
+    list-style-type: disc;
+}
+
+.listSection {
+    list-style-type: none;
+    margin-left: -25px;
+}
+
+.pastCareers ul .listSection {
+    list-style-type: none;
+    margin-left: -25px;
+}
+/*----------END-Style of the main content.----------*/
+
+/*++++++++++BEGIN-Controlling the follow-buttons.++++++++++*/
+.button_group {
+    /*This allows the buttons on the bottom to be centered.*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /*Without "width", this div will extend 100% horizontally.
+     * hence, it won't be centered the way we want.*/
+    width: 450px;
+}
+
+.followbuttons {
+    display: inline;
+    float: right;
+    padding: 5px;
+}
+/*++++++++++END-Controlling the follow-buttons.++++++++++*/
+
+.footer {
+    min-width: 964px;
+    height: 40px;
+    margin-bottom: -10px;
+    margin-left: -8px;
+    padding-right: 38px;
+    background-color: pink;
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    background-image: -moz-linear-gradient(top,  #FFF0F5 0%, #FFC0CB 100%); /* FF3.6+ */  
+    background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#FFF0F5), color-stop(100%,#FFC0CB)); /* Chrome,Safari4+ */  
+    background-image: -webkit-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Chrome10+,Safari5.1+ */  
+    background-image: -o-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Opera 11.10+ */  
+    background-image: -ms-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* IE10+ */  
+    background-image: linear-gradient(to bottombottom,  #FFF0F5 0%,#FFC0CB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF0F5', endColorstr='#FFC0CB',GradientType=0 ); /* IE6-9 */
+
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 1px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 0 0px 0px rgba(0, 0, 0, .5);  
+}
