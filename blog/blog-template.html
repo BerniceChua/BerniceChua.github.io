@@ -1,81 +1,196 @@
 <!DOCTYPE html>
 <html>
-  <header>
-    <!--
-      On your own, reflect on your learning during this challenge by answering the following questions 
-      in a commented out section of your template. 
+  <head>
+    <meta charset="utf-8">
 
-      How was it to wireframe and create an HTML page with a pair?
-      - It was fun to wireframe with a pair because we were able to bounce ideas off each other and get 
-      feedback right away, and my pair asked questions about or thought of things that I haven't thought 
-      about.
+    <link rel="shortcut icon" href="../imgs/favicon.ico" />
 
-      Did you find wireframing to be helpful to your development process?
-      - Wireframing was somewhat tedious, but I understand that it will prevent more tedium and headaches 
-      later down the road and I think that I will get used to it.  It was definitely helpful to our 
-      development process because everything is laid out plainly in front of us, so we can test if something 
-      makes sense visually.  This testing is useful because we don't need to waste too much time coding for 
-      the style of something that appeared like a cool idea in our heads, but it turns out to be something 
-      that we didn't want.  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      What did you and your pair decide made a good wireframe? 
-      - We decide that a good wireframe will be simple and bare-bones enough, so that the person(s) working on 
-      it will not be too invested in the idea, and it will be easier to change the layout/style later since 
-      nobody is really that invested in the style/layout.
 
-      But the wireframe must still be able to communicate the intention of each section and what needs to go where.  
+    <link rel="stylesheet" type="text/css" href="../stylesheets/html-boilerplate-normalize-main.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
 
-      For example, 2 months later I can look at the wireframe and be able to figure out relatively 
-      quickly what I was thinking at that time.  Even better, in real life these things are worked 
-      on by teams.  If the wireframe is good, everyone would be happier and more efficient and less 
-      confused if they can understand what the intention of the designer is.  
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
 
-      What new semantic elements did you learn about (if any) ?
-      - <nav></nav>.  
-
-      There's something that I'm a bit confused about, which are the "<section></section>" tags and the 
-      "<main></main>" tags.  I have read about <section></section> tags from a different blog, and I found 
-      out about <main></main> tags because of 
-      https://github.com/Devbootcamp/phase-0-code/blob/master/week-1/blog-template.html.  
-
-      My question about <main></main> = when I look at other code samples, I don't really see it used that 
-      much, and also it does not auto-fill.  Why is that?
-
-      My question about <section></section> & <select></select> = how does one know when to use this and when 
-      to use <div></div>?
-    -->
     <title>Bernice's Dev Bootcamp Blog ^_^</title>
-  </header>
+  </head>
   <body>
-    <div>
-      <h1>Bernice's Dev Bootcamp Blog ^_^</h1>
-      <p>By: Bernice Anne W. Chua</p>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+        <div class="banner">
+            <a  class="logo" 
+        href="http://BerniceChua.github.io">BerniceChua.github.io</a>
+     <nav>
+        <ul class="nav_container">
+            <li>
+                <a href="http://BerniceChua.github.io">
+                    Home</a>
+            </li>
+            <li>
+                <a href="./index.html">Blog</a>
+            </li>
+            <!-- In HTML, &#233; renders as é -->
+                      <!--<a href="./resume.html">Curriculum Vitae/Resum&#233;</a>
+                  </li> -->
+  <!--                <li>
+                      <a href="./programs.html">Programs I Made</a>
+                  </li>
+                  <li>
+                      <a href="./affiliates.html">Affiliates</a>
+                  </li>
+                  <li>
+                      <a href="./contactMe()">
+                          Contact Me (under construction)</a>
+                  </li>
+                  <li>
+                      <a href="./acknowledgements.html">Acknowledgements</a>
+                  </li>
+  -->
+              </ul>
+          </nav>
+        </div>
+    </header>
+    
+    <main role="main" class="main_content">
+      <section class="title">
+        <h1 class="page-title"><a href="http://BerniceChua.github.io/blog/index">Bernice's Dev Bootcamp Blog ^_^</a></h1>
+        <p class="author">By Bernice Anne W. Chua</p>
+      </section>
+
       <nav>
-        <a href="blog/git.html">Oldest</a>
-        <a href="blog/previous.html">Previous</a>
-        <a href="blog/next.html">Next</a>
-        <a href="blog/current.html">Most Recent</a>
+        <ul class="float-left">
+          <li><a href="http://bernicechua.github.io/blog/git">First</a></li>
+          <li><a href="http://bernicechua.github.io/blog/wireframe">Previous</a></li>
+        </ul>
+
+        <ul class="float-right">
+          <li>Next</li>
+          <li>Most Recent</li>
+        </ul>
       </nav>
-      <!-- <hr /> -->
-    </div>
-    <div>
-      <h2>Title of Blog Post</h2>
-      <p>Date of Post</p>
-    </div>
-    <div>
-      <p>This is paragraph one.</p>
-      <p>This is paragraph two.</p>
-    </div>
-    <div>
-      <ul>
-        <li><a href="#">Facebook Share</a></li> <!---Temporary link-->
-        <li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-        <li><a href="#">Tumblr Share</a></li> <!---Temporary link-->
-        <li><a href="#">Reddit Share</a></li> <!---Temporary link-->
-        <li><a href="#">LinkedIn Share</a></li> <!---Temporary link-->
-        <li><a href="#">etc Share</a></li> <!---Temporary link-->
-      </ul>
-    </div>
+
+      <article class="main_column blog-post">
+        <h2 class="mrgn-btm-no">Title of Blog Post</h2>
+        <p class="mrgn-top-no">posted on [....]</p>
+
+        <section class="table_of_contents"> <!-- Optional, only if long blog post. -->
+          <h3 class="mrgns-sm">(Optional) Jump To Section....</h3>
+          <ul>
+            <li class="mrgns-sm">
+              <a href="#first">1st Idea if long blog post</a>
+            </li>
+            <li class="mrgns-sm">
+              <a href="#second">2nd Idea if long blog post</a>
+            </li>
+            <li class="mrgns-sm">
+              <a href="#third">3rd Idea if long blog post</a>
+            </li>
+            <li class="mrgns-sm">
+              <a href="#fourth">4th Idea if long blog post</a>
+            </li>
+            <li class="mrgns-sm">
+              <a href="#more_references">Additional References And Resources</a>
+            </li>
+          </ul>
+        </section>
+
+        <div>
+          <p>This is paragraph one.</p>
+          <p>This is paragraph two.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer  class="footer">
+            <div class="button_group">
+        <div class="followbuttons">
+                    <a href="https://github.com/BerniceChua">
+                    <img src="../imgs/Fork_Me_On_GitHub.png" alt="View Bernice Anne W. Chua's repo on GitHub">
+                    </a>
+                </div>                      
+
+                <!-- <div class="followbuttons">
+                    <a href="https://coderbits.com/BerniceChua">
+                    <img src="./coderbits.png" alt="View Bernice Anne W. Chua's profile on CoderBits">
+                    </a>
+                </div> -->
+
+                <div class="followbuttons">
+                    <a href="https://twitter.com/ChuaBernice" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ChuaBernice</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+
+                <div class="followbuttons">
+                <!-- Place this code where you want the badge to render. -->
+                    <a href="http://plus.google.com/115377831515196015573?prsrc=3"
+                        rel="publisher" target="_top" style="text-decoration:none;">
+                    <img src="http://ssl.gstatic.com/images/icons/gplus-32.png" 
+                        alt="Google+" style="border:0;width:32px;height:32px;"/>
+                    </a>
+                </div>
+
+                <div class="followbuttons">
+                    <a href="http://www.linkedin.com/in/bernicechua415">
+                      <img  class="linkedin-button" 
+                          src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" 
+                          alt="View Bernice Anne W. Chua's profile on LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
   </body>
 </html>
+
+<!--
+  On your own, reflect on your learning during this challenge by answering the following questions 
+  in a commented out section of your template. 
+
+  How was it to wireframe and create an HTML page with a pair?
+  - It was fun to wireframe with a pair because we were able to bounce ideas off each other and get 
+  feedback right away, and my pair asked questions about or thought of things that I haven't thought 
+  about.
+
+  Did you find wireframing to be helpful to your development process?
+  - Wireframing was somewhat tedious, but I understand that it will prevent more tedium and headaches 
+  later down the road and I think that I will get used to it.  It was definitely helpful to our 
+  development process because everything is laid out plainly in front of us, so we can test if something 
+  makes sense visually.  This testing is useful because we don't need to waste too much time coding for 
+  the style of something that appeared like a cool idea in our heads, but it turns out to be something 
+  that we didn't want.  
+
+  What did you and your pair decide made a good wireframe? 
+  - We decide that a good wireframe will be simple and bare-bones enough, so that the person(s) working on 
+  it will not be too invested in the idea, and it will be easier to change the layout/style later since 
+  nobody is really that invested in the style/layout.
+
+  But the wireframe must still be able to communicate the intention of each section and what needs to go where.  
+
+  For example, 2 months later I can look at the wireframe and be able to figure out relatively 
+  quickly what I was thinking at that time.  Even better, in real life these things are worked 
+  on by teams.  If the wireframe is good, everyone would be happier and more efficient and less 
+  confused if they can understand what the intention of the designer is.  
+
+  What new semantic elements did you learn about (if any) ?
+  - <nav></nav>.  
+
+  There's something that I'm a bit confused about, which are the "<section></section>" tags and the 
+  "<main></main>" tags.  I have read about <section></section> tags from a different blog, and I found 
+  out about <main></main> tags because of 
+  https://github.com/Devbootcamp/phase-0-code/blob/master/week-1/blog-template.html.  
+
+  My question about <main></main> = when I look at other code samples, I don't really see it used that 
+  much, and also it does not auto-fill.  Why is that?
+
+  My question about <section></section> & <select></select> = how does one know when to use this and when 
+  to use <div></div>?
+-->

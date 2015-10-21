@@ -2,6 +2,7 @@
 <html>
     <head>
       <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
       <link rel="shortcut icon" href="../imgs/favicon.ico" />
 
@@ -10,9 +11,17 @@
       <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
       <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
 
-        <title>Bernice's Dev Bootcamp Blog ^_^ ~ Index</title>
+      <title>Bernice's Dev Bootcamp Blog ^_^ ~ Index</title>
+      
+      <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+      <![endif]-->
     </head>
     <body>
+      <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
             <header>
                 <div class="banner">
                     <a  class="logo" 
@@ -48,7 +57,7 @@
                 </div>
             </header>
 
-            <main class="main_content">
+            <main role="main" class="main_content">
               <section class="title">
                 <h1 class="page-title"><a href="http://BerniceChua.github.io/blog/index">Bernice's Dev Bootcamp Blog ^_^</a></h1>
                 <p class="author">By Bernice Anne W. Chua</p>
@@ -66,8 +75,30 @@
                 </ul>
               </nav>
 
-              <section class="main_column blog-post">
-                    <h2>CSS FTW!!!! (And WTF!!!) ~ CSS Concepts</h2>
+              <article class="main_column blog-post">
+                    <h2 class="mrgn-btm-no">CSS FTW!!!! (And WTF!!!) ~ CSS Concepts</h2>
+                    <p class="mrgn-top-no">posted on October 19, 2015</p>
+
+                    <section class="table_of_contents">
+                      <h3 class="mrgns-sm">Jump To Section....</h3>
+                      <ul>
+                        <li class="mrgns-sm">
+                          <a href="#margin_border_padding">What is the difference between Margin, Border, and Padding?</a>
+                        </li>
+                        <li class="mrgns-sm">
+                          <a href="#classes_vs_ids">What are the best practices associated with using classes vs. ids?</a>
+                        </li>
+                        <li class="mrgns-sm">
+                          <a href="#positioning">What are the differences between relative, absolute, fixed, and static positioning?</a>
+                        </li>
+                        <li class="mrgns-sm">
+                          <a href="#inline_vs_inline-block">What does it mean to display inline vs using inline block?</a>
+                        </li>
+                        <li class="mrgns-sm">
+                          <a href="#more_references">Additional References And Resources</a>
+                        </li>
+                      </ul>
+                    </section>
 
                     <p>CSS is really useful because it allows the people who make the structure and the content of a webpage to only concentrate on the structure and the content through HTML, and it allows the people who make the design to only concentrate on the layout.  It does this through having the CSS code on a separate file than the HTML file.</p>
 
@@ -78,11 +109,11 @@
                       <!-- </pre> -->
                     </code>
 
-                    <p>Because the .css file is separate from the .html file, the .css is infinitely re-usable.  The person who wrote the webpage does not need to re-do the style on each page.  They just have to copy that link.  Also, the content and structure of the .html does not need to be cluttered by random &lt;style&gt; tags all throughout.  For these reasons, I say "CSS FTW!!!" ("FTW" means "for the win!!!".)  But CSS is also confusing.</p>
+                    <p>Because the .css file is separate from the .html file, the .css is infinitely re-usable.  The person who wrote the webpage does not need to re-do the style on each page.  They just have to copy that link.  Also, the content and structure of the .html does not need to be cluttered by random &lt;style&gt; tags all throughout.  For these reasons, I say "CSS FTW!!!" ("FTW" means "for the win!!!".)  But CSS can sometimes also be very "WTF!????!?!!???"-inducing.</p>
 
                     <p>In order to alleviate this confusion, I've put together a quick cheat sheet with explanations:</p>
 
-                    <h3>What is the difference between Margin, Border, and Padding?</h3>
+                    <h3 id="margin_border_padding">What is the difference between Margin, Border, and Padding?</h3>
 
                     <ul>
                       <li><code>margin</code> = distance between the edge of the selected element and the elements surrounding it.  If there's no element surrounding it, distance between the selected element and the element/container that it stays in.  (Outside distance.)  </li>
@@ -90,7 +121,7 @@
                       <li><code>padding</code> = distance between the child elements &amp; text that live inside an element to the edge of the element.  (Inside distance.)  </li>
                     </ul>
     
-                    <h3>What are the best practices associated with using classes vs. ids?</h3>
+                    <h3 id="classes_vs_ids">What are the best practices associated with using classes vs. ids?</h3>
 
                     <p>Classes are more portable, and more than one class can be used to style one element.  For example, in our code we wanted a particular line to have multiple attributes, so we did this: </p>
 
@@ -135,7 +166,7 @@
 
                     <p>Also, ID selectors should only be used once per HTML element, so ID tags should only be used in special cases that should not repeat.  That is why we used class selectors, so if we wanted another HTML element to look the same, we didn't need to make a new ID selector for it.  </p>
     
-                    <h3>What are the differences between relative, absolute, fixed, and static positioning?</h3>
+                    <h3 id="positioning">What are the differences between relative, absolute, fixed, and static positioning?</h3>
 
                     <ul>
                       <li><code>static</code> = default positioning style, if no <code>position</code> attribute is specified.  Element flows on the page as it normally would, based on its sequence in the HTML file.  </li>
@@ -147,14 +178,14 @@
                       <li><code>relative</code> = elements move <em>relative to where it would have been</em> if it just had the default static positioning.  <code>relative</code> works with other properties/attribues like <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> attributes.  For example, if the element has the attribute <code>top: 10px;</code>, this element will shift it's position 10 pixels DOWN from where it would NORMALLY be.  The <code>z-index</code> of a <code>relative</code>-ly positioned element will always trump a <code>static</code>-ally positioned element.  <code>relative</code> elements can have <code>absoulte</code>-positioned child elements inside it, and this `absolute` child element will behave as if it is inside its own browser window.  </li>
                     </ul>
 
-                    <h3>What does it mean to display inline vs using inline block?</h3>
+                    <h3 id="inline_vs_inline-block">What does it mean to display inline vs using inline block?</h3>
                     
                     <ul>
                       <li><code>inline</code> = the element will sit on the same row as another element.  </li>
                       <li><code>inline-block</code> = the element will have its own row.  </li>
                     </ul>
 
-                    <h3>Additional References And Resources:</h3>
+                    <h3 id="more_references">Additional References And Resources:</h3>
 
                     <p>To better understand margins, borders, and padding, modern browsers like Firefox and Google Chrome have a tool for inspecting individual HTML elements.  Since this school is using Google Chrome, here's a screenshot of Google's Chrome Dev Tools:</p>
 
@@ -215,7 +246,7 @@
                       </li>
                     </ul>
 
-              </section>
+              </article>
             </main>
 
         <footer  class="footer">
