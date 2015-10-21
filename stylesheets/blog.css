@@ -44,3 +44,15 @@ code {
     border-color: #F08080; /*LightCoral*/
     background-color: #B0C4DE; /*LightSteelBlue*/
 }
+
+.table_of_contents {
+    border: 1px solid red;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: .80em;
+}
+
+.mrgns-sm {
+    margin: .2em;
+}
