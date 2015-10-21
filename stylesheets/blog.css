@@ -56,3 +56,6 @@ code {
 .mrgns-sm {
     margin: .2em;
 }
+
+.mrgn-btm-no { margin-bottom: 0; }
+.mrgn-top-no { margin-top: 0; }
