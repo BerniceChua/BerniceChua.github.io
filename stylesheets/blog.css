@@ -37,14 +37,6 @@ nav ul li {
    margin-bottom: 1.5em;
 }
 
-code {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: #F08080; /*LightCoral*/
-    background-color: #B0C4DE; /*LightSteelBlue*/
-}
-
 .table_of_contents {
     border: 1px solid red;
     width: 50%;
@@ -59,3 +51,26 @@ code {
 
 .mrgn-btm-no { margin-bottom: 0; }
 .mrgn-top-no { margin-top: 0; }
+
+.padding-xs { padding: .5%; }
+
+code {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #F08080; /*LightCoral*/
+    padding: .3%;
+    background-color: #B0C4DE; /*LightSteelBlue*/
+}
+
+pre {
+    display: block;
+    border-style: groove;
+    padding: 1%;
+    background-color: #2F4F4F;
+    color: #E9967A; /* DarkSalmon */
+}
+
+.code-comment {
+    color: #C0C0C0; /* Silver */
+}
