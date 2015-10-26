@@ -83,7 +83,14 @@ header {
 
 .nav_container li a:active {
     color: ghostwhite;
-    background-color: red;
+    background-color: #FF0000; /* Red */
+    /*background-color: #BB002A; /* from https://color.adobe.com/create/color-wheel/?base=0&rule=Shades&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.7333333333333333,0,0.16470588235317338,0.4833333333333333,0,0.10855614973285127,0.23333333333333328,0,0.05240641711241095,0.7833333333333333,0,0.17593582887737966,0.6333333333333333,0,0.14224598930511548&swatchOrder=0,1,2,3,4 */
+    /*background-color: #970019; /* https://color.adobe.com/create/color-wheel/?base=2&rule=Shades&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.592156862745098,0,0.09803909154999702,0.8349019607843137,0,0.13822862643031705,0.69,0,0.11423826594839964,0.74,0,0.1225164011620518,0.59,0,0.09768199552109535&swatchOrder=0,1,2,3,4 */
+    /*background-color: #B22222; /* FireBrick */
+    /*background-color: #800000; /* Maroon */
+    background-color: #DC143C; /* Crimson */
+    /*background-color: #cc0000; /* "Scarlet Red 2" from http://colrd.com/color/0xffcc0000/ */
+    /*background-color: #F43683;*/
 }
 /*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
 

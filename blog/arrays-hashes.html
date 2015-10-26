@@ -93,6 +93,8 @@
 
           <p>Arrays are ordered collections of objects. Hashes are dictionaries where a key points to a value (just like a word points to a definition in a dictionary) and are ordered in more recent versions of Ruby (as of Ruby version 1.9).  Here "ordered" just means that Hashes "know what their first, last, or nth element is".  The order in which keys were inserted into a Hash is the order in which the Hash replays itself for you if you iterate through the pairs in it or print a string representation of it to the screen.  </p>
 
+          <p>JUST TO BE CLEAR: the first key of a Hash can be anything, but the first index of an Array must ALWAYS be ZERO!!!</p>
+
           <h3>How are Arrays structured?</h3>
           
           <p>Arrays are structured like this: (<code>animals</code> is an array of <code>Strings</code> (names of animals).)  <code>animals = ["Maru", "Hana", "Boo", "Ohagi", "Goro", "Tama", "Nitama", "Grumpycat", "Li'l Bub"]</code>.  Notice that each element is separated by a comma.  To create an empty array, the syntax is like this: <code>my_array = []</code>.  You can also create an Array with constructors: <code>constructed_array = Array.new</code> creates an empty array, and to make a non-empty array, the syntax is like this: <code>greetings = Array.new("Hello", "Good day")</code>.  </p>
