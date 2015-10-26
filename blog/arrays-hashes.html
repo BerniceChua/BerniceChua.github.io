@@ -79,34 +79,155 @@
       </nav>
 
       <article class="main_column blog-post">
-        <h2 class="mrgn-btm-no">Title of Blog Post</h2>
-        <p class="mrgn-top-no">posted on [....]</p>
-
-        <section class="table_of_contents"> <!-- Optional, only if long blog post. -->
-          <h3 class="mrgns-sm">(Optional) Jump To Section....</h3>
-          <ul>
-            <li class="mrgns-sm">
-              <a href="#first">1st Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#second">2nd Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#third">3rd Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#fourth">4th Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#more_references">Additional References And Resources</a>
-            </li>
-          </ul>
-        </section>
+        <h2 class="mrgn-btm-no">Arrays And Hashes</h2>
+        <p class="mrgn-top-no">posted on October 26, 2015</p>
 
         <div>
-          <p>This is paragraph one.</p>
-          <p>This is paragraph two.</p>
+          <h3>What are arrays and hashes?</a></h3>
+
+          <p>In programming, Arrays and Hashes are kinds of objects called <em>collections</em>.  Collections are a kind of <em>data structure</em>.  What gets collected in these collections?  All kinds of objects such as but not limited to numbers (integers and floats), Strings, variables, booleans, classes, other Arrays, and other Hashes may get stored in these collection.  </p>
+
+          <h3>What are the main differences between arrays and hashes?</h3>
+
+          <p> The main difference between arrays and hashes is that the elements of arrays are stored, identified, and accessed by a consistent sequential numerical index.  The contents of an array always remain in the same order, unless you change it.  Meanwhile, Hashes are <em>associative arrays</em>, meaning that the elements of hashes are keys associated with values.  In key-value pairs, the elements are stored, identified, and accessed by their keys.  The keys of a Hash in Ruby can be any object type, including Strings and symbols.  </p>
+
+          <p>Arrays are ordered collections of objects. Hashes are dictionaries where a key points to a value (just like a word points to a definition in a dictionary) and are ordered in more recent versions of Ruby (as of Ruby version 1.9).  Here "ordered" just means that Hashes "know what their first, last, or nth element is".  The order in which keys were inserted into a Hash is the order in which the Hash replays itself for you if you iterate through the pairs in it or print a string representation of it to the screen.  </p>
+
+          <h3>How are Arrays structured?</h3>
+          
+          <p>Arrays are structured like this: (<code>animals</code> is an array of <code>Strings</code> (names of animals).)  <code>animals = ["Maru", "Hana", "Boo", "Ohagi", "Goro", "Tama", "Nitama", "Grumpycat", "Li'l Bub"]</code>.  Notice that each element is separated by a comma.  To create an empty array, the syntax is like this: <code>my_array = []</code>.  You can also create an Array with constructors: <code>constructed_array = Array.new</code> creates an empty array, and to make a non-empty array, the syntax is like this: <code>greetings = Array.new("Hello", "Good day")</code>.  </p>
+
+          <h3>What does it mean to iterate over an array?</h3>
+
+          <p>To iterate over an array means to go through each element in the order that it is positioned in the array.  Because Arrays are indexed numerically and sequentially, the contents of an array always remain in the same order, unless you change it.  This means that the position of each element can be computed from its index by a mathematical formula, in order to iterate through and/or access the elements of an array.  </p>
+
+          <h3>Based on what you've learned, what is the best way to access values in an Array?</h3>
+
+          <p>To access an element of an array, you would need the index (number) of the position where the element is stored.  From the above example: if I type <code>animals[0]</code>, I would get <code>Maru</code> which is the FIRST element of the Array <code>animals</code>.  If I typed <code>animals[4]</code>, I would get <code>Goro</code>, which is the fifth element of <code>animals</code>.  Notice that the FIRST element is element zero, NOT element 1.  (FYI, I'm not trying to reference <a href="https://en.wikipedia.org/wiki/The_Fifth_Element">that movie</a> or <a href="https://en.wikipedia.org/wiki/Mass_Effect_(video_game)#.22Mass_Effect.22">that game</a>.  It just came out that way lol!)</p>
+
+          <p>This is because the index of arrays start at 0 and end at the length of the array minus one.  For example, in this array <code>["A", "B", "C", "D"]</code>, the length of the array is 4 because there are 4 elements inside it.  But the last index which "D" occupies is actually the 3rd index, since "A" occupies element 0 (Zero).  </p>
+
+          <p>Trying to access an element that is not there will usually give an error message in other programming languages like C++.  Fortunately, Ruby is more forgiving and this will just output a blank.  (Still, not what you'd expect if you want to access "D" from that array.  </p>
+
+          <h3>How are Hashes structured?</h3>
+
+          <p>To create a Hash in Ruby, there are several ways to do these:</p>
+
+          <p>Constructor Method:</p>
+
+          <pre>empty_hash = Hash.new</pre>
+
+          <pre>my_hash = Hash.new("The Default")</pre>
+
+          <p>Hash Literal Notation:</p>
+
+          <pre>empty_hash = {}</pre>
+
+<pre>
+my_hash = {
+  <span class="code-comment"># each element is separated by a comma</span>
+  "key1" => value1, 
+  <span class="code-comment"># using a String as a key</span>
+  :key2  => value2, 
+  <span class="code-comment"># using a symbol as a key</span>
+  3 => value 3, 
+  <span class="code-comment"># using an integer as a key</span>
+  key4: value4 
+  <span class="code-comment"># as of Ruby 1.9, this is shorthand</span>
+  <span class="code-comment"># The key is automatically generated into a symbol.</span>
+}</pre>
+
+          <h3>Based on what you've learned, what is the best way to access values in a hash?</h3>
+
+          <p>To access the values inside a hash, one would need to get the key that identifies that value.  For example, I have:  </p>
+
+          <pre>
+            grades = {
+              :Bernice => 90,
+              :Madelein => 99,
+              :Audris => 98
+            }</pre>
+
+          <p>To get Madelein's grade, I'll type <code>grades[:Madelein]</code>.  This will get me </code>99</code>.</p>
+
+          <h3>What are some important things to remember about hash keys and uniqueness?</h3>
+
+          <p>The keys of a Hash must be unique for the hash they belong.  If a hash key already exists inside the given hash, and you could overwrite the answer by accident.  For example with our hash grades[:Bernice] already exists, so if I do </code>grades[:Bernice] = 79</code>, I replaced 90 with 79, so now the hash will say: </p>
+    
+          <pre class="padding-xs">
+            grades = {
+              :Bernice => 79,
+              :Madelein => 99,
+              :Audris => 98
+            }</pre>
+
+          <p>Notice that the value of <code>grades[Bernice]</code> has changed, instead of creating a new element.  But if the key does not exist, then a new key-value pair will be created: <code>grades[:Diane] = 88</code> will make the hash:</p>
+
+          <pre>
+            grades = {
+              :Bernice => 79,
+              :Madelein => 99,
+              :Audris => 98,
+              :Diane => 88
+            }</pre>
+
+          <h3>Arrays and Hashes seem so complicated!  Why would I want to use arrays and hashes if I already have good ol' fashioned variables?</h3>
+
+          <p>For the same reason that you don't get a new bookshelf for each book that you have.  Let's go back to <code>animals</code>.  Imagine if we created separate variables for each of those animals' names.  There are 9 animal's names in that Array.  To make individual variables for them, you would make <code>animal_1 = "Maru"</code>, <code>animal_2 = "Hana"</code>, <code>animal_3 = "Boo"</code>, <code>animal_4 = "Ohagi"</code>, etc.  That's really tedious and tiresome!!!  Do you really want to do that?  DO YOU!?!?!???!!  o_o  </p>
+
+          <p>Aside from that, with Arrays and Hashes, you can do all sorts of neat things to your data, like sorting, transforming, etc., which will be much more complicated to do with individual variables.  </p>
+
+          <h3>When do you think one will be better over the other?</h3>
+
+          <p>Neither one is better than the other, because it depends on what they are going to be used for.  If the order matters, then it's time to use an array, since the elements are stored linearly/sequentially.  An array allows its elements to be randomly accessed, as long as the index of that element is known beforehand.  If you'd prefer efficiency/speed of getting the data because the order does not matter, and you'd rather access the data by some keyword, then a hash would be more appropriate.  </p>
+
+          <h3>Here are additional helpful links:</h3>
+          <ul>
+            <li>
+              <a href="http://ruby-doc.org/core-2.2.3/Array.html">Ruby-Doc: Array</a>
+            </li>
+            <li>
+              <a href="http://ruby-doc.org/core-2.2.3/Hash.html">Ruby-Doc: Hash</a>
+            </li>
+            <li>
+              <a href="https://www.codecademy.com/articles/glossary-ruby">Codecademy Ruby Glossary</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Array_data_structure">Wikipedia: Array Data Sructure</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Associative_array">Wikipedia: Associative Array</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Associative_array">Wikipedia: Associative Array</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/1-arrays/lessons/2-arrays-introduction">Rubymonk.com ~ Arrays</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/">Rubymonk.com ~ Hashes in Ruby</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/lessons/46-introduction-to-ruby-hashes">Rubymonk.com ~ Hashes</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/lessons/47-hashes-in-and-out">Rubymonk.com ~ Hashes, in and out.</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Hash_function">Wikipedia: Hash Function</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Hash_table">Wikipedia: Hash Table</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Hash_list">Wikipedia: Hash List</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Hash_tree">Wikipedia: Hash Tree</a>
+            </li>
+          </ul>
         </div>
+
       </article>
     </main>
 

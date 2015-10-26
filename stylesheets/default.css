@@ -2,7 +2,9 @@
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
 
 body {
-    background-image:url('http://images1.pixlis.com/background-image-circles-bubbles-sponge-soap-seamless-tileable-puerto-rico-spice-238qmt.png');
+    /*background-image:url('http://images1.pixlis.com/background-image-circles-bubbles-sponge-soap-seamless-tileable-puerto-rico-spice-238qmt.png');*/
+    /*background-image:url('../imgs/textured-bg.jpg');*/
+    background-image: url('../imgs/blue-thatch.jpg');
     background-repeat: repeat;
     /*background-repeat:no-repeat;
     background-size:100% 100%;*/
@@ -90,7 +92,8 @@ header {
     width: 70%;
     margin: auto;
     padding: 20px;
-    background: mistyrose;
+    /*background: mistyrose;*/
+    background-image:url('../imgs/textured-bg.jpg');
 
     min-height: 100%;
     height: auto !important;
@@ -100,7 +103,7 @@ header {
 
 .main_content a:hover {
     font-weight: bold;
-    color: orange;
+    color: #FF4500; /* OrangeRed */
 }
 
 .menu_column {
@@ -226,7 +229,7 @@ html, body {
     margin: 0 auto;
     /*margin-left: -8px;*/
     /*padding-right: 38px;*/
-    background-color: #FFC0CB /*pink*/;
+    background-color: #FFC0CB; /*pink*/
 
     clear: both;
     position: relative;
