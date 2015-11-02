@@ -1,0 +1,160 @@
+<!--
+<?php
+
+if($_POST["submit"]) {
+    $recipient="Bernice.Chua.415@gmail.com";
+    $subject="Form to email message";
+    $sender=$_POST["sender"];
+    $senderEmail=$_POST["senderEmail"];
+    $message=$_POST["message"];
+
+    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+
+    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+
+    $thankYou="<p>Thank you! Your message has been sent.</p>";
+}
+
+?>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="shortcut icon" href="../imgs/favicon.ico" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/html-boilerplate-normalize-main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/linkedin-button.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/blog.css">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+
+    <title>BerniceChua.github.io ~ Contact Me</title>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header>
+      <div class="banner">
+        <a  class="logo" 
+            href="http://BerniceChua.github.io">BerniceChua.github.io</a>
+        <nav>
+            <ul class="nav_container">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./blog/index.html">Blog</a>
+                </li>
+  <!--                <li>
+                    News & Updates
+                </li>
+                <li> -->
+                    <!-- In HTML, &#233; renders as é -->
+<!--                    <a href="./resume.html">Curriculum Vitae/Resum&#233;</a>
+                </li> -->
+                <li>
+                    <a href="./contactMe.php">Contact Me</a>
+                </li>
+  <!--                <li>
+                    <a href="./programs.html">Programs I Made</a>
+                </li>
+                <li>
+                    <a href="./affiliates.html">Affiliates</a>
+                </li>
+                <li>
+                    <a href="./acknowledgements.html">Acknowledgements</a>
+                </li>
+  -->
+            </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main_content">
+      <section class="title">
+        <h1 class="page-title"><a href="mailto:Bernice.Chua.415@gmail.com">Contact Me ^_^</a></h1>
+      </section>
+
+      <section class="main_column">
+        <h3>You can contact me through the links on the footer of this page, or you could send me an email through the form below.</h3>
+<!-- 
+        <?=$thankYou ?>
+
+       <form method="post" action="contact.php">
+          <label>Name:</label>
+          <input name="sender">
+
+          <label class="clearfix">Email address:</label>
+          <input class="clearfix" name="senderEmail">
+
+          <label class="clearfix">Message:</label>
+          <textarea class="clearfix"rows="5" cols="20" name="message"></textarea>
+
+          <input class="clearfix" type="submit" name="submit">
+        </form>
+-->
+        <form action="mailto:Bernice.Chua.415@gmail.com" enctype="text/plain" method="post">
+          <p>Name: <input name="Name" type="text" id="Name" size="40"></p>
+          <p>E-mail address: <input name="E-mail" type="text" id="E-mail" size="40"></p>
+          <p>Message:</p>
+          <p><textarea name="Comment" cols="55" rows="5"
+          id="Comment"></textarea></p>
+          <p><input type="submit" name="Submit" value="Submit"></p>
+        </form>
+    
+      </section>
+    </main>
+
+    <footer  class="footer">
+      <div class="button_group">
+        <div class="followbuttons">
+          <a href="https://github.com/BerniceChua">
+          <img src="imgs/Fork_Me_On_GitHub.png" alt="View Bernice Anne W. Chua's repo on GitHub">
+          </a>
+        </div>                      
+
+        <!-- <div class="followbuttons">
+          <a href="https://coderbits.com/BerniceChua">
+          <img src="./coderbits.png" alt="View Bernice Anne W. Chua's profile on CoderBits">
+          </a>
+        </div> -->
+
+        <div class="followbuttons">
+          <a href="https://twitter.com/ChuaBernice" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ChuaBernice</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+
+        <div class="followbuttons">
+        <!-- Place this code where you want the badge to render. -->
+          <a href="http://plus.google.com/115377831515196015573?prsrc=3"
+              rel="publisher" target="_top" style="text-decoration:none;">
+          <img src="http://ssl.gstatic.com/images/icons/gplus-32.png" 
+              alt="Google+" style="border:0;width:32px;height:32px;"/>
+          </a>
+        </div>
+
+        <div class="followbuttons">
+          <a href="http://www.linkedin.com/in/bernicechua415">
+            <img  class="linkedin-button" 
+                  src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" 
+                  alt="View Bernice Anne W. Chua's profile on LinkedIn">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
