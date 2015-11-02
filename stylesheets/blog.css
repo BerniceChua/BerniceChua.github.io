@@ -54,6 +54,10 @@ nav ul li {
 
 .padding-xs { padding: .5%; }
 
+.display-block { display: block; }
+
+.clearfix { clear: both; }
+
 code {
     border-style: solid;
     border-width: 1px;
