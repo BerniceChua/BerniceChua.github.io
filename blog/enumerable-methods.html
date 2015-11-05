@@ -79,153 +79,225 @@
       </nav>
 
       <article class="main_column blog-post">
-        <h2 class="mrgn-btm-no">Enumerables In Ruby</h2>
+        <h2 class="mrgn-btm-no">Enumerate All The Collections!!!  (Or is it "Collect all the Enumerables?")</h2>
         <p class="mrgn-top-no">posted on November 2, 2015</p>
 
         <div>
-          <h3>What is an Enumerable in Ruby?</a></h3>
+          <img src="../imgs/2751075.jpg" alt="'All The Things!' meme" class="img-align-cntr">
 
-          <p>In programming, Arrays and Hashes are kinds of objects called <em>collections</em>.  Collections are a kind of <em>data structure</em>.  What gets collected in these collections?  All kinds of objects such as but not limited to numbers (integers and floats), Strings, variables, booleans, classes, other Arrays, and other Hashes may get stored in these collection.  </p>
+          <h3>In Ruby, an Enumerable is a...</h3>
 
-          <h3>What are the main differences between arrays and hashes?</h3>
+          <p>... <code>mixin</code> that provides methods for collections of items (like arrays, hashes, ranges, and pseud-arrays like "Ranges" in Ruby or strings) so that they can be stepped through, then filtered or searched to find one or more elements that match one or more criteria.  </p>
 
-          <p> The main difference between arrays and hashes is that the elements of arrays are stored, identified, and accessed by a consistent sequential numerical index.  The contents of an array always remain in the same order, unless you change it.  Meanwhile, Hashes are <em>associative arrays</em>, meaning that the elements of hashes are keys associated with values.  In key-value pairs, the elements are stored, identified, and accessed by their keys.  The keys of a Hash in Ruby can be any object type, including Strings and symbols.  </p>
+          <h3>But let's backtrack first!!!!!  What even is a <code>mixin</code>?!?  (And how is that even pronounced???!!?!?!!!!)</h3> 
 
-          <p>Arrays are ordered collections of objects. Hashes are dictionaries where a key points to a value (just like a word points to a definition in a dictionary) and are ordered in more recent versions of Ruby (as of Ruby version 1.9).  Here "ordered" just means that Hashes "know what their first, last, or nth element is".  The order in which keys were inserted into a Hash is the order in which the Hash replays itself for you if you iterate through the pairs in it or print a string representation of it to the screen.  </p>
+          <p>To answer that question, in programming, there is a software design technique called <em>modular programming</em>.  In this technique, the functionality of a program is separated into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.  In other words, it's a thing that contains common functionality or methods that classes or objects have in common.  So this "thing" gets shared by the classes and objects that needs these functionality and methods, instead of each class or each object writing their own.  For Ruby, this is called either a "<code>mixin</code>" (pronounced as "mix-in"), and sometimes it's called a "<code>module</code>" interchangeably.  </p>  
 
-          <p>JUST TO BE CLEAR: the first key of a Hash can be anything, but the first index of an Array must ALWAYS be ZERO!!!</p>
+          <p>To create a <code>module</code> in Ruby, we simply start the code block with <code>module NameOfMyModule</code>.  To put this <code>module</code> into a class or object that wants to use the functionality of this module, we don't use inheritance, but we do this by putting "<code>include NameOfMyModule</code>" in the beginning of the class, right under <code>class NameOfMyClass</code>.  </p>
 
-          <h3>How are Arrays structured?</h3>
-          
-          <p>Arrays are structured like this: (<code>animals</code> is an array of <code>Strings</code> (names of animals).)  <code>animals = ["Maru", "Hana", "Boo", "Ohagi", "Goro", "Tama", "Nitama", "Grumpycat", "Li'l Bub"]</code>.  Notice that each element is separated by a comma.  To create an empty array, the syntax is like this: <code>my_array = []</code>.  You can also create an Array with constructors: <code>constructed_array = Array.new</code> creates an empty array, and to make a non-empty array, the syntax is like this: <code>greetings = Array.new("Hello", "Good day")</code>.  </p>
+          <h3>But why can't we just use good ol' inheritance?</h3>
 
-          <h3>What does it mean to iterate over an array?</h3>
+          <p>Well, inheritance is good <em>most of the time</em>, especially when the class or the object is a kind of class or object of the parent class that it inherits from.  But there are some cases where classes or objects from VASTLY different parent classes would need to share some common actions.  For example, a string versus an array versus a hash are different from each other, but they need to share some common actions, like loop through each element.  To loop through or iterate from a hash is very different from iterating through a string, but they both need those actions.  So if I tried to have a String object inherit the looping capabilities of a Hash object (AKA "multiple inheritance", I could run into all kinds of problems.  <a href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">Wikipedia gives a very good explanation about this phenomenon called "the diamond problem".</a>  In other words, one does not simply use multiple inheritance.  Because if your parent classes have methods that override each other, you're gonna have a bad time.  </p> 
 
-          <p>To iterate over an array means to go through each element in the order that it is positioned in the array.  Because Arrays are indexed numerically and sequentially, the contents of an array always remain in the same order, unless you change it.  This means that the position of each element can be computed from its index by a mathematical formula, in order to iterate through and/or access the elements of an array.  </p>
+          <img src="../imgs/2751374.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
+          <img src="../imgs/2751441.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
 
-          <h3>Based on what you've learned, what is the best way to access values in an Array?</h3>
+          <p>Anyway, for those of you curious to know, <a href="https://en.wikipedia.org/wiki/Mixin#History">this is why a <code>module</code> is sometimes called a <code>mixin</code>, and where the name comes from</a>.  </p>
 
-          <p>To access an element of an array, you would need the index (number) of the position where the element is stored.  From the above example: if I type <code>animals[0]</code>, I would get <code>Maru</code> which is the FIRST element of the Array <code>animals</code>.  If I typed <code>animals[4]</code>, I would get <code>Goro</code>, which is the fifth element of <code>animals</code>.  Notice that the FIRST element is element zero, NOT element 1.  (FYI, I'm not trying to reference <a href="https://en.wikipedia.org/wiki/The_Fifth_Element">that movie</a> or <a href="https://en.wikipedia.org/wiki/Mass_Effect_(video_game)#.22Mass_Effect.22">that game</a>.  It just came out that way lol!)</p>
+          <h3>Specifically for Enumerables in Ruby...</h3>
 
-          <p>This is because the index of arrays start at 0 and end at the length of the array minus one.  For example, in this array <code>["A", "B", "C", "D"]</code>, the length of the array is 4 because there are 4 elements inside it.  But the last index which "D" occupies is actually the 3rd index, since "A" occupies element 0 (Zero).  </p>
+          <p>In Ruby, common characteristics among the <code>Collections</code>-type objects tend to reside in the "<code>Enumerable</code>" module.  Any class that aspires to have enumerable-like properties must have two important things:
+            <ol>
+              <li>"<code>include Enumerable</code>" in the beginning of the class, right under <code>class NameOfYourClass</code></li>
+              <li>a <code>.each</code> method whose job it is to <code>yield</code> items to a supplied code block, one at a time.  </li>
+            </ol>
+          </p>
 
-          <p>Trying to access an element that is not there will usually give an error message in other programming languages like C++.  Fortunately, Ruby is more forgiving and this will just output a blank.  (Still, not what you'd expect if you want to access "D" from that array.  </p>
+          <p>Exactly what <code>.each</code> does will vary from one class to another. In the case of an array, <code>.each</code> <code>yields</code> the first element, then the second, and so forth. In the case of a hash, it <code>yields</code> key/value pairs in the form of two-element arrays. In the case of a filehandle, it yields one line of the file at a time. Ranges iterate by first deciding whether iterating is possible (if the start point is a float, this isn’t possible) and then pretending to be an array.  </p>
 
-          <h3>How are Hashes structured?</h3>
+          <p>If you make your own class, <code>.each</code> can mean whatever you want it to mean, as long as it <code>yields</code> something. So <code>.each</code> has different semantics for different classes. But however each is implemented, the methods in the Enumerable module depend on being able to call it.  As long as "<code>include Enumerable</code>" is present and there is an <code>each</code> method inside, <code>NameOfYourClass</code> will now automatically just have methods built on top of the each method.  This is because all of those methods are built on top of <code>each</code>.  </p>
 
-          <p>To create a Hash in Ruby, there are several ways to do these:</p>
+<pre>[1] 2.2.3 > Enumerable.instance_methods.sort 
+[ 
+    [ 0] :all?, 
+    [ 1] :any?, 
+    [ 2] :chunk, 
+    [ 3] :collect, 
+    [ 4] :collect_concat, 
+    [ 5] :count, 
+    [ 6] :cycle, 
+    [ 7] :detect, 
+    [ 8] :drop, 
+    [ 9] :drop_while, 
+    [10] :each_cons, 
+    [11] :each_entry, 
+    [12] :each_slice, 
+    [13] :each_with_index, 
+    [14] :each_with_object, 
+    [15] :entries, 
+    [16] :find, 
+    [17] :find_all, 
+    [18] :find_index, 
+    [19] :first, 
+    [20] :flat_map, 
+    [21] :grep, 
+    [22] :group_by, 
+    [23] :include?, 
+    [24] :inject, 
+    [25] :lazy, 
+    [26] :map, 
+    [27] :max, 
+    [28] :max_by, 
+    [29] :member?, 
+    [30] :min, 
+    [31] :min_by, 
+    [32] :minmax, 
+    [33] :minmax_by, 
+    [34] :none?, 
+    [35] :one?, 
+    [36] :partition, 
+    [37] :reduce, 
+    [38] :reject, 
+    [39] :reverse_each, 
+    [40] :select, 
+    [41] :slice_after, 
+    [42] :slice_before, 
+    [43] :slice_when, 
+    [44] :sort, 
+    [45] :sort_by, 
+    [46] :take, 
+    [47] :take_while, 
+    [48] :to_a, 
+    [49] :to_h, 
+    [50] :zip 
+] 
+[2] 2.2.3 > Enumerable.instance_methods(false).sort 
+[ 
+    [ 0] :all?, 
+    [ 1] :any?, 
+    [ 2] :chunk, 
+    [ 3] :collect, 
+    [ 4] :collect_concat, 
+    [ 5] :count, 
+    [ 6] :cycle, 
+    [ 7] :detect, 
+    [ 8] :drop, 
+    [ 9] :drop_while, 
+    [10] :each_cons, 
+    [11] :each_entry, 
+    [12] :each_slice, 
+    [13] :each_with_index, 
+    [14] :each_with_object, 
+    [15] :entries, 
+    [16] :find, 
+    [17] :find_all, 
+    [18] :find_index, 
+    [19] :first, 
+    [20] :flat_map, 
+    [21] :grep, 
+    [22] :group_by, 
+    [23] :include?, 
+    [24] :inject, 
+    [25] :lazy, 
+    [26] :map, 
+    [27] :max, 
+    [28] :max_by, 
+    [29] :member?, 
+    [30] :min, 
+    [31] :min_by, 
+    [32] :minmax, 
+    [33] :minmax_by, 
+    [34] :none?, 
+    [35] :one?, 
+    [36] :partition, 
+    [37] :reduce, 
+    [38] :reject, 
+    [39] :reverse_each, 
+    [40] :select, 
+    [41] :slice_after, 
+    [42] :slice_before, 
+    [43] :slice_when, 
+    [44] :sort, 
+    [45] :sort_by, 
+    [46] :take, 
+    [47] :take_while, 
+    [48] :to_a, 
+    [49] :to_h, 
+    [50] :zip 
+  ]
+</pre>
+<figcaption><i>The book (<em>The Well Grounded Rubyist</em>) says that putting <code>false</code> inside <code>.instance_methods()</code> would make this list shorter?  I don't see the difference, but this was done in coderpad.io, so maybe that's why?  Oh well...  </i></figcaption>
 
-          <p>Constructor Method:</p>
+          <p>Arrays serve generically as the containers for most of the results that come back from enumerable selecting and filtering operations, whether or not the object being selected from or filtered is an array. There are some exceptions to this quasi-rule, but it holds widely.  </p>
 
-          <pre>empty_hash = Hash.new</pre>
+          <p>The array is the most generic container and therefore the logical candidate for the role of universal result format. A few exceptions arise. A hash returns a hash from a select or reject operation. Sets return arrays from map, but you can call map! on a set to change the elements of the set in place. For the most part, though, enumerable selection and filtering operations come back to you inside arrays.  </p>
 
-          <pre>my_hash = Hash.new("The Default")</pre>
+          <h3>Now, here is a little more detail about the the <code>Enumerable</code> method called <code>.cycle</code>:</h3>
 
-          <p>Hash Literal Notation:</p>
+          <p>Ruby-doc.org defines <code>cycle</code> as: "Calls block for each element of enum repeatedly n times or forever if none or nil is given. If a non-positive number is given or the collection is empty, does nothing. Returns nil if the loop has finished without getting interrupted.  #cycle saves elements in an internal array so changes to enum after the first pass have no effect.  If no block is given, an enumerator is returned instead"</p>
 
-          <pre>empty_hash = {}</pre>
+          <p>In other words, <code>cycle</code> is basically a combination of <code>.times</code> AND either a <code>for</code> loop or <code>.each</code> inside of it.  So these 4 sets of code are equivalent and do the exact same thing.  (Although, it's super-important to put a parameter inside the parentheses of <code>.cycle()</code>, or else you'll end up with an infinite loop!!!)  </p>
 
 <pre>
-my_hash = {
-  <span class="code-comment"># each element is separated by a comma</span>
-  "key1" => value1, 
-  <span class="code-comment"># using a String as a key</span>
-  :key2  => value2, 
-  <span class="code-comment"># using a symbol as a key</span>
-  3 => value 3, 
-  <span class="code-comment"># using an integer as a key</span>
-  key4: value4 
-  <span class="code-comment"># as of Ruby 1.9, this is shorthand</span>
-  <span class="code-comment"># The key is automatically generated into a symbol.</span>
-}</pre>
+counter = 0
+while counter &lt; number_of_times_to_redo
+  for item in my_generic_enumerable
+    puts item
+  end
 
-          <h3>Based on what you've learned, what is the best way to access values in a hash?</h3>
+  counter += 1
+end
+</pre>
 
-          <p>To access the values inside a hash, one would need to get the key that identifies that value.  For example, I have:  </p>
+<pre>
+number_of_times_to_redo.times {
+  for item in my_generic_enumerable
+    puts item
+  end
+}
+</pre>
 
-          <pre>
-            grades = {
-              :Bernice => 90,
-              :Madelein => 99,
-              :Audris => 98
-            }</pre>
+<pre>
+number_of_times_to_redo.times {
+  my_generic_enumerable.each {
+    puts item
+  }
+}
+</pre>
 
-          <p>To get Madelein's grade, I'll type <code>grades[:Madelein]</code>.  This will get me </code>99</code>.</p>
+<pre>
+my_generic_enumerable.cycle(number_of_times_to_redo) {
+  puts item
+}
+</pre>
+          <p>I think that's really awesome how all those lines of code were able to be refactored to only 3 lines of code!!!  ^__^</p>
 
-          <h3>What are some important things to remember about hash keys and uniqueness?</h3>
-
-          <p>The keys of a Hash must be unique for the hash they belong.  If a hash key already exists inside the given hash, and you could overwrite the answer by accident.  For example with our hash grades[:Bernice] already exists, so if I do </code>grades[:Bernice] = 79</code>, I replaced 90 with 79, so now the hash will say: </p>
-    
-          <pre class="padding-xs">
-            grades = {
-              :Bernice => 79,
-              :Madelein => 99,
-              :Audris => 98
-            }</pre>
-
-          <p>Notice that the value of <code>grades[Bernice]</code> has changed, instead of creating a new element.  But if the key does not exist, then a new key-value pair will be created: <code>grades[:Diane] = 88</code> will make the hash:</p>
-
-          <pre>
-            grades = {
-              :Bernice => 79,
-              :Madelein => 99,
-              :Audris => 98,
-              :Diane => 88
-            }</pre>
-
-          <h3>Arrays and Hashes seem so complicated!  Why would I want to use arrays and hashes if I already have good ol' fashioned variables?</h3>
-
-          <p>For the same reason that you don't get a new bookshelf for each book that you have.  Let's go back to <code>animals</code>.  Imagine if we created separate variables for each of those animals' names.  There are 9 animal's names in that Array.  To make individual variables for them, you would make <code>animal_1 = "Maru"</code>, <code>animal_2 = "Hana"</code>, <code>animal_3 = "Boo"</code>, <code>animal_4 = "Ohagi"</code>, etc.  That's really tedious and tiresome!!!  Do you really want to do that?  DO YOU!?!?!???!!  o_o  </p>
-
-          <p>Aside from that, with Arrays and Hashes, you can do all sorts of neat things to your data, like sorting, transforming, etc., which will be much more complicated to do with individual variables.  </p>
-
-          <h3>When do you think one will be better over the other?</h3>
-
-          <p>Neither one is better than the other, because it depends on what they are going to be used for.  If the order matters, then it's time to use an array, since the elements are stored linearly/sequentially.  An array allows its elements to be randomly accessed, as long as the index of that element is known beforehand.  If you'd prefer efficiency/speed of getting the data because the order does not matter, and you'd rather access the data by some keyword, then a hash would be more appropriate.  </p>
 
           <h3>Here are additional helpful links:</h3>
           <ul>
             <li>
-              <a href="http://ruby-doc.org/core-2.2.3/Array.html">Ruby-Doc: Array</a>
+              <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">Programming Ruby: The Pragmatic Programmer's Guide - Modules</a>
             </li>
             <li>
-              <a href="http://ruby-doc.org/core-2.2.3/Hash.html">Ruby-Doc: Hash</a>
+              <a href="http://ruby-doc.org/core-2.2.3/Enumerable.html">Ruby-Docs - Module:Enumerable (Ruby 2.2.3)</a>
             </li>
             <li>
-              <a href="https://www.codecademy.com/articles/glossary-ruby">Codecademy Ruby Glossary</a>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/79-getting-modular">Rubymonk.com ~ 8.1 Getting Modular</a>
             </li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/Array_data_structure">Wikipedia: Array Data Sructure</a>
+              <a href="http://www.sitepoint.com/ruby-mixins-2/">sitepoint.com - Ruby Mixins</a>
             </li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/Associative_array">Wikipedia: Associative Array</a>
+              <a href="https://en.wikipedia.org/wiki/Mixin">Wikipedia: Mixin</a>
             </li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/Associative_array">Wikipedia: Associative Array</a>
+              <a href="https://en.wikipedia.org/wiki/Modular_programming">Wikipedia: Modular Programming</a>
             </li>
             <li>
-              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/1-arrays/lessons/2-arrays-introduction">Rubymonk.com ~ Arrays</a>
+              <a href="https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/48-advanced-modules/lessons/117-included-and-extend">Rubymonk.com ~ "includes" callback</a>
             </li>
             <li>
-              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/">Rubymonk.com ~ Hashes in Ruby</a>
-            </li>
-            <li>
-              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/lessons/46-introduction-to-ruby-hashes">Rubymonk.com ~ Hashes</a>
-            </li>
-            <li>
-              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/10-hashes-in-ruby/lessons/47-hashes-in-and-out">Rubymonk.com ~ Hashes, in and out.</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Hash_function">Wikipedia: Hash Function</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Hash_table">Wikipedia: Hash Table</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Hash_list">Wikipedia: Hash List</a>
-            </li>
-            <li>
-              <a href="https://en.wikipedia.org/wiki/Hash_tree">Wikipedia: Hash Tree</a>
+              <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Reference/Objects/Enumerable">Wikibooks: Ruby Enumerable</a>
             </li>
           </ul>
         </div>

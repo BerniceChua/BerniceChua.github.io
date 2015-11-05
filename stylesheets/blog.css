@@ -58,6 +58,12 @@ nav ul li {
 
 .clearfix { clear: both; }
 
+.img-align-cntr { 
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 code {
     border-style: solid;
     border-width: 1px;
