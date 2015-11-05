@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="shortcut icon" href="../imgs/favicon.ico" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/html-boilerplate-normalize-main.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+    <![endif]-->
+
+    <title>Bernice's Dev Bootcamp Blog ^_^ ~ Enumerables In Ruby</title>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header>
+        <div class="banner">
+            <a  class="logo" 
+        href="http://BerniceChua.github.io">BerniceChua.github.io</a>
+     <nav>
+        <ul class="nav_container">
+            <li>
+                <a href="http://BerniceChua.github.io">
+                    Home</a>
+            </li>
+            <li>
+                <a href="./index.html">Blog</a>
+            </li>
+            <!-- In HTML, &#233; renders as é -->
+                      <!--<a href="./resume.html">Curriculum Vitae/Resum&#233;</a>
+                  </li> -->
+  <!--                <li>
+                      <a href="./programs.html">Programs I Made</a>
+                  </li>
+                  <li>
+                      <a href="./affiliates.html">Affiliates</a>
+                  </li>
+                  <li>
+                      <a href="./contactMe()">
+                          Contact Me (under construction)</a>
+                  </li>
+                  <li>
+                      <a href="./acknowledgements.html">Acknowledgements</a>
+                  </li>
+  -->
+              </ul>
+          </nav>
+        </div>
+    </header>
+    
+    <main role="main" class="main_content">
+      <section class="title">
+        <h1 class="page-title"><a href="http://BerniceChua.github.io/blog/index">Bernice's Dev Bootcamp Blog ^_^</a></h1>
+        <p class="author">By Bernice Anne W. Chua</p>
+      </section>
+
+      <nav>
+        <ul class="float-left">
+          <li><a href="http://bernicechua.github.io/blog/git">First</a></li>
+          <li><a href="http://bernicechua.github.io/blog/arrays-hashes">Previous</a></li>
+        </ul>
+
+        <ul class="float-right">
+          <li>Next</li>
+          <li>Most Recent</li>
+        </ul>
+      </nav>
+
+      <article class="main_column blog-post">
+        <h2 class="mrgn-btm-no">Enumerate All The Collections!!!  (Or is it "Collect all the Enumerables?")</h2>
+        <p class="mrgn-top-no">posted on November 2, 2015</p>
+
+        <div>
+          <img src="../imgs/2751075.jpg" alt="'All The Things!' meme" class="img-align-cntr">
+
+          <h3>In Ruby, an Enumerable is a...</h3>
+
+          <p>... <code>mixin</code> that provides methods for collections of items (like arrays, hashes, ranges, and pseud-arrays like "Ranges" in Ruby or strings) so that they can be stepped through, then filtered or searched to find one or more elements that match one or more criteria.  </p>
+
+          <h3>But let's backtrack first!!!!!  What even is a <code>mixin</code>?!?  (And how is that even pronounced???!!?!?!!!!)</h3> 
+
+          <p>To answer that question, in programming, there is a software design technique called <em>modular programming</em>.  In this technique, the functionality of a program is separated into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality.  In other words, it's a thing that contains common functionality or methods that classes or objects have in common.  So this "thing" gets shared by the classes and objects that needs these functionality and methods, instead of each class or each object writing their own.  For Ruby, this is called either a "<code>mixin</code>" (pronounced as "mix-in"), and sometimes it's called a "<code>module</code>" interchangeably.  </p>  
+
+          <p>To create a <code>module</code> in Ruby, we simply start the code block with <code>module NameOfMyModule</code>.  To put this <code>module</code> into a class or object that wants to use the functionality of this module, we don't use inheritance, but we do this by putting "<code>include NameOfMyModule</code>" in the beginning of the class, right under <code>class NameOfMyClass</code>.  </p>
+
+          <h3>But why can't we just use good ol' inheritance?</h3>
+
+          <p>Well, inheritance is good <em>most of the time</em>, especially when the class or the object is a kind of class or object of the parent class that it inherits from.  But there are some cases where classes or objects from VASTLY different parent classes would need to share some common actions.  For example, a string versus an array versus a hash are different from each other, but they need to share some common actions, like loop through each element.  To loop through or iterate from a hash is very different from iterating through a string, but they both need those actions.  So if I tried to have a String object inherit the looping capabilities of a Hash object (AKA "multiple inheritance", I could run into all kinds of problems.  <a href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">Wikipedia gives a very good explanation about this phenomenon called "the diamond problem".</a>  In other words, one does not simply use multiple inheritance.  Because if your parent classes have methods that override each other, you're gonna have a bad time.  </p> 
+
+          <img src="../imgs/2751374.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
+          <img src="../imgs/2751441.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
+
+          <p>Anyway, for those of you curious to know, <a href="https://en.wikipedia.org/wiki/Mixin#History">this is why a <code>module</code> is sometimes called a <code>mixin</code>, and where the name comes from</a>.  </p>
+
+          <h3>Specifically for Enumerables in Ruby...</h3>
+
+          <p>In Ruby, common characteristics among the <code>Collections</code>-type objects tend to reside in the "<code>Enumerable</code>" module.  Any class that aspires to have enumerable-like properties must have two important things:
+            <ol>
+              <li>"<code>include Enumerable</code>" in the beginning of the class, right under <code>class NameOfYourClass</code></li>
+              <li>a <code>.each</code> method whose job it is to <code>yield</code> items to a supplied code block, one at a time.  </li>
+            </ol>
+          </p>
+
+          <p>Exactly what <code>.each</code> does will vary from one class to another. In the case of an array, <code>.each</code> <code>yields</code> the first element, then the second, and so forth. In the case of a hash, it <code>yields</code> key/value pairs in the form of two-element arrays. In the case of a filehandle, it yields one line of the file at a time. Ranges iterate by first deciding whether iterating is possible (if the start point is a float, this isn’t possible) and then pretending to be an array.  </p>
+
+          <p>If you make your own class, <code>.each</code> can mean whatever you want it to mean, as long as it <code>yields</code> something. So <code>.each</code> has different semantics for different classes. But however each is implemented, the methods in the Enumerable module depend on being able to call it.  As long as "<code>include Enumerable</code>" is present and there is an <code>each</code> method inside, <code>NameOfYourClass</code> will now automatically just have methods built on top of the each method.  This is because all of those methods are built on top of <code>each</code>.  </p>
+
+<pre>[1] 2.2.3 > Enumerable.instance_methods.sort 
+[ 
+    [ 0] :all?, 
+    [ 1] :any?, 
+    [ 2] :chunk, 
+    [ 3] :collect, 
+    [ 4] :collect_concat, 
+    [ 5] :count, 
+    [ 6] :cycle, 
+    [ 7] :detect, 
+    [ 8] :drop, 
+    [ 9] :drop_while, 
+    [10] :each_cons, 
+    [11] :each_entry, 
+    [12] :each_slice, 
+    [13] :each_with_index, 
+    [14] :each_with_object, 
+    [15] :entries, 
+    [16] :find, 
+    [17] :find_all, 
+    [18] :find_index, 
+    [19] :first, 
+    [20] :flat_map, 
+    [21] :grep, 
+    [22] :group_by, 
+    [23] :include?, 
+    [24] :inject, 
+    [25] :lazy, 
+    [26] :map, 
+    [27] :max, 
+    [28] :max_by, 
+    [29] :member?, 
+    [30] :min, 
+    [31] :min_by, 
+    [32] :minmax, 
+    [33] :minmax_by, 
+    [34] :none?, 
+    [35] :one?, 
+    [36] :partition, 
+    [37] :reduce, 
+    [38] :reject, 
+    [39] :reverse_each, 
+    [40] :select, 
+    [41] :slice_after, 
+    [42] :slice_before, 
+    [43] :slice_when, 
+    [44] :sort, 
+    [45] :sort_by, 
+    [46] :take, 
+    [47] :take_while, 
+    [48] :to_a, 
+    [49] :to_h, 
+    [50] :zip 
+] 
+[2] 2.2.3 > Enumerable.instance_methods(false).sort 
+[ 
+    [ 0] :all?, 
+    [ 1] :any?, 
+    [ 2] :chunk, 
+    [ 3] :collect, 
+    [ 4] :collect_concat, 
+    [ 5] :count, 
+    [ 6] :cycle, 
+    [ 7] :detect, 
+    [ 8] :drop, 
+    [ 9] :drop_while, 
+    [10] :each_cons, 
+    [11] :each_entry, 
+    [12] :each_slice, 
+    [13] :each_with_index, 
+    [14] :each_with_object, 
+    [15] :entries, 
+    [16] :find, 
+    [17] :find_all, 
+    [18] :find_index, 
+    [19] :first, 
+    [20] :flat_map, 
+    [21] :grep, 
+    [22] :group_by, 
+    [23] :include?, 
+    [24] :inject, 
+    [25] :lazy, 
+    [26] :map, 
+    [27] :max, 
+    [28] :max_by, 
+    [29] :member?, 
+    [30] :min, 
+    [31] :min_by, 
+    [32] :minmax, 
+    [33] :minmax_by, 
+    [34] :none?, 
+    [35] :one?, 
+    [36] :partition, 
+    [37] :reduce, 
+    [38] :reject, 
+    [39] :reverse_each, 
+    [40] :select, 
+    [41] :slice_after, 
+    [42] :slice_before, 
+    [43] :slice_when, 
+    [44] :sort, 
+    [45] :sort_by, 
+    [46] :take, 
+    [47] :take_while, 
+    [48] :to_a, 
+    [49] :to_h, 
+    [50] :zip 
+  ]
+</pre>
+<figcaption><i>The book (<em>The Well Grounded Rubyist</em>) says that putting <code>false</code> inside <code>.instance_methods()</code> would make this list shorter?  I don't see the difference, but this was done in coderpad.io, so maybe that's why?  Oh well...  </i></figcaption>
+
+          <p>Arrays serve generically as the containers for most of the results that come back from enumerable selecting and filtering operations, whether or not the object being selected from or filtered is an array. There are some exceptions to this quasi-rule, but it holds widely.  </p>
+
+          <p>The array is the most generic container and therefore the logical candidate for the role of universal result format. A few exceptions arise. A hash returns a hash from a select or reject operation. Sets return arrays from map, but you can call map! on a set to change the elements of the set in place. For the most part, though, enumerable selection and filtering operations come back to you inside arrays.  </p>
+
+          <h3>Now, here is a little more detail about the the <code>Enumerable</code> method called <code>.cycle</code>:</h3>
+
+          <p>Ruby-doc.org defines <code>cycle</code> as: "Calls block for each element of enum repeatedly n times or forever if none or nil is given. If a non-positive number is given or the collection is empty, does nothing. Returns nil if the loop has finished without getting interrupted.  #cycle saves elements in an internal array so changes to enum after the first pass have no effect.  If no block is given, an enumerator is returned instead"</p>
+
+          <p>In other words, <code>cycle</code> is basically a combination of <code>.times</code> AND either a <code>for</code> loop or <code>.each</code> inside of it.  So these 4 sets of code are equivalent and do the exact same thing.  (Although, it's super-important to put a parameter inside the parentheses of <code>.cycle()</code>, or else you'll end up with an infinite loop!!!)  </p>
+
+<pre>
+counter = 0
+while counter &lt; number_of_times_to_redo
+  for item in my_generic_enumerable
+    puts item
+  end
+
+  counter += 1
+end
+</pre>
+
+<pre>
+number_of_times_to_redo.times {
+  for item in my_generic_enumerable
+    puts item
+  end
+}
+</pre>
+
+<pre>
+number_of_times_to_redo.times {
+  my_generic_enumerable.each {
+    puts item
+  }
+}
+</pre>
+
+<pre>
+my_generic_enumerable.cycle(number_of_times_to_redo) {
+  puts item
+}
+</pre>
+          <p>I think that's really awesome how all those lines of code were able to be refactored to only 3 lines of code!!!  ^__^</p>
+
+
+          <h3>Here are additional helpful links:</h3>
+          <ul>
+            <li>
+              <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html">Programming Ruby: The Pragmatic Programmer's Guide - Modules</a>
+            </li>
+            <li>
+              <a href="http://ruby-doc.org/core-2.2.3/Enumerable.html">Ruby-Docs - Module:Enumerable (Ruby 2.2.3)</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/79-getting-modular">Rubymonk.com ~ 8.1 Getting Modular</a>
+            </li>
+            <li>
+              <a href="http://www.sitepoint.com/ruby-mixins-2/">sitepoint.com - Ruby Mixins</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Mixin">Wikipedia: Mixin</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Modular_programming">Wikipedia: Modular Programming</a>
+            </li>
+            <li>
+              <a href="https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/48-advanced-modules/lessons/117-included-and-extend">Rubymonk.com ~ "includes" callback</a>
+            </li>
+            <li>
+              <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Reference/Objects/Enumerable">Wikibooks: Ruby Enumerable</a>
+            </li>
+          </ul>
+        </div>
+
+      </article>
+    </main>
+
+    <footer  class="footer">
+            <div class="button_group">
+        <div class="followbuttons">
+                    <a href="https://github.com/BerniceChua">
+                    <img src="../imgs/Fork_Me_On_GitHub.png" alt="View Bernice Anne W. Chua's repo on GitHub">
+                    </a>
+                </div>                      
+
+                <!-- <div class="followbuttons">
+                    <a href="https://coderbits.com/BerniceChua">
+                    <img src="./coderbits.png" alt="View Bernice Anne W. Chua's profile on CoderBits">
+                    </a>
+                </div> -->
+
+                <div class="followbuttons">
+                    <a href="https://twitter.com/ChuaBernice" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ChuaBernice</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                </div>
+
+                <div class="followbuttons">
+                <!-- Place this code where you want the badge to render. -->
+                    <a href="http://plus.google.com/115377831515196015573?prsrc=3"
+                        rel="publisher" target="_top" style="text-decoration:none;">
+                    <img src="http://ssl.gstatic.com/images/icons/gplus-32.png" 
+                        alt="Google+" style="border:0;width:32px;height:32px;"/>
+                    </a>
+                </div>
+
+                <div class="followbuttons">
+                    <a href="http://www.linkedin.com/in/bernicechua415">
+                      <img  class="linkedin-button" 
+                          src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" 
+                          alt="View Bernice Anne W. Chua's profile on LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+  </body>
+</html>
