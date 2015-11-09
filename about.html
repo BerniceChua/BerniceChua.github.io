@@ -1,23 +1,3 @@
-<!--
-<?php
-
-if($_POST["submit"]) {
-    $recipient="Bernice.Chua.415@gmail.com";
-    $subject="Form to email message";
-    $sender=$_POST["sender"];
-    $senderEmail=$_POST["senderEmail"];
-    $message=$_POST["message"];
-
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
-
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
-
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
-}
-
-?>
--->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,7 +19,7 @@ if($_POST["submit"]) {
       <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
     <![endif]-->
 
-    <title>BerniceChua.github.io ~ Contact Me</title>
+    <title>BerniceChua.github.io ~ About</title>
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -88,39 +68,27 @@ if($_POST["submit"]) {
 
     <main class="main_content">
       <section class="title">
-        <h1 class="page-title"><a href="mailto:Bernice.Chua.415@gmail.com">Contact Me ^_^</a></h1>
+        <h1 class="page-title">About...</h1>
       </section>
 
       <section class="main_column">
-        <h3>You can contact me through the links on the footer of this page, or you could send me an email through:</h3>
-<!-- 
-        <?=$thankYou ?>
+        <h3>About this website</h3>
 
-       <form method="post" action="contact.php">
-          <label>Name:</label>
-          <input name="sender">
+        <p>Hi everyone, my name is Bernice and welcome to my website. ^_^</p>
 
-          <label class="clearfix">Email address:</label>
-          <input class="clearfix" name="senderEmail">
+        <p>This website will always be improved and updated as my skills improve and update.</p>
 
-          <label class="clearfix">Message:</label>
-          <textarea class="clearfix"rows="5" cols="20" name="message"></textarea>
+        <h3>About Bernice</h3>
 
-          <input class="clearfix" type="submit" name="submit">
-        </form>
+        <p>Currently, I am a student in Dev Bootcamp.</p>
 
-        <form action="mailto:Bernice.Chua.415@gmail.com" enctype="text/plain" method="post">
-          <p>Name: <input name="Name" type="text" id="Name" size="40"></p>
-          <p>E-mail address: <input name="E-mail" type="text" id="E-mail" size="40"></p>
-          <p>Message:</p>
-          <p><textarea name="Comment" cols="55" rows="5"
-          id="Comment"></textarea></p>
-          <p><input type="submit" name="Submit" value="Submit"></p>
-        </form>
--->
-        <address>
-          <p><a href="mailto:mailto:Bernice.Chua.415@gmail.com">Bernice.Chua.415@gmail.com</a></p>
-        </address>
+        <p>Before this, I was an I.T. professional, who used to work in <a href="http://www.boku.com/">Boku</a> in San Francisco, CA; <a href="http://www.google.com/">Google</a> in Mountain View, CA; and <a href="https://www.campbells.com/campbell-soup/">Campbell Soup</a> in Sacramento (<a href="https://www.google.com/search?q=campbell+soup+company&rlz=1C1MSIM_enUS621US621&oq=campbell+soup&aqs=chrome.2.69i57j0l5.5887j0j1&sourceid=chrome&es_sm=93&ie=UTF-8#q=campbell+soup+in+sacramento+ca">before it closed down</a>).</p>
+        
+        <p>I attended the University of California, Davis, where I majored in Economics and minored in Geography.</p>
+
+        <p>When I am not coding and find the time, I like to play videogames; read books/graphic novels/manga; geek out on sci-fi & fantasy; work out & practice Muay Thai; try out different food; take pictures of whatever looks interesting & awesome to me; try to tinker with my Raspberry Pi & Arduino; and go hiking.</p>
+
+        <p>If you want to know more, you can click on the links to GitHub, LinkedIn, Google+, or Twitter below.</p>
 
       </section>
     </main>
