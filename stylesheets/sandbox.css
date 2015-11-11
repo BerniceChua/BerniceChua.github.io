@@ -1,0 +1,278 @@
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900);
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+body {
+    /*background-image:url('http://images1.pixlis.com/background-image-circles-bubbles-sponge-soap-seamless-tileable-puerto-rico-spice-238qmt.png');*/
+    /*background-image:url('../imgs/textured-bg.jpg');*/
+    background-image: url('../imgs/blue-thatch.jpg');
+    background-repeat: repeat;
+    /*background-repeat:no-repeat;
+    background-size:100% 100%;*/
+
+    font-family: 'Maven Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: slategray;
+}
+
+/*~~~~~~~~~~BEGIN-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+header {
+    margin: 0;
+    background-color: black;
+    /*min-width: 786px;*/
+    min-width: 100%
+}
+.banner {
+    color: #F0F0F0;
+    /*text-shadow: 20px 20px 20px #ddd;*/
+    background-color: black;
+    /*min-width: 786px;*/
+    min-width: 60%;
+
+    height: 100px;
+    /*padding: 20px;*/
+    /*padding-top: 38px;*/
+    padding-top: 1.5em;
+    text-align: center;
+
+    /*padding-bottom: 38px;*/
+    padding-bottom: 1.5em;
+
+/*    margin-left: auto !important;
+    margin-right: auto !important;
+    min-width: 977px;
+    position: fixed;
+    z-index: 3;*/
+}
+
+.logo {
+    font-family: 'Special Elite', monospace;
+    /*font-size: 3rem;*/
+    font-size: 200%;
+    color: #F0F0F0;
+    background-color: black;
+    padding: 1em;
+    padding-bottom: 1.5em;
+}
+
+.nav_container {
+    text-align: center;
+    list-style-type: none;
+    background-color: black;
+
+    min-width: 90%;
+    /*width: 100%;*/
+    margin-left: 0;
+    margin-right: 0;
+    color: white;
+}
+
+.nav_container li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.nav_container li a {
+    display: inline-block;
+    text-decoration: none;
+
+    color: grey;
+}
+
+.nav_container li a:hover {
+    color: ghostwhite;
+}
+
+.nav_container li a:active {
+    color: ghostwhite;
+    background-color: #FF0000; /* Red */
+    /*background-color: #BB002A; /* from https://color.adobe.com/create/color-wheel/?base=0&rule=Shades&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.7333333333333333,0,0.16470588235317338,0.4833333333333333,0,0.10855614973285127,0.23333333333333328,0,0.05240641711241095,0.7833333333333333,0,0.17593582887737966,0.6333333333333333,0,0.14224598930511548&swatchOrder=0,1,2,3,4 */
+    /*background-color: #970019; /* https://color.adobe.com/create/color-wheel/?base=2&rule=Shades&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.592156862745098,0,0.09803909154999702,0.8349019607843137,0,0.13822862643031705,0.69,0,0.11423826594839964,0.74,0,0.1225164011620518,0.59,0,0.09768199552109535&swatchOrder=0,1,2,3,4 */
+    /*background-color: #B22222; /* FireBrick */
+    /*background-color: #800000; /* Maroon */
+    background-color: #DC143C; /* Crimson */
+    /*background-color: #cc0000; /* "Scarlet Red 2" from http://colrd.com/color/0xffcc0000/ */
+    /*background-color: #F43683;*/
+}
+/*~~~~~~~~~~END-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
+
+/*----------BEGIN-Style of the main content.----------*/
+.main_content {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    /*background: mistyrose;*/
+    background-image:url('../imgs/textured-bg.jpg');
+
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -52px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.main_content a:hover {
+    font-weight: bold;
+    color: #FF4500; /* OrangeRed */
+}
+
+.menu_column {
+    width: 250px;
+    float: left;
+    position: fixed;
+
+    margin-top: 2em;
+}
+
+#nav_side_column {
+    list-style: none;
+    margin-left: -15px;
+    text-align: center;
+}
+
+#nav_side_column li {
+    padding: 8px;
+    background: ghostwhite;
+    border-top: solid darkred 4px;
+    border-left: solid darkred 4px;
+    border-bottom: solid darkred 2px;
+    border-bottom-left-radius: 100px;
+    opacity: 0.5;
+}
+
+#nav_side_column li:hover {
+    opacity: 1;
+/*    box-shadow: -5px 10px 15px #777;*/
+    width: 207px;
+    border-right: solid ghostwhite 3px;
+}
+
+#nav_side_column li a {
+    font-weight: bold;
+}
+
+#nav_side_column li a:hover {
+    color: red;
+}
+
+#nav_side_column li:active {
+    opacity: 1;
+    width: 208px;
+/*    border-left-style: inset;
+    border-top-style: inset;
+    border-right-style: hidden;*/
+    background: darkred;
+    border-right: solid darkred 2px;
+}
+
+#nav_side_column li a:active {
+    color: ghostwhite;
+}
+
+#nav_side_column li.selected {
+    opacity: 1;
+/*    box-shadow: -5px 10px 15px #777;*/
+    width: 208px;
+    border-right: solid ghostwhite 2px;
+}
+
+#nav_side_column li a.selected {
+    color: black;
+}
+
+#nav_side_column li.selected:active {
+    border-right: solid darkred 2px;
+}
+
+.main_column {
+    min-width: 70%;
+    /*margin-left: 250px;*/
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    border: solid darkred 5px;
+    border-radius: 10px;
+    background-color: ghostwhite;
+    padding: 15px;
+    box-shadow: 10px 10px 15px #777;
+}
+
+
+.main_column h1, p {
+    margin: 10px;
+}
+
+margin-s { margin: 3%; }
+
+#greeting, .dateButton, .title, .centerP {
+    text-align: center;
+}
+/*----------END-Style of the main content.----------*/
+
+.button_group {
+    /*This allows the buttons on the bottom to be centered.*/
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    /*Without "width", this div will extend 100% horizontally.
+     * hence, it won't be centered the way we want.*/
+    width: 70%;
+}
+
+.followbuttons {
+    display: inline;
+    float: right;
+    padding: 5px;
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.footer {
+    bottom: 0;
+    min-width: 786px;
+    /*min-width: 957px;*/
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    /*margin-left: -8px;*/
+    /*padding-right: 38px;*/
+    background-color: #FFC0CB; /*pink*/
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: -3em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: fixed;
+
+    background-image: -moz-linear-gradient(top,  #FFF0F5 0%, #FFC0CB 100%); /* FF3.6+ */  
+    background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#FFF0F5), color-stop(100%,#FFC0CB)); /* Chrome,Safari4+ */  
+    background-image: -webkit-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Chrome10+,Safari5.1+ */  
+    background-image: -o-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Opera 11.10+ */  
+    background-image: -ms-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* IE10+ */  
+    background-image: linear-gradient(to bottombottom,  #FFF0F5 0%,#FFC0CB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF0F5', endColorstr='#FFC0CB',GradientType=0 ); /* IE6-9 */
+
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 1px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 0 0px 0px rgba(0, 0, 0, .5);  
+}
+
+.footer, .push {
+    /*height: 142px;*/ /* .push must be the same height as .footer */
+    height: 42px;
+}

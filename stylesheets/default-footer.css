@@ -1,0 +1,67 @@
+.button_group {
+    /*This allows the buttons on the bottom to be centered.*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: green;
+    /*Without "width", this div will extend 100% horizontally.
+     * hence, it won't be centered the way we want.*/
+    width: 630px;
+}
+
+.followbuttons {
+    display: inline;
+    float: right;
+    padding: 5px;
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.footer {
+    bottom: 0;
+    min-width: 786px;
+    /*min-width: 957px;*/
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    /*margin-left: -8px;*/
+    /*padding-right: 38px;*/
+    background-color: #FFC0CB; /*pink*/
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    margin-top: -3em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    position: fixed;
+
+    background-image: -moz-linear-gradient(top,  #FFF0F5 0%, #FFC0CB 100%); /* FF3.6+ */  
+    background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#FFF0F5), color-stop(100%,#FFC0CB)); /* Chrome,Safari4+ */  
+    background-image: -webkit-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Chrome10+,Safari5.1+ */  
+    background-image: -o-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* Opera 11.10+ */  
+    background-image: -ms-linear-gradient(top,  #FFF0F5 0%,#FFC0CB 100%); /* IE10+ */  
+    background-image: linear-gradient(to bottombottom,  #FFF0F5 0%,#FFC0CB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF0F5', endColorstr='#FFC0CB',GradientType=0 ); /* IE6-9 */
+
+    border-right: 1px solid rgba(0, 0, 0, .2);  
+    border-left: 1px solid rgba(0, 0, 0, .2);  
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    border-top: 1px solid rgba(250, 250, 250, .2);
+
+    box-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, .4),
+                inset 0px 1px 1px 0px rgba(0, 0, 0, .2);
+
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .2),  
+                inset 0px 0 0px 0px rgba(0, 0, 0, .5);  
+}
+
+.footer, .push {
+    /*height: 142px;*/ /* .push must be the same height as .footer */
+    height: 42px;
+}
