@@ -58,10 +58,15 @@ nav ul li {
 
 .clearfix { clear: both; }
 
-.img-align-cntr { 
+.align-cntr { 
     display: block;
     margin-right: auto;
     margin-left: auto;
+}
+
+.imgs-for-small-screens {
+    max-width: 50%;
+    width: 90%;
 }
 
 code {
@@ -76,7 +81,7 @@ code {
 pre {
     display: block;
     border-style: groove;
-    padding: 1%;
+    padding: 1em;
     background-color: #2F4F4F;
     color: #E9967A; /* DarkSalmon */
 }

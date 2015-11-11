@@ -104,9 +104,7 @@
 
                     <p>In order to do this, it is important to make sure that the path to the external file is correct, or else the effects of that file won't appear in the HTML file.  Also, it is important to make the syntax correct, like this:</p>
                     <code>
-                      <!-- <pre> -->
                         &lt;link rel="stylesheet" type="text/css" href="path/of/my/stylesheet.css"&gt;
-                      <!-- </pre> -->
                     </code>
 
                     <p>Because the .css file is separate from the .html file, the .css is infinitely re-usable.  The person who wrote the webpage does not need to re-do the style on each page.  They just have to copy that link.  Also, the content and structure of the .html does not need to be cluttered by random &lt;style&gt; tags all throughout.  For these reasons, I say "CSS FTW!!!" ("FTW" means "for the win!!!".)  But CSS can sometimes also be very "WTF!????!?!!???"-inducing.</p>
@@ -125,40 +123,40 @@
 
                     <p>Classes are more portable, and more than one class can be used to style one element.  For example, in our code we wanted a particular line to have multiple attributes, so we did this: </p>
 
-                    <pre><code>&lt;span class="description-text separate-line"&gt;Updated August 10, 2015&lt;/span&gt;;</code></pre>
+                    <code>&lt;span class="description-text separate-line"&gt;Updated August 10, 2015&lt;/span&gt;;</code>
 
                     <p>When we did that, that string of characters  got the attributes of these 2 classes at the same time:</p>
     
-                    <pre>
-                    .description-text {
-                      font-size: .60em;
-                      padding-top: .5%;
-                      margin-top: .5%;
-                    }
-                    and
-                    .separate-line {
-                      display: block;
-                    }</pre>
+<pre>
+.description-text {
+  font-size: .60em;
+  padding-top: .5%;
+  margin-top: .5%;
+}</pre>
+                    <p>and</p>
+<pre>.separate-line {
+  display: block;
+}</pre>
 
                     <p>That cannot be done with ID selectors.  If I were to use an ID, doing the same thing would give me these error messages:</p>
-                    <pre>
-                    #description-text {
-                      font-size: .60em;
-                      padding-top: .5%;
-                      margin-top: .5%;
-                    }
-                    and
-                    #separate-line {
-                      display: block;
-                    }
-                    </pre>
+<pre>
+#description-text {
+  font-size: .60em;
+  padding-top: .5%;
+  margin-top: .5%;
+}</pre>
+                    <p>and</p>
+<pre>#separate-line {
+  display: block;
+}
+</pre>
 
   <p><code>&lt;span id="description-text" id="separate-line"&gt;Updated August 10, 2015&lt;/span&gt;;</code> will give me this error message:
-  <img src="../imgs/not-allowed-2-ids.PNG" alt="Not Allowed 2 IDs."></p>
+  <img src="../imgs/not-allowed-2-ids.PNG" alt="Not Allowed 2 IDs." class="imgs-for-small-screens align-cntr"></p>
   
   <p><code>&lt;span id="description-text separate-line"&gt;Updated August 10, 2015&lt;/span&gt;;</code> </p>
   <p>this is also not allowed either:
-  <img src="../imgs/you-can't-put-2-in-1.PNG" alt="Error Message Of 2 IDs In 1."></p>
+  <img src="../imgs/you-can't-put-2-in-1.PNG" alt="Error Message Of 2 IDs In 1." class="imgs-for-small-screens align-cntr"></p>
 
 
 
@@ -189,7 +187,7 @@
 
                     <p>To better understand margins, borders, and padding, modern browsers like Firefox and Google Chrome have a tool for inspecting individual HTML elements.  Since this school is using Google Chrome, here's a screenshot of Google's Chrome Dev Tools:</p>
 
-                    <img src="../imgs/css-box-model-chrome-dev-tools.png" alt="Screenshot of CSS Box Model in Chrome Dev Tools.">
+                    <img src="../imgs/css-box-model-chrome-dev-tools.png" alt="Screenshot of CSS Box Model in Chrome Dev Tools." class="imgs-for-small-screens align-cntr">
 
                     <p>This screenshot illustrates that the element that I'm looking at has a width of 475px, and a height of 40px.  It has 4px padding on the top and bottom, 8px padding on its left, and 40px padding on its right.  It does not have a border, that's why there are no numbers on that side.  But it has margins set to 64.50px on its left and right.  The box model and the browser's Dev Tools are very useful for figuring out why an HTML element is positioning itself in an unexpected way.  If the margins of an element are huge, it may be pushing the elements under it more down on the webpage than you'd expect from just normal positioning from "fixed", "relative", and "absolute".</p>
 
