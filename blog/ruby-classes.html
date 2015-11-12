@@ -66,33 +66,30 @@
               <nav>
                 <ul class="float-left">
                   <li><a href="http://bernicechua.github.io/blog/git">First</a></li>
-                  <li><a href="http://bernicechua.github.io/blog/wireframe">Previous</a></li>
+                  <li><a href="http://bernicechua.github.io/blog/enumerable-methods">Previous</a></li>
                 </ul>
 
                 <ul class="float-right">
-                  <li><a href="http://bernicechua.github.io/blog/arrays-hashes">Next</a></li>
-                  <li><a href="http://bernicechua.github.io/blog/enumerable-methods">Most Recent</a></li>
+<!--                   <li><a href="http://bernicechua.github.io/blog/arrays-hashes">Next</a></li>
+                  <li><a href="http://bernicechua.github.io/blog/enumerable-methods">Most Recent</a></li> -->
                 </ul>
               </nav>
 
               <article class="main_column blog-post">
-                <h2 class="mrgn-btm-no">Let's Make The Backend Of A Videogame!! ~ Demonstrating Classes In Ruby</h2>
+                <h2 class="mrgn-btm-no">Demonstrating How Classes Work, With Ruby</h2>
                 <p class="mrgn-top-no">posted on November 9, 2015</p>
 
-                <section class="table_of_contents">
+                <section class="table_of_contents"> <!-- Optional, only if long blog post. -->
                   <h3 class="mrgns-sm">Jump To Section....</h3>
                   <ul>
                     <li class="mrgns-sm">
-                      <a href="#margin_border_padding">What is the difference between Margin, Border, and Padding?</a>
+                      <a href="#videogame">Let's Make A Videogame!!!</a>
                     </li>
                     <li class="mrgns-sm">
-                      <a href="#classes_vs_ids">What are the best practices associated with using classes vs. ids?</a>
+                      <a href="#clock">Let's Make A Clock!!</a>
                     </li>
                     <li class="mrgns-sm">
-                      <a href="#positioning">What are the differences between relative, absolute, fixed, and static positioning?</a>
-                    </li>
-                    <li class="mrgns-sm">
-                      <a href="#inline_vs_inline-block">What does it mean to display inline vs using inline block?</a>
+                      <a href="#musings">Additional Musings</a>
                     </li>
                     <li class="mrgns-sm">
                       <a href="#more_references">Additional References And Resources</a>
@@ -100,60 +97,702 @@
                   </ul>
                 </section>
 
-                    <p></p>
+                <section>
+                    <h3 id="videogame">Let's Make A Videogame Character!!</h3>
 
-                    <p>Here are additional helpful links:</p>
+                    <p>Well, it's a super-barebones one anyway.  Note: this is only the back-end logic, and it's fake.  </p>
 
-                    <ul>
-                      <li>Box Model:
-                        <ul>
-                          <li>
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model</a>
-                          </li>
-                          <li>
-                            <a href="http://www.w3.org/TR/CSS21/box.html">http://www.w3.org/TR/CSS21/box.html</a>
-                          </li>
-                          <li>
-                            <a href="https://css-tricks.com/box-sizing/">https://css-tricks.com/box-sizing/</a>
-                          </li>
-                          <li>
-                            <a href="https://css-tricks.com/the-css-box-model/">https://css-tricks.com/the-css-box-model/</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>To learn more about CSS positions:
-                        <ul>
-                          <li>
-                            <a href="https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/">https://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/</a>
-                          </li>
-                          <li>
-                            <a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">http://www.barelyfitz.com/screencast/html-training/css/positioning/</a>
-                          </li>
-                          <li>
-                            <a href="http://www.w3schools.com/css/css_positioning.asp">http://www.w3schools.com/css/css_positioning.asp</a>
-                          </li>
-                          <li>
-                            <a href="http://learn.shayhowe.com/html-css/positioning-content/">http://learn.shayhowe.com/html-css/positioning-content/</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>Convert px to flexible units:
-                        <ul>
-                          <li>
-                            <a href="http://www.w3schools.com/tags/ref_pxtoemconversion.asp">http://www.w3schools.com/tags/ref_pxtoemconversion.asp</a>
-                          </li>
-                          <li>
-                            <a href="http://yuilibrary.com/yui/docs/cssfonts/cssfonts-size.html">http://yuilibrary.com/yui/docs/cssfonts/cssfonts-size.html</a>
-                          </li>
-                          <li>
-                            <a href="https://offroadcode.com/prototypes/rem-calculator/">https://offroadcode.com/prototypes/rem-calculator/</a>
-                          </li>
-                          <li>
-                            <a href="http://pxtoem.com/">http://pxtoem.com/</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                    <p>In this imaginary videogame that we're making, the player characters will cooperate with each other, to compete against the enemy-AI in collecting gold coins, while they must avoid traps and pits by jumping.  The game is won when all of the remaining coins have been collected by the player if there is 1 player, or all the players if this is multi-player.  If they touch a trap or fall into a pit, they will lose a "life".  Each player character will have 3 lives, but they can perform certain actions to gain another "life".  If their number of lives reaches zero, the player-character "dies" and cannot play anymore.  (Kind of like Super Mario/Sonic The Hedgehog, but not.)</p>
+
+                    <p>Using classes makes creating the player characters really easy!  To create a character through a class, I will need to first define the class that makes them.  We start it by writing:</p>
+
+<pre>
+  class PlayerCharacter
+  end
+</pre>
+
+                    <p>wherein <code>class</code> is a reserved keyword in Ruby, that tells Ruby what kind of code we are creating.  <code>PlayerCharacter</code> is the name of this particular class.  And last but not least, the class needs to know where its code ends, so we put <code>end</code>.</p>
+
+                    <p>For now, <code>PlayerCharacter</code> is not doing anything because nothing is inside, and nothing is calling it.  For the player character to <em>have the features that we want</em>, we need to <code>initialize</code> it.  For the player character to <em>be able to do actions</em>, we need to give it a <code>method</code>, like this: </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <p>Remember <code>include</code> from <a href="enumerable-methods.html">the previous blog post</a>?  I put that here, because the code for the "jump" action was already written there, and the code for what constitutes a game character/entity to be "destroyed" already exists.  Other game entities also need to jump and/or get destroyed, but they are not necessarily the same kind of thing as a "PlayerCharacter", so we DON'T want the player character to inherit ALL of their methods.  So those actions were put into modules so different kinds of classes can share them.  Since different modules already took care of jumping and getting destroyed, all our code needs to worry about is the logic for the PlayerCharacter.  Namely, what is the player-character's name and color-scheme(because the gamers can customize their character with a name since this is multi-player), how many gold coins got collected by each, and how many lives the character has left.  </p>
+
+                    <p>This is exactly what the <code>initialize</code> method of <code>PlayerCharacter</code> does.  When a new character is made, it sets up the starting conditions.  <code>@lives</code> is 3, because all player characters start out with 3 lives.  <code>@coins</code> is 0 because at the start, each character hasn't collected any coins yet.  But <code>@name</code> and <code>@color_scheme</code> are set to whatever the player will input.  When we create a new <code>"PlayerCharacter"</code> object, it will require a name and a color scheme, or else the program will spit out an <code>ArgumentError: wrong number of arguments</code>.  Like this: </p>
+
+<pre>
+  # Making a new character:
+
+  # This will give an error message, because there were no inputs.
+  player0 = PlayerCharacter.new
+
+  # This will create a new character named "Berni", with 
+  # a "Metallic Color Scheme".
+  player1 = PlayerCharacter.new("Berni", "Metallic Color Scheme")
+
+  # A new player appears!  
+  player2 = PlayerCharacter.new("Freeman", "Orange Color Scheme")
+  # This will create a new character named "Freeman", with 
+  # an "Orange Color Scheme".
+</pre>
+
+                    <p>Where did this <code>.new</code> method come from?  It's not in the class that we just made.  Well, any code created starting with <code>class</code>will inherit this method from <code>Object</code>, which is the class that all classes inherit from, as demonstrated here: </p>
+
+<pre>
+  p MyClass.class
+  # output is:
+  #    Class
+
+  p MyClass.superclass
+  # output is:
+  #    Object
+
+  p MyClass.superclass.superclass
+  # output is:
+  #    BasicObject
+
+  p MyClass.superclass.superclass.superclass
+  # output is:
+  #    nil (because "BasicObject" does not inherit from 
+  #          anything else anymore.  This has reached the
+  #          top-most superclass, and it's already at C,
+  #          which is the language that Ruby is based on.)
+</pre>
+
+<pre>
+p PlayerCharacter.instance_methods.sort
+
+[:!, :!=, :!~, :<=>, :==, :===, :=~, :__binding__, :__id__, :__send__, :at_
+exit, :class, :clone, :collect_coins, :define_singleton_method, :display, :
+dup, :enum_for, :eql?, :equal?, :extend, :freeze, :frozen?, :hash, :inspect
+, :instance_eval, :instance_exec, :instance_of?, :instance_variable_defined
+?, :instance_variable_get, :instance_variable_set, :instance_variables, :is
+_a?, :itself, :jump, :kind_of?, :method, :methods, :nil?, :object_id, :pret
+ty_inspect, :pretty_print, :pretty_print_cycle, :pretty_print_inspect, :pre
+tty_print_instance_variables, :private_methods, :protected_methods, :pry, :
+public_method, :public_methods, :public_send, :remove_instance_variable, :r
+equire, :respond_to?, :send, :singleton_class, :singleton_method, :singleto
+n_methods, :status, :taint, :tainted?, :tap, :to_enum, :to_s, :trust, :unta
+int, :untrust, :untrusted?] 
+
+# PlayerCharacter class has all these other methods we didn't write.
+</pre>
+
+                    <p>Basically, any methods that you don't see written in our class itself is either because anything that is a class will just automatically have them, or they are inherited from its superclasss(es).  Additionally, aside from <code>initialize</code>, which is mapped to <code>NameOfYourClass.new</code>, any method that we wrote in this class is accessible by anyone, by using <code>.[method_name_here]</code> with the objects it creates!! ^__^  Isn't that wonderful?  </p>
+
+                    <aside>Seriously, if you try to do <code>player1.initialize</code>, you will get this error message <code>NoMethodError: private method `initialize' called</code>.  </aside>
+
+                    <p>Then the horrifying realization dawns on you.... <em>any method that we wrote in this class is accessible by anyone, by using <code>.[method_name_here]</code> with the objects it creates</em>. o_o  </p>
+
+                    <p>Done pondering why this is a horrifying realization yet?  OK, it's because not every method in a class ought to be available to just anybody.  For our game, we want our player-characters to be able to jump and to collect coins, so it's perfectly ok for <code>player1.jump</code> and <code>player1.collect_coins</code> to happen.  But we cannot allow the players to access <code>.calculate_lives_left</code>, because if they can do this, then they will give themselves infinite lives.  (Now if only there was such a hack IRL lolol!!)  Anyway we don't want that in the game.  So how can this be fixed?  Fortunately, all we need to do is add the Ruby reserved word <code>private</code>.  </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+
+    private  # this is our new piece of code! ^_^
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <p>That wasn't so hard, was it?  Basically, anything AFTER the keyword <code>private</code> cannot be accessed outside the class.  These <code>private</code> methods are sometimes called "helper methods", because they help the other methods function, but we don't necessarily want them to be accessed outside.  </p>
+
+                    <p>You may be wondering what's up with all the "@" symbols.  Those basically indicate that we want those specific variables to be accessible by everything in that class.  If there is only 1 "@", it means that we want only that one instance of this object to retain this data.  For example, if <code>player1</code> fell into the pits/traps more, then only <code>player1</code> should have the information recorded of losing more lives.  This is called an "Instance Variable."  If there are 2 "@" signs ("@@"), then this means that we want any object that is this class to have this information.  In our example, it was <code>@@jump_height</code>, because all the player characters have the same jump height, when they press the button/key to jump.  This is called a "Class Variable".  Both Instance variables and Class variables are ways that a class shares information in itself.</p>
+
+                    <p>But how can <em>people</em> (the players themselves) see this information?  Like for example, I want to check my stats.  We would need methods for that action to be possible.  As of now, players cannot view their stats.  They can only make their character jump and collect coins.  If you actually write <code>player1.name</code>, you would get a <code>NoMethodError: undefined method</code>.  That's because Instance variables like <code>@name</code> or <code>@lives</code> cannot be seen OUTSIDE the class, unless we explicity write a method to allow it.  Like this: </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+    #### We added these just now! #####
+    def name
+      @name
+    end
+
+    def color_scheme
+      @color_scheme
+    end
+
+    def lives
+      @lives
+    end
+
+    def coins
+      @coins
+    end
+    #### We added these just now! #####
+
+
+    private
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <p>These new methods that we just coded are called "reader methods" or "getter methods".  Because of the code in "We added these just now!", a person can now view their game stats: </p>
+
+<pre>
+  # "Berni" is checking how many lives she has left:
+  p player1.lives
+  p player1.status  # output is "alive"
+  # player1 is relieved to find out that her status is Still Alive
+
+  # "Freeman" is also checking how many lives he has left.
+  # This number should still be 3 because he did not 
+  # fall into a pit or a trap.
+  p player2.lives
+
+  # They can now check how many coins they have collected ...
+  p player1.coins
+  p player2.coins
+
+  # ... and so on and so forth
+</pre>
+
+                    <p>Later, while you are coding your game, you get feedback that players would also want to be able to change their names and color schemes.  Well, what's the opposite of "reader methods"?  They are "writer methods"!  The other name for "writer method" is "setter method", because you use this to set a value.  There are 2 ways of coding a writer method: </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def name
+      @name
+    end
+
+    def color_scheme
+      @color_scheme
+    end
+
+    def lives
+      @lives
+    end
+
+    def coins
+      @coins
+    end
+    
+    #### We added these just now! #####
+
+    def name(new_name)
+      @name = new_name
+    end
+
+    def color_scheme=(new_color_scheme)
+      @color_scheme = new_color_scheme
+    end
+
+    #### We added these just now! #####
+
+
+    private
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <p>They do the same thing, but work in different ways.  If you use the version without an "=", then you can call this method the usual way, like so: <code>player2.name("Gordon")</code>, so when you do <code>player2.name</code>, "Freeman" is now changed to "Gordon".  If you use the version WITH an "=", you will you need to call this method like this: <code>instance_of_profile.color_scheme = "Psychedelic Color Scheme"</code> in order to change its value.  The method calls for reassigning the variables cannot be interchanged between the version with the "=" and the version without.  </p>
+
+                    <p>As you can see, this is kind of repetitive.  Ruby knows this, and this design pattern for data being read from AND modified in methods comes up so often, that Ruby has this shortcut for us.  The "getter" or "reader" methods can be written as <code>"attr_reader :my_method"</code>, and to call the method, it would be <code>my_new_instance.my_method</code>, same as before.  The "setter" or "writer" methods can be written as <code>"attr_writer :my_method"</code>, but to call the method and assign a new variable, you cannot use <code>my_new_instance.my_method(my_argument)</code> anymore, but it would just be <code>my_new_instance.my_method = [put my_argument here]</code>.  </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+    #### These code have replaced the codes that are commented out. #####
+
+    attr_reader :name
+    =begin
+    def name
+      @name
+    end
+    =end
+
+    attr_writer :name
+    =begin
+    def name(new_name)
+      @name = new_name
+    end
+    =end
+
+    attr_reader :color_scheme
+    =begin
+    def color_scheme
+      @color_scheme
+    end
+    =end
+
+    attr_writer :color_scheme
+    =begin
+    def color_scheme=(new_color_scheme)
+      @color_scheme = new_color_scheme
+    end
+    =end
+
+    attr_reader :lives
+    =begin
+    def lives
+      @lives
+    end
+    =end
+
+    attr_reader :coins
+    =begin
+    def coins
+      @coins
+    end
+    =end
+   
+    #### These code have replaced the codes that are commented out. #####
+
+
+    private
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+                    <p>We can basically access the data the same way: </p>
+
+<pre>
+  p player1.name    # returns "Berni"
+  
+  player1.name = "Bernice"     # player1 wants to change her name to "Bernice"
+
+  p player1.name    # returns "Bernice" now, instead of "Berni"
+</pre>
+
+                    <p>Ruby further allows the code to be simplified even further.  If the contents of <code>attr_reader</code> and <code>attr_writer</code> are the same, they can just be combined into <code>attr_acccessor</code>: </p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+    #### These code have replaced the codes that are commented out. #####
+
+    attr_accessor :name
+    =begin
+    attr_reader :name
+    attr_writer :name
+    =end
+
+    attr_accessor :color_scheme
+    =begin
+    attr_reader :color_scheme
+    attr_writer :color_scheme
+    =end
+    
+    #### These code have replaced the codes that are commented out. #####
+
+    attr_reader :lives
+    
+    attr_reader :coins
+
+
+    private
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <p>Changing the code from <code>attr_reader</code> and <code>attr_writer</code> won't affect how the methods work.  The data can be viewed and modified the same way: </p>
+
+<pre>
+  p player2.name    # returns "Gordon"
+  
+  player2.name = "Gordon Freeman"     # player2 wants to change the name again
+
+  p player2.name    # returns "Gordon Freeman" now, instead of "Gordon"
+</pre>
+
+                    <p>If attr_accessor is so simple, why not just use it for everything, in order to save on typing?  Why weren't <code>attr_reader :lives</code> and <code>attr_reader :coins</code> changed?  For the same reason that we keep some methods to be private -- we cannot allow the players to just write whatever they want for lives and coins.  Because if they can do this, then they will give themselves infinite lives and infinite money to win the game.  (Now if only there was such a hack IRL lolol!!)  Anyway we don't want that in the game, because it will make the game no fun.  </p>
+
+                    <p>This is our "final" product.  We now have a player character! ^__^  Not bad for a n00b, eh?</p>
+
+<pre>
+  class PlayerCharacter
+    include Jump_Module
+    include Destroyed_Module
+    include Gained_Life_Module
+
+    @@jump_height = 5
+
+    attr_accessor :name
+    attr_accessor :color_scheme
+    attr_reader :lives
+    attr_reader :coins
+
+    def initialize(name, color_scheme)
+      @name = name
+      @color_scheme = color_scheme
+      @lives = 3
+      @coins = 0
+      @status = "alive"
+    end
+  
+    def jump
+      @jump = self.jump(@@jump_height)
+    end
+
+    def collect_coins
+      @coins + 1
+    end
+
+    def status
+      @status = "dead" if @lives == 0
+    end
+
+
+    private
+
+    def calculate_lives_left
+      if self.destroyed?
+        @lives -= 1
+      end
+
+      if self.gained_another_life?
+        @lives += 1
+      end
+    end
+
+  end
+</pre>
+
+                    <h3 id="clock">Let's Make A Clock!!</h3>
+
+                    <p>What is a clock?  It is just something that helps us keep track of time.  We tell time by the units of measurements -- hours, minutes, and seconds.  The most basic clock will only have 12 numbers for the hour, 60 numbers for the minutes, and 60 numbers for the seconds.  (Seriously, if you only looked at a very plain clock, you would have no clue if it's am or pm without looking outside.)  If we were to program a clock, we would want it to have all of those features.  How would a clock know what hours, minutes, and seconds it is supposed to be right now?  What do people do when they newly open the box of their clock that they bought from the store?  Why, they <em>set</em> the time!  </p>
+
+<pre>
+  class Clock
+    def initialize(hour, minute, second)
+      @hour = hour
+      @minute = minute
+      @second = second
+    end
+
+    def hour
+      @hour
+    end
+    
+    def hour=(hour)
+      @hour = hour
+    end
+
+    def minute
+      @minute
+    end
+
+    def minute=(minute)
+      @minute = minute
+    end
+    
+    def second
+      @second
+    end
+
+    def second=(second)
+      @second = second
+    end
+
+    def current_time
+      p "The time now is #{@hour}: #{@minute}: #{@second}."
+    end
+
+  end
+</pre>
+
+                    <p>If people want to know the current time, they can either display the hour, or minute, or second individually, OR they can use the <code>current_time</code> method: </p>
+
+<pre>
+  my_clock = Clock.new(10, 0, 0)  # because it is Ten O'Clock!
+  p my_clock.hour  # output will be 10
+  p my_clock.minute  # output will be 0
+  p my_clock.second  # output will be 0
+  p my_clock.current_time  # output will be "The time now is 10:0:0."
+</pre>
+
+                    <p>But clocks come in many different shapes and forms.  There are analog clocks (the ones with the hands ticking away), and digital ones.  In the digital ones can be further differentiated: there are the kinds that use the 24-hour format versus the 12 hour format, with am and pm.  There are wristwatches or wall clocks or small clocks on night stands.  All of the clocks have different power sources.  Some of them are battery powered, and some of them are plugged in to a wall outlet.  So with all these different variations, we don't need to write the class from scratch.  We can just have the new one inherit from the main Clock class.  In Ruby, this is done by using <code>&lt;</code>.  You can imagine this as the essence of the Clock class flowing into your new class that you're creating.  In our example, we're making a WristWatch.  The objects of the WristWatch class can tell time the same way as the objects of the Clock class.  But it is further specialized because it is battery powered, it is analog and not digital, and it can show am versus pm.  </p>
+
+<pre>
+  class WristWatch &lt; Clock
+    include BatteryPowered
+
+    def initialize(hour, minute, second, am_or_pm)
+      @hour = hour
+      @minute = minute
+      @second = second
+      @am_or_pm = am_or_pm
+    end
+
+  end
+</pre>
+
+<pre>
+  # All of these work, even if they are not in the written in the body of WristWatch class itself, 
+  # because they are inherited from Clock.
+    my_wristwatch = Clock.new(10, 0, 0)  # because it is Ten O'Clock!
+    p my_wristwatch.hour  # output will be 10
+    p my_wristwatch.minute  # output will be 0
+    p my_wristwatch.second  # output will be 0
+    p my_wristwatch.current_time  # output will be "The time now is 10:0:0."
+
+  # This one is from BatteryPowered
+    p my_wristwatch.battery_left
+</pre>
+
+                    <p>We are inheriting from Clock, but only including BatteryPowered, because in real life, other non-clock things are also battery powered, like wireless mice, radios, electric toothbrushes, cellphones, smartphones, Nintendo DS, PSP, flashlights, heartrate monitors, laptops, tablets, cameras, etc.  We don't want the WristWatch to inherit every feature that those other things have.... wait nevermind -- smartwatches.  But you get the idea.  (Maybe I should have used a nightstand table clock as an example instead.  But those have radios on them.  Dang... horrible examples all around!)  </p>
+
+                    <p>There are 2 caveats here.  First of all, the <code>initialize</code> method cannot be inherited so your new class needs its own <code>initialize</code>have to make it yourself.  Just as well, because in our example, there's an additional parameter/argument called <code>am_or_pm</code>.  If the subclass WristWarch inherited Clock's <code>initialize</code>, it might get confused because Clock's <code>initialize</code> has 3 arguments, but WristWatch's <code>initialize</code> has "am_or_om".  Secondly, weren't you wondering why I did the long versions of reader and writer methods, when I clearly demonstrated the short version above?  It's because <code>attr_</code> cannot be inherited by the subclass.  Remember, inheritance is only for methods (except <code>initialize</code>.  </p>
+
+                    <h3 id="musings">Additional Musings</h3>
+
+                    <p>In Philosophy class, and in the various Philosophy books that I have read, I found out about <a href="https://en.wikipedia.org/wiki/Theory_of_Forms">Plato's Theory Of Forms</a>.  The gist of that theory is that all objects in real life can be distilled or understood through non-material abstracted ideas called "Forms" with a capital F.  To Plato, "every object or quality in reality has a form: dogs, human beings, mountains, colors, courage, love, and goodness" and that "Form was a distinct singular thing but caused plural representations of itself in particular objects".  Isn't that the idea of "Abstraction"?  And classes?  And... O.M.G....!!!!  @_@</p>
+
+                    <img src="../imgs/2844335.jpg" alt="That moment you realize that Plato talked about Object-Oriented Programming before modern computers existed..." class="img-align-cntr">
+
+                    <p>Mind = Blown</p>
+                    
+                    <img src="../imgs/2844306.jpg" alt="Tells this idea to friends, gets 'WTF' blank stares, because the friends who know Philosophy are mutually exclusive from the Computer Science friends." class="img-align-cntr">
+
+                    <p>Fortunately, I found like-minded people in the internet as evidenced by these links:</p>
+
+                    <p><a href="http://www.richardfarrar.com/plato-and-object-oriented-programming/">RichardFarrar.com - Plato and Object Oriented Programming</a>
+                    </p>
+
+                    <p><a href="http://www.perlmonks.org/?node_id=349593">perlmonks.org - Ancient Philosophy And Programming Languages</a>
+                    </p>
+
+                    <p><a href="http://mxplx.com/meme/2682/">mxplx.com - Plato's Theory of Forms and Object Oriented Programming</a>
+                    </p>
+
+                    <p><a href="http://www.infoq.com/presentations/Philosophy-Programming">infoq.com - How the Ancient Greeks Invented [Object Oriented] Programming</a>
+                    </p>
+
+                    <p><a href="https://www.quora.com/What-is-a-Platonic-world-view-and-how-is-it-used-in-object-oriented-programming">What is a Platonic world view and how is it used in object-oriented programming?</a>
+                    </p>
+
+                    <p><a href="http://weblogs.asp.net/jasonsalas/396038">http://weblogs.asp.net/jasonsalas/396038</a>
+                    </p>
+
+                    <p><a href="http://news.softpedia.com/news/The-Metaphysics-of-Object-Oriented-Programming-24906.shtml">"The Metaphysics of Object Oriented Programming - Plato would have been proud of today's computer programmers"</a>
+                    </p>
+
+                    <p><a href="https://www.google.com/search?q=plato+object+oriented+programming&rlz=1C1MSIM_enUS621US621&oq=plato+object+oriente&aqs=chrome.1.69i57j0.5575j0j1&sourceid=chrome&es_sm=93&ie=UTF-8">Other Links In Google</a>
+                    </p>
+
+
+                    <h3 id="more_references">Additional References And Resources</h3>
+                    <p><a href="http://rubylearning.com/satishtalim/ruby_inheritance.html">Inheritance In Ruby</a></p>
+                    <p><a href="http://ruby-doc.com/docs/ProgrammingRuby/">Modules In Ruby</a></p>
+                    <p><a href="">Classes In Ruby</a></p>
+
+                </section>
 
               </article>
             </main>

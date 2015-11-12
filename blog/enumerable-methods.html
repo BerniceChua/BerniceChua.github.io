@@ -71,8 +71,8 @@
         </ul>
 
         <ul class="float-right">
-          <li>Next</li>
-          <li>Most Recent</li>
+          <li><a href="ruby-classes.html">Next</a></li>
+          <li><a href="ruby-classes.html">Most Recent</a></li>
         </ul>
       </nav>
 
@@ -98,7 +98,7 @@
           <p>Well, inheritance is good <em>most of the time</em>, especially when the class or the object is a kind of class or object of the parent class that it inherits from.  But there are some cases where classes or objects from VASTLY different parent classes would need to share some common actions.  For example, a string versus an array versus a hash are different from each other, but they need to share some common actions, like loop through each element.  To loop through or iterate from a hash is very different from iterating through a string, but they both need those actions.  So if I tried to have a String object inherit the looping capabilities of a Hash object (AKA "multiple inheritance", I could run into all kinds of problems.  <a href="https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem">Wikipedia gives a very good explanation about this phenomenon called "the diamond problem".</a>  In other words, one does not simply use multiple inheritance.  Because if your parent classes have methods that override each other, you're gonna have a bad time.  </p> 
 
           <img src="../imgs/2751374.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
-          <img src="../imgs/2751441.jpg" alt="One does not simply use multiple inheritance" class="img-align-cntr">
+          <img src="../imgs/2751441.jpg" alt="Because if your parent classes have methods that override each other, you're gonna have a bad time." class="img-align-cntr">
 
           <p>Anyway, for those of you curious to know, <a href="https://en.wikipedia.org/wiki/Mixin#History">this is why a <code>module</code> is sometimes called a <code>mixin</code>, and where the name comes from</a>.  </p>
 
