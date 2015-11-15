@@ -17,6 +17,12 @@ a {
     color: slategray;
 }
 
+.txt-cntr { text-align: center; }
+
+.no-mrgn-top { margin-top: 0; }
+.no-mrgn-bottom { margin-bottom: -25px; }
+.medium-mrgn-bottom {margin-bottom: 2em; }
+
 /*~~~~~~~~~~BEGIN-Style of the banner, logo, and nav-menu.~~~~~~~~~~*/
 header {
     margin: 0;
