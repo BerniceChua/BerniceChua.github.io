@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+      <link rel="shortcut icon" href="../imgs/favicon.ico" />
+
+      <link rel="stylesheet" type="text/css" href="../stylesheets/html-boilerplate-normalize-main.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+
+      <title>Bernice's Dev Bootcamp Blog ^_^ ~ JavaScript Prototypes</title>
+      
+      <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+      <![endif]-->
+    </head>
+    <body>
+      <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+            <header>
+                <div class="banner">
+                    <a  class="logo" 
+                href="http://BerniceChua.github.io">BerniceChua.github.io</a>
+             <nav>
+                <ul class="nav_container">
+                    <li>
+                        <a href="http://BerniceChua.github.io">
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">Blog</a>
+                    </li>
+                    <!-- In HTML, &#233; renders as é -->
+                              <!--<a href="./resume.html">Curriculum Vitae/Resum&#233;</a>
+                          </li> -->
+          <!--                <li>
+                              <a href="./programs.html">Programs I Made</a>
+                          </li>
+                          <li>
+                              <a href="./affiliates.html">Affiliates</a>
+                          </li>
+                          <li>
+                              <a href="./contactMe()">
+                                  Contact Me (under construction)</a>
+                          </li>
+                          <li>
+                              <a href="./acknowledgements.html">Acknowledgements</a>
+                          </li>
+          -->
+                      </ul>
+                  </nav>
+                </div>
+            </header>
+
+            <main role="main" class="main_content">
+              <section class="title">
+                <h1 class="page-title"><a href="http://BerniceChua.github.io/blog/index">Bernice's Dev Bootcamp Blog ^_^</a></h1>
+                <p class="author">By Bernice Anne W. Chua</p>
+              </section>
+
+              <nav>
+                <ul class="float-left">
+                  <li><a href="http://bernicechua.github.io/blog/git">First</a></li>
+                  <li><a href="http://bernicechua.github.io/blog/ruby-classes">Previous</a></li>
+                </ul>
+
+                <ul class="float-right">
+<!--                   <li><a href="http://bernicechua.github.io/blog/arrays-hashes">Next</a></li>
+                  <li><a href="http://bernicechua.github.io/blog/enumerable-methods">Most Recent</a></li> -->
+                </ul>
+              </nav>
+
+              <article class="main_column blog-post">
+                <h2 class="mrgn-btm-no">The Difference Between Classes (Like In Ruby) And Prototypes (Like In JavaScript)</h2>
+                <p class="mrgn-top-no">posted on November 9, 2015</p>
+
+                <section class="table_of_contents"> <!-- Optional, only if long blog post. -->
+                  <h3 class="mrgns-sm">Jump To Section....</h3>
+                  <ul>
+                    <li class="mrgns-sm">
+                      <a href="#prototype">The differences and similarities...</a>
+                    </li>
+                    <li class="mrgns-sm">
+                      <a href="#more_references">Additional References And Resources</a>
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                    <h3 id="prototype">The differences and similarities...</h3>
+
+                    <p>My <a href="http://bernicechua.github.io/blog/ruby-classes">previous blog post</a> demonstrated classes in Object-Oriented programming (by using Ruby).  This week at Dev Bootcamp, the material covered JavaScript.  JavaScript, like Ruby, IS an Object-Oriented language.  Hell, their "hashes"/"dictionaries" (for you Python folks out there) are literally called <code>objects</code>.  JavaScript (or JS for short) has tools that allow the code to be more modular, has  "A PIE", which is a mnemonic that stands for <u>A</u>bstraction, <u>P</u>olymorphism, <u>I</u>nheritance, and <u>E</u>ncapsulation.  But JavaScript is unusual among programming languages in that it does not have true classes.  It is a <em>class-less</em> language.  Meaning, that it is not a "class-based" Object-Oriented language, but a <em>prototypal</em>-based Object Oriented language.  </p>
+
+                    <p>This basically means that instead of using a class as a blueprint for an instance of an object, JS uses objects that have <code>constructors</code> to initialize new objects.  How are constructors different from classes?  In class-based languages, the class would have something to initialize the class.  All Java classes have an <code>init</code> method.  All Ruby classes need an <code>initialize</code> method.  </p>
+
+                    <p>JS constructors don't need one.  For this reason, in JS, every function is potentially a constructor.  In languages that have classes like Ruby, classes are special kinds of objects that create new instances.  JS does not have things like these, but they have prototypes.  Prototypes are objects, but they don't have special methods or properties specifically associated with it.  Literally any object in JS can be a prototype.  </p>
+
+                    <p>Basically in prototype-based languages, there is no distinction between instances of an object.  A good way to demonstrate these are through examples: </p>
+
+                    <pre>
+  # Classical Inheritance With Ruby:
+  class ExampleSuperclass
+    def initialize
+      @my_local_variable_1
+      @my_local_variable_2
+    end
+
+    def my_getter_method
+      @my_local_variable_1
+    end
+
+    def my_setter_method(my_argument)
+      @my_local_variale_1 = my_argument
+    end
+  end
+
+  class ExampleSubclass < ExampleSuperclass  
+  # the "lesser than" lets ExampleSubclass inherit from ExampleSuperclass
+    def initialize
+      @my_local_variable_1
+      @my_local_variable_2
+    end
+
+    def some_method
+      #whatever code
+    end
+  end
+  
+  # instantiating objects w/ class-based language: 
+  new_thing = ExampleSuperclass.new
+  another_thing = ExampleSubcleass.new
+                    </pre>
+
+                    <pre>
+  // Prototypal Inheritance With JavaScript:
+  function ExampleSuper() {
+    this.myLocalVariable1;
+    this.myLocalVariable2;
+
+    this.my_getter_method = function() {
+      this.myLocalVariable1;
+    }
+
+    this.my_setter_method = function(My_argument) {
+      this.myLocalVariable1 = my_argument;
+    }
+  }
+  
+  var ExampleSub  = function() {
+    ExampleSuper.call(this);  // this line allows inheritance from ExampleSuper
+
+    this.someMethod {
+      //whatever code
+    }
+  }
+  ExampleSub.prototype = Object.create(ExampleSuper.prototype);
+
+  // instantiating objects with prototype-based language:
+  var new_thing = new ExampleSub;
+                    </pre>
+
+                    <p>I hope that was sufficient to explain the similarities and differences.  The main deal with prototypal-based languages is that objects inherit directly from other objects, whereas in class-based languages, objects are instances of a class, and classes inherit from their superclass/base class.  As you can imagine, prototypal languages have advantages and disadvantages (same with class-based languages).  Below, I've provided links to work that have explained these concepts more eloquently than I have.  </p>
+
+                    <h3 id="more_references">Additional References And Resources</h3>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">developer.mozilla.org ~ Details of the object model</a></p>
+
+                    <p><a href="http://raganwald.com/2013/02/10/prototypes.html">raganwald.com ~ Classes vs. Prototypes In JavaScript</a></p>
+
+                    <p><a href="https://www.ncl.ucar.edu/Document/HLUs/User_Guide/classes/classoview.shtml">ncl.ucar.edu ~ Understanding classes and objects</a></p>
+
+                    <p><a href="https://en.wikipedia.org/wiki/Prototype-based_programming">Wikipedia ~ Prototype-based programming</a></p>
+
+                    <p><a href="http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/">javascriptissexy.com ~ JavaScript Prototype in Plain Language</a></p>
+
+                    <p><a href="http://programmers.stackexchange.com/questions/110936/what-are-the-advantages-of-prototype-based-oop-over-class-based-oop">StackExchange ~ What are the advantages of prototype-based OOP over class-based OOP?</a></p>
+
+                    <p><a href="http://stackoverflow.com/questions/186244/what-does-it-mean-that-javascript-is-a-prototype-based-language">Stack Overflow ~ What does it mean that JavaScript is a prototype based language?</a></p>
+
+                </section>
+
+              </article>
+            </main>
+
+    <footer  class="footer">
+      <div class="button_group">
+        <div class="followbuttons">
+          <a href="https://github.com/BerniceChua">
+          <img src="../imgs/Fork_Me_On_GitHub.png" alt="View Bernice Anne W. Chua's repo on GitHub">
+          </a>
+        </div>                      
+
+      <!-- <div class="followbuttons">
+          <a href="https://coderbits.com/BerniceChua">
+          <img src="./coderbits.png" alt="View Bernice Anne W. Chua's profile on CoderBits">
+          </a>
+      </div> -->
+
+      <div class="followbuttons">
+        <a href="https://twitter.com/ChuaBernice" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ChuaBernice</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+
+      <div class="followbuttons">
+      <!-- Place this code where you want the badge to render. -->
+        <a href="http://plus.google.com/115377831515196015573?prsrc=3"
+            rel="publisher" target="_top" style="text-decoration:none;">
+        <img src="http://ssl.gstatic.com/images/icons/gplus-32.png" 
+            alt="Google+" style="border:0;width:32px;height:32px;"/>
+        </a>
+      </div>
+
+      <div class="followbuttons">
+        <a href="http://www.linkedin.com/in/bernicechua415">
+          <img  class="linkedin-button" 
+              src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" 
+              alt="View Bernice Anne W. Chua's profile on LinkedIn">
+        </a>
+      </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
