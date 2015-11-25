@@ -11,6 +11,11 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/linkedin-button.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/highlight.js/styles/solarized_dark.min.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -71,13 +76,13 @@
         </ul>
 
         <ul class="float-right">
-          <li>Next</li>
-          <li>Most Recent</li>
+          <!-- <li>Next</li>
+          <li>Most Recent</li> -->
         </ul>
       </nav>
 
       <article class="main_column blog-post">
-        <h2 class="mrgn-btm-no">Recursion</h2>
+        <h2 class="mrgn-btm-no">Recursion ~ "To Infinity!  And BEYOND~~!!!! (at least until a stop-condition is met)"</h2>
         <p class="mrgn-top-no">posted on November 23, 2015</p>
 
         <img src="../imgs/Shadi's_Recursion.png" alt="Picture demonstrating 'recursion'." class="align-cntr imgs-for-small-screens">
@@ -86,16 +91,10 @@
           <h3 class="mrgns-sm">(Optional) Jump To Section....</h3>
           <ul>
             <li class="mrgns-sm">
-              <a href="#first">1st Idea if long blog post</a>
+              <a href="#recursion">Recursion In Programming</a>
             </li>
             <li class="mrgns-sm">
-              <a href="#second">2nd Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#third">3rd Idea if long blog post</a>
-            </li>
-            <li class="mrgns-sm">
-              <a href="#fourth">4th Idea if long blog post</a>
+              <a href="#demo">A Demonstration Of Recursion</a>
             </li>
             <li class="mrgns-sm">
               <a href="#more_references">Additional References And Resources</a>
@@ -104,8 +103,338 @@
         </section>
 
         <div>
-          <p>I find more and more that .</p>
-          <p>This is paragraph two.</p>
+          <h3>How To Explain Recursion</h3>
+
+          <p>Whenever people ask me to teach them recursion, I ask them: "Do you play videogames?  If so, have you played "Portal?" "  (If they say no, I ask them "Have you seen "Inception"?")  </p>
+
+          <iframe width="490" height="370" src="http://www.youtube.com/embed/PHGHM738kDE" frameborder="0" allowfullscreen="allowfullscreen" data-link="http://www.youtube.com/watch?v=PHGHM738kDE"></iframe>
+
+          <iframe width="490" height="370" src="http://www.youtube.com/embed/niDQJWRILYE" frameborder="0" allowfullscreen="allowfullscreen" data-link="http://www.youtube.com/watch?v=niDQJWRILYE"></iframe>
+
+          <p>Positioning the portals in such a way in the game "Portal" demonstrates the idea of recursion.  Anything entering the bottom portal will fall down from the top portal, and enter the bottom portal again (and fall out of the top portal, and enter the bottom portal again, etc.) due to gravity and the positions of the portals.  Basically, it can be boiled down to "Is there a portal in the direction you are going?  If yes, enter the portal and come out the other side.  If not, then you will not enter the portal again and the "infinite loop" stops.  </p>
+
+          <p>This will go on infinitely until some "stop-condition" is met (the "stop-conditions" here would be either the player-character removes or re-positions either of the portals, or if the player character enters the portal, she angles herself not to fall straight down into it, but to jump off to the side).  </p>
+
+          <p>For people who have never played "Portal", here's the "Inception" explanation: </p>
+
+          <p>Cobb and his team enter someone's dream.  Did they find the dream-layer that they want?  If yes, they will stay there and "incept" the idea they want.  If not, then they enter the person's dream in that dream.  This goes on continually until they find the dream-layer that they want.  </p>
+
+
+          <h3 id="recursion">Recursion In Programming</h3>
+
+          <img src="../imgs/Portal_Infinity.jpg" alt="recursion-Maru" class="align-cntr imgs-for-small-screens">
+
+          <p>Recursion sounds intimidating, but it's really not.  Do you know how to use if-else statements?  Do you know how to make loops (either for loops or while loops)?  Do you know how to call a function/method?  If you answer yes to any of those questions, then you are part of the way there.  </p>
+
+          <p>Recursion in programming simply means this:</p>
+          
+          <p>There is a function or method that gets called.  As long as some condition is true, the function or method will call itself.  (This can happen as long as the condition is true.)  But if that condition becomes false (the aforementioned "stop-condition"), the function will stop calling itself and get out of the loop.  The method would just keep calling itself, until some condition is met.  This is the reason why putting the stop condition is really important.  Or else, you'd end up with an infinite loop.  <a href="https://i.ytimg.com/vi/3HE8tvRzEkg/maxresdefault.jpg">But this is no different than creating an infinite loop with a regular for loop or while loop.</a>  And exactly like regular for-loops or while-loops, one must take care that the input of the recursively-summoned method must be able to tell which iteration or which layer it is working on.  This means that the input to this recursively-called method needs to have a different input than the original input of the method.  For example, doing something to iterate to the next item, or if you are working on a array, instead of re-inputting the array as the argument of this recursively-called method, the argument would be its element.  Or you would never get out of the recursion.  </p>
+
+          <p>(Can you tell that I 
+            <a href="http://www.pcper.com/images/reviews/506/portalInPortal_valve_error.jpg">
+              really
+            </a> 
+            <a href="http://th0mas.nl/assets/images/companionrecursion.png">
+              love
+            </a> 
+            <a href="">"Portal"</a>?  Actually, a lot of concepts in recursion were used to make the game, as <a href="http://th0mas.nl/2013/05/19/rendering-recursive-portals-with-opengl/">evidenced by this person who was trying to learn how to program "Portal" from scratch</a>.  I also found in my research that other games that are not-"Portal" also use <a href="http://www.pcper.com/reviews/Processors/Ray-Tracing-and-Gaming-One-Year-Later/Special-Effects-Portals">some form of recursion</a>.)</p>
+
+
+          <h3 id="demo">A Demonstration Of Recursion</h3>
+
+          <iframe width="490" height="370" src="http://www.youtube.com/embed/yxNudEkQ7B4" frameborder="0" allowfullscreen="allowfullscreen" data-link="http://www.youtube.com/watch?v=aRkphNk2yFM"></iframe>
+
+          <p>Originally, I was going to 
+            <a href="http://www.etropolis.com/escher/hands.htm">
+              use
+            </a> 
+            <a href="https://prateekvjoshi.files.wordpress.com/2013/10/part-1.jpg">
+              these
+            </a> 
+            <a href="https://upload.wikimedia.org/wikipedia/commons/b/b3/Screenshot_Recursion_via_vlc.png">
+              kinds
+            </a> 
+            <a href="http://i.stack.imgur.com/0DaD5.jpg">
+              of
+            </a> 
+            <a href="http://logos.cs.uic.edu/examples%20and%20notes/notes/Java/Recursion/RecursionScreenshot.png">
+              images
+            </a> 
+            <a href="https://cs1110.cs.virginia.edu/lecture/2015/03/15/lecture-24-sherriff-methods-and-recursion/">
+              as
+            </a> 
+            <a href="http://colbertnation.mtvnimages.com/images/shows/colbert_report/video_archive/season_2/cr_02132_08_col_v6.jpg">
+              a
+            </a> 
+            <a href="https://russianuniverse.files.wordpress.com/2015/03/matryoshka-recursion.jpg">
+              way
+            </a> 
+            <a href="http://static.fjcdn.com/pictures/Recursion+pushing+top+250+on+content+this+content+will+hopefully_0c60a1_5327406.jpg">
+              to
+            </a> 
+            <a href="http://xkcdsw.com/content/img/1105.gif">
+              demonstrate
+            </a> 
+            recursion, but the images don't portray any "stop-condition".  <a href="https://www.youtube.com/watch?v=Rt4VJy8jCIU">These "Portal" videos will have to do.</a>  I thought that they make good analogies, because entering a portal is the equivalent of <a href="https://www.youtube.com/watch?v=aLyib_dI_p4">calling the method</a>.  The <a href="https://www.youtube.com/watch?v=3HE8tvRzEkg">method would just keep calling itself</a>, until some condition is met.  This is the reason why putting the stop condition is really important.  Or else, you'd end up with an infinite loop.  <a href="https://i.ytimg.com/vi/3HE8tvRzEkg/maxresdefault.jpg">But this is no different than creating an infinite loop with a regular for loop or while loop.</a>  And exactly like regular for-loops or while-loops, one must take care that the input of the recursively-summoned method must be able to tell which iteration or which layer it is working on.  This means that the input to this recursively-called method needs to have a different input than the original input of the method.  For example, doing something to iterate to the next item, or if you are working on a array, instead of re-inputting the array as the argument of this recursively-called method, the argument would be its element.  Or you would never get out of the recursion.  </p>
+
+            <p>I know that I'm repeating myself (no pun intended), but these are really important things to think about if you are using recursion.  Or else you're gonna have a bad time.  </p>
+
+            <p>One of the easiest things used to demonstrate recursion is calculating for a factorial.  A factorial is a mathematical operation where a number is multiplied by the minus-1 version of itself until the minus-1 version of itself is 1.  (Except for Zero.  As a rule, the factorial of Zero is always 1 no matter what.)  </p>
+
+            <p>Here's the regular non-recursion version of calculating a factorial.  </p>
+
+<pre>
+  # Ruby
+
+  def factorial(number)
+    return 1 if number == 0
+
+    factorial = number
+    for next_number in 2...number
+        factorial *= next_number
+        #longhand is factorial = factorial * next_number
+    end
+
+    factorial
+  end
+
+  # or
+
+  def factorial(number)
+    return 1 if number == 0
+
+    factorial = number
+    next_number = number - 1
+    while next_number >= 2
+        factorial *= next_number
+        #longhand is factorial = factorial * next_number
+
+        next_number -= 1
+        #longhand is next_number = next_number - 1
+    end
+
+    factorial
+  end
+</pre>
+
+<pre>
+  // JavaScript
+
+  var factorial = function(number) {
+    if (number === 0) {
+      return 1;
+    }
+      
+    var factorial = number;
+
+    while (number > 1) {
+      factorial *= number - 1;
+
+      number--;
+    }
+    
+    return factorial;
+  }
+</pre>
+
+<pre>
+  # Python
+
+   def factorial(number):
+      if number == 0:     # This is our "stop-condition".
+          return 1
+
+      while (number > 1):
+          # number is multiplied by the minus-1 version of itself
+          number * (number - 1)
+          number -= 1;
+</pre>
+          <p>And here is how to do it with recursion: </p>
+
+<pre>
+  # Ruby
+
+  def factorial(number)
+    if number == 0    # This is our "stop-condition".
+      return 1
+    else
+      # number is multiplied by the minus-1 version of itself
+      return number * factorial(number - 1)
+    end
+  end
+
+</pre>
+
+<pre>
+  // JavaScript
+
+  var factorial = function(number) {
+    if (number === 0) {
+      // This "number === 1" is our "stop-condition".
+      return 1;
+    } else {
+      // number is multiplied by the minus-1 version of itself
+      return number * factorial(number - 1);
+    }
+  }
+</pre>
+
+<pre>
+  # Python
+
+  def factorial(number):
+      if number == 0:     # This is our "stop-condition".
+          return 1
+      else
+          # number is multiplied by the minus-1 version of itself
+          return number * factorial(number - 1)
+</pre>
+
+          <p>Take note that when the function is called inside itself, its argument/parameter is different than the original.  The argument/parameter here is <code>number - 1</code>, so that the code knows to iterate to the next lowest number.  </p>
+
+          <p>"So," you may be asking, "why can't we just use normal loops?"  For one thing, the code is cleaner and easier to maintain -- the less lines of code, the less places a mess-up can happen.  For another thing, coding in recursion sounds more like speaking in natural language.  But!  The true power of recursion comes when we <em>DON'T KNOW how many times we are supposed to loop</em>.  </p>
+
+          <p>Take the case of when we have nested data structures, and we want to do stuff to the elements of these data structures.  These thing COULD be done with regular programming methods: </p>
+
+<pre>
+  # JavaScript
+
+  number_array = [5, [10, 15], [20,25,30], 35]
+
+  # Pseudocode:
+  #Go through each item in number array
+  #Each item we will check if it is array
+  #If element is an array we will run another each loop
+  #Inside this each loop we will add 5 to each element
+  #if element is not array we will add 5
+
+  for element in (0...number_array.length) do 
+    if number_array[element].kind_of?(Array)
+      for inner in (0...number_array[element].length) do 
+        number_array[element][inner] += 5
+      end
+    else
+      number_array[element] += 5
+    end
+  end
+
+  print number_array
+  puts
+
+  # refactored:
+  number_array.map! { |element|
+    if element.kind_of?(Array)
+      element.map! {|inner| inner + 5}
+    else
+      element + 5
+    end
+  }
+
+
+  startup_names = ["bit", ["find", "fast", ["optimize", "scope"]]]
+
+  # Pseudocode:
+  #Go through each item in startup_names array
+  #Each item we will check if it is array
+  #If element is an array we will run another each loop inside it
+  #Inside this each loop we will add "ly" to the name of each element
+  #if element is not array we will add "ly" to the name of this element
+
+  startup_names_copy = []
+  startup_names.each_index { |outtest|
+    if startup_names[outtest].kind_of?(Array)
+      startup_names_copy[outtest] = []
+      
+      startup_names[outtest].each_index { |inner|
+        if startup_names[outtest][inner].kind_of?(Array)
+          startup_names_copy[outtest][inner] = []
+          
+          startup_names[outtest][inner].each_index { |innest| 
+            startup_names_copy[outtest][inner][innest] = startup_names[outtest][inner][innest].capitalize
+          }
+        else
+          startup_names_copy[outtest][inner] = startup_names[outtest][inner].capitalize
+        end
+      }
+    else 
+      startup_names_copy[outtest] = startup_names[outtest].capitalize
+    end
+  }
+</pre>
+
+          <p>But what would happen if there are inner-inner-INNER nested data structures?  How will we hand-code that?  With too many nested for-loops, that's for sure!  Seriously, are you going to hand-code all of that!?!?!?!?  There is a better way!  (Recursion is here to save the day!!)  </p>
+
+<pre>
+  number_array = [5, [10, 15], [20,25,30], 35]
+
+  def getInnerArray(inputArray)
+    for element in (0...inputArray.length) do 
+      if inputArray[element].kind_of?(Array)
+        getInnerArray(inputArray[element])
+      else
+        inputArray[element] += 5
+      end
+    end
+  end
+
+  p getInnerArray(number_array)
+</pre>
+
+          <p>Take note that in the recursively-called <code>getInnerArray</code>, its argument is NOT the original <code>inputArray</code>, but it is <code>inputArray[element]</code>.  This needs to be done, or else, the recursion will never go deeper into the nested array.  </p>
+
+          <p>Once again, here is the recap of how recursion works: </p>
+          
+          <p>There is a function or method that gets called.  As long as some condition is true, the function or method will continuously call itself.  But if that condition becomes false (the aforementioned "stop-condition"), the method/function will stop calling itself and get out of the loop.  The method would just keep calling itself, until some condition is met.  This is the reason why putting the stop condition is really important.  Or else, you'd end up with an infinite loop.  <a href="https://i.ytimg.com/vi/3HE8tvRzEkg/maxresdefault.jpg">But this is no different than creating an infinite loop with a regular for loop or while loop.</a>  And exactly like regular for-loops or while-loops, one must take care that the input of the recursively-summoned method must be able to tell which iteration or which layer it is working on.  This means that the input to this recursively-called method needs to have a different input than the original input of the method.  For example, doing something to iterate to the next item, or if you are working on a array, instead of re-inputting the array as the argument of this recursively-called method, the argument would be its element.  Or you would never get out of the recursion.  </p>
+
+          <h3 id="musings">Additional Musings</h3>
+
+          <p>As mentioned in <a href="ruby-classes.html#musings">one of my previous blog posts</a>, I find it fascinating that the more and more I delve into coding and software engineering, the more I find that the concepts have a lot in common with philosophy.  </p>
+
+          <p>For example, our current topic is recursion.  You can look at the sample code above, and compare it with the examples in these links: </p>
+
+          <ul>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach"><em>Gödel, Escher, Bach</em></a> by <a href="https://en.wikipedia.org/wiki/Douglas_Hofstadter">Douglas Hofstadter</a>
+            </li>
+            <li>
+              The idea of <a href="https://en.wikipedia.org/wiki/Infinite_regress">"Infinite regress"</a> by Aristotle
+            </li>
+            <li>
+              Infinite regress in optics is the formation of an <a href="https://en.wikipedia.org/wiki/Video_feedback">infinite series of receding images</a>.  
+            </li>
+            <li>
+              the idea of "infinite regress" itself comes from the idea of <a href="https://en.wikipedia.org/wiki/Self-reference">Self-reference</a>.  
+            </li>
+          </ul>
+
+          <h3 id="more_references">Additional References And Resources</h3>
+          <ul>
+            <li>
+              <a href="http://algosaur.us/recursion/">http://algosaur.us/ - “To iterate is human, to recurse, divine.” – A guide to Recursion</a>
+            </li>
+            <li>
+              <a href="http://prateekvjoshi.com/2013/10/05/understanding-recursion-part-i/">prateekvjoshi.com - Understanding Recursion</a>
+            </li>
+            <li>
+              <a href="http://programmers.stackexchange.com/questions/93826/how-do-i-explain-recursion-to-a-8-years-old-kid">programmers.stackexchange.com - How do I explain “Recursion” to a 8 years old kid?</a>
+            </li>
+            <li>
+              <a href="http://logos.cs.uic.edu/examples%20and%20notes/notes/Java/Recursion/Recursion.htm">logos.cs.uic.edu - Recursion</a>  (This one has a lot of good examples.)
+            </li>
+            <li>
+              <a href="https://cs1110.cs.virginia.edu/lecture/2015/03/15/lecture-24-sherriff-methods-and-recursion/">cs1110.cs.virginia.edu - Lecture 24 - Methods and Recursion</a>
+            </li>
+            <li>
+              <a href="http://vaidehijoshi.github.io/blog/2014/12/14/to-understand-recursion-you-must-first-understand-recursion/">vaidehijoshi.github.io/blog - To Understand Recursion, You Must First Understand Recursion</a>
+            </li>
+
+
+          </ul>
+
+          <p>Now, time for recursion-Maru to haunt your dreams.</p>
+
+          <img src="../imgs/9045565e1e28dd7f772a99b61575db48.jpg" alt="recursion-Maru" class="align-cntr">
+
         </div>
       </article>
     </main>
