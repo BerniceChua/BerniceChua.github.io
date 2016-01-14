@@ -153,12 +153,27 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.padding-small { padding: .5em; }
 
+.display-height { height: 2em; }
 
+.display-inline-block { display: inline-block; }
 
+.button-width { min-width: 1.5em; }
 
+.button-padding { padding: 1em; }
 
+.text-align-center { text-align: center; }
 
+.margin-small { margin: .1em; }
+
+.full-width { width: 98%; }
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
 
 
 
