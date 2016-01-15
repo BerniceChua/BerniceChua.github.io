@@ -32,12 +32,12 @@
   <script src="initializr/js/displayLogic.js"></script>
 
 </head>
-<body>
+<body onload="set_style_from_cookie()">
   <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div class="header-container">
+<!--   <div class="header-container">
     <header class="wrapper clearfix">
       <h1 class="title">h1.title</h1>
       <nav>
@@ -48,31 +48,44 @@
         </ul>
       </nav>
     </header>
-  </div>
+  </div> -->
 
   <div class="main-container">
     <div class="main wrapper clearfix">
 
-      <section id="change-colors"><form>
+      <!-- <section id="change-colors"><form>
         <input type="submit" onclick="switch_style('serious-colors');return false;" name="theme" value="Default Theme (Serious Colors)" id="serious-colors">
         <input type="submit" onclick="switch_style('ti-89-titanium');return false;" name="theme" value="TI-89 Titanium Theme" id="ti-89-titanium">
         <input type="submit" onclick="switch_style('casio-fx-115-es');return false;" name="theme" value="Casio-Fx-115 ES Theme" id="casio-fx-115-es">
-      </form></section>
+      </form></section> -->
 
-      <section id="calculator-body" class="background-color words padding-small">
+      <section id="calculator-body" class="background-color words padding-small min-width">
         <h1 class="float-left">Awesome Calculator</h1>
         <div class="float-right">
           <span class="display-block">A combination of a scientific</span>
           <span class="display-block"> and financial calculator.</span>
         </div>
-          <form id="screen-form" method="post" action="/index">
+        <div id="display-screen" class="full-width screen-height center screen-color screen-text margin-small padding-small overflow-auto">
+          <!-- <form id="screen-form" method="post" action="/index">
             <textarea name="screen" placeholder="You can type your equation here!!!" class="full-width screen-height center screen-color screen-text margin-small padding-small overflow-auto"></textarea>
-          </form>
-        <!-- </div> -->
+          </form> -->
+        </div>
+        <section>
+        </section>
         <table>
           <tr>
+            <td id="sqrt"
+              class="calculator-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small">
+              &radic;
+            </td>
             <td id="mean"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -83,7 +96,7 @@
               MEAN
             </td>
             <td id="sin"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -95,7 +108,7 @@
             </td>
 
             <td id="open-parenthesis"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -106,7 +119,7 @@
               (
             </td>
             <td id="close-parenthesis"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -117,7 +130,7 @@
               )
             </td>
             <td id="delete"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -126,20 +139,20 @@
               margin-small">
               DEL
             </td>
-            <td id="sqrt"
-              class="number-button
+            <td id="clear-screen"
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
               margin-small">
-              &radic;
+              CLR
             </td>
           </tr>
           <tr>
             <td id="median"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -150,7 +163,7 @@
               MEDIAN
             </td>
             <td id="cosine"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -162,7 +175,7 @@
             </td>
 
             <td id="seven"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -173,7 +186,7 @@
               7
             </td>
             <td id="eight"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -184,7 +197,7 @@
               8
             </td>
             <td id="nine"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -195,7 +208,7 @@
               9
             </td>
             <td id="divide"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -208,7 +221,7 @@
           </tr>
           <tr>
             <td id="mode"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -219,7 +232,7 @@
               MODE
             </td>
             <td id="tangent"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -231,7 +244,7 @@
             </td>
 
             <td id="four"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -242,7 +255,7 @@
               4
             </td>
             <td id="five"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -253,7 +266,7 @@
               5
             </td>
             <td id="six"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -264,7 +277,7 @@
               6
             </td>
             <td id="multiply"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -277,7 +290,7 @@
           </tr>
           <tr>
             <td id="minimum"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -288,7 +301,7 @@
               MIN
             </td>
             <td id="hypothenuse"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -300,7 +313,7 @@
             </td>
 
             <td id="one"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -311,7 +324,7 @@
               1
             </td>
             <td id="two"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -322,7 +335,7 @@
               2
             </td>
             <td id="three"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -333,7 +346,7 @@
               3
             </td>
             <td id="minus"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -346,7 +359,7 @@
           </tr>
           <tr>
             <td id="maximum"
-              class="operation-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -357,7 +370,7 @@
               MAX
             </td>
             <td id="zero"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -368,7 +381,7 @@
               0
             </td>
             <td id="decimal-point"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -379,7 +392,7 @@
               .
             </td>
             <td id="equals"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
@@ -389,13 +402,14 @@
               =
             </td>
             <td id="plus"
-              class="number-button
+              class="calculator-button
               display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
-              margin-small">
+              margin-small"
+              data-myValue="+">
               +
             </td>
           </tr>
@@ -405,11 +419,11 @@
     </div> <!-- #main -->
   </div> <!-- #main-container -->
 
-            <div class="footer-container">
+<!--             <div class="footer-container">
               <footer class="wrapper">
                 <h3>footer</h3>
               </footer>
-            </div>
+            </div> -->
 
             <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
             <script>
