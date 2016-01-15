@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+#container {
+    height: 800px;
+    width: 99%;
+
+    border: 5px darkred solid;
+    border-radius: 15px;
+}
+
+.instructions {
+    text-align: center;
+    font-family: 'Special Elite', monospace;
+    background-color: darkred;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.addDucky {
+    position: absolute;
+    width:256px;
+    height:256px;
+    background-image:url('ducky.png');
+    background-repeat:no-repeat;
+}
