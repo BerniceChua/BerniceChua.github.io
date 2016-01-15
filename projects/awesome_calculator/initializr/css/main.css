@@ -155,9 +155,17 @@ nav a:hover {
    ========================================================================== */
 .padding-small { padding: .5em; }
 
-.display-height { height: 2em; }
+.float-left { float: left; }
+
+.float-right { float: right; }
+
+.display-block { display: block; }
+
+.screen-height { height: 3em; }
 
 .display-inline-block { display: inline-block; }
+
+.overflow-auto { overflow: auto; }
 
 .button-width { min-width: 1.5em; }
 

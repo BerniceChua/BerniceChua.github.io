@@ -20,6 +20,17 @@
   <link rel="alternate stylesheet" href="initializr/css/casio-fx-115-es.css">
 
   <script src="initializr/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="initializr/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.6.0/math.js"></script>
+
+  <script src="initializr/js/plugins.js"></script>
+  <script src="initializr/js/main.js"></script>
+  <script src="initializr/js/mathLogic.js"></script>
+  <script src="initializr/js/displayLogic.js"></script>
+
 </head>
 <body>
   <!--[if lt IE 8]>
@@ -49,200 +60,346 @@
       </form></section>
 
       <section id="calculator-body" class="background-color words padding-small">
-        <h1>Awesome Calculator</h1>
-        <div id="display" class="full-width display-height center display-color display-text margin-small padding-small">test</div>
-        <div>
-          <section>
-            <div id="open-parenthesis"
-              class="display-inline-block
+        <h1 class="float-left">Awesome Calculator</h1>
+        <div class="float-right">
+          <span class="display-block">A combination of a scientific</span>
+          <span class="display-block"> and financial calculator.</span>
+        </div>
+          <form id="screen-form" method="post" action="/index">
+            <textarea name="screen" placeholder="You can type your equation here!!!" class="full-width screen-height center screen-color screen-text margin-small padding-small overflow-auto"></textarea>
+          </form>
+        <!-- </div> -->
+        <table>
+          <tr>
+            <td id="mean"
+              class="operation-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
-              button-color-numbers
-              margin-small">
+              button-color-operations
+              margin-small"
+              data-myValue="mean">
+              MEAN
+            </td>
+            <td id="sin"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="sin">
+              SIN
+            </td>
+
+            <td id="open-parenthesis"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="(">
               (
-            </div>
-            <div id="close-parenthesis"
-              class="display-inline-block
+            </td>
+            <td id="close-parenthesis"
+              class="operation-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
-              button-color-numbers
-              margin-small">
+              button-color-operations
+              margin-small"
+              data-myValue=")">
               )
-            </div>
-            <div id="delete"
-              class="display-inline-block
+            </td>
+            <td id="delete"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
               margin-small">
               DEL
-            </div>
-            <div id="sqrt"
-              class="display-inline-block
+            </td>
+            <td id="sqrt"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
               margin-small">
               &radic;
-            </div>
-          </section>
-          <section>
-            <div id="seven"
-              class="display-inline-block
+            </td>
+          </tr>
+          <tr>
+            <td id="median"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="median">
+              MEDIAN
+            </td>
+            <td id="cosine"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="cos">
+              COS
+            </td>
+
+            <td id="seven"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="7">
               7
-            </div>
-            <div id="eight"
-              class="display-inline-block
+            </td>
+            <td id="eight"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="8">
               8
-            </div>
-            <div id="nine"
-              class="display-inline-block
+            </td>
+            <td id="nine"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="9">
               9
-            </div>
-            <div id="divide"
-              class="display-inline-block
+            </td>
+            <td id="divide"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
-              margin-small">
+              margin-small"
+              data-myValue="/">
               &divide;
-            </div>
-          </section>
-          <section>
-            <div id="four"
-              class="display-inline-block
+            </td>
+          </tr>
+          <tr>
+            <td id="mode"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="mode">
+              MODE
+            </td>
+            <td id="tangent"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="tan">
+              TAN
+            </td>
+
+            <td id="four"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="4">
               4
-            </div>
-            <div id="five"
-              class="display-inline-block
+            </td>
+            <td id="five"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="5">
               5
-            </div>
-            <div id="six"
-              class="display-inline-block
+            </td>
+            <td id="six"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="6">
               6
-            </div>
-            <div id="multiply"
-              class="display-inline-block
+            </td>
+            <td id="multiply"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
-              margin-small">
+              margin-small"
+              data-myValue="*">
               &times;
-            </div>
-          </section>
-          <section>
-            <div id="one"
-              class="display-inline-block
-              button-width
-              button-padding
-              text-align-center
-              button-color-numbers
-              margin-small">
-              1
-            </div>
-            <div id="two"
-              class="display-inline-block
-              button-width
-              button-padding
-              text-align-center
-              button-color-numbers
-              margin-small">
-              2
-            </div>
-            <div id="three"
-              class="display-inline-block
-              button-width
-              button-padding
-              text-align-center
-              button-color-numbers
-              margin-small">
-              3
-            </div>
-            <div id="minus"
-              class="display-inline-block
+            </td>
+          </tr>
+          <tr>
+            <td id="minimum"
+              class="operation-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
-              margin-small">
+              margin-small"
+              data-myValue="min">
+              MIN
+            </td>
+            <td id="hypothenuse"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="hyp">
+              HYP
+            </td>
+
+            <td id="one"
+              class="number-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-numbers
+              margin-small"
+              data-myValue="1">
+              1
+            </td>
+            <td id="two"
+              class="number-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-numbers
+              margin-small"
+              data-myValue="2">
+              2
+            </td>
+            <td id="three"
+              class="number-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-numbers
+              margin-small"
+              data-myValue="3">
+              3
+            </td>
+            <td id="minus"
+              class="number-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="-">
               &minus;
-            </div>
-          </section>
-          <section>
-            <div id="zero"
-              class="display-inline-block
+            </td>
+          </tr>
+          <tr>
+            <td id="maximum"
+              class="operation-button
+              display-inline-block
+              button-width
+              button-padding
+              text-align-center
+              button-color-operations
+              margin-small"
+              data-myValue="max">
+              MAX
+            </td>
+            <td id="zero"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue="0">
               0
-            </div>
-            <div id="decimal-point"
-              class="display-inline-block
+            </td>
+            <td id="decimal-point"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-numbers
-              margin-small">
+              margin-small"
+              data-myValue=".">
               .
-            </div>
-            <div id="equals"
-              class="display-inline-block
+            </td>
+            <td id="equals"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
               margin-small">
               =
-            </div>
-            <div id="plus"
-              class="display-inline-block
+            </td>
+            <td id="plus"
+              class="number-button
+              display-inline-block
               button-width
               button-padding
               text-align-center
               button-color-operations
               margin-small">
               +
-            </div>
-          </section>
-        </div>
+            </td>
+          </tr>
+        </table>
       </section>
 
     </div> <!-- #main -->
@@ -253,12 +410,6 @@
                 <h3>footer</h3>
               </footer>
             </div>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <script>window.jQuery || document.write('<script src="initializr/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-            <script src="initializr/js/plugins.js"></script>
-            <script src="initializr/js/main.js"></script>
 
             <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
             <script>
