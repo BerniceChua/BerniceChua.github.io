@@ -1,0 +1,15 @@
+#container {
+    height: 800px;
+    width: 99%;
+
+    border: 5px red solid;
+    border-radius: 15px;
+}
+
+.addDucky {
+    position: absolute;
+    width:128px;
+    height:128px;
+    background-image:url('http://i1061.photobucket.com/albums/t480/ericqweinstein/f3a16fb6.jpg');
+    background-repeat:no-repeat;
+}
